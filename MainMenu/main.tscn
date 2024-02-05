@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=3 uid="uid://s4mr31xgwy8"]
+
+[ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_c0ywe"]
+
+[node name="Main" type="Node"]
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c0ywe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 277.0
+offset_right = 756.0
+offset_bottom = 549.0
+alignment = 1
+
+[node name="Button_FamousGuests" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Famous Guests"
+expand_icon = true
+
+[node name="Button_GuestBook" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Guest Book"
+expand_icon = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.221
+anchor_right = 0.783
+anchor_bottom = 0.997
+offset_left = 0.40799
+offset_top = -1.0
+offset_right = -0.0160522
+offset_bottom = -0.0560303
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect3" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect4" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect5" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect6" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect7" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect8" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect9" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect10" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect11" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect12" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect13" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect14" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect15" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect16" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="MainMenu/HBoxContainer/Button_FamousGuests" to="MainMenu" method="_on_button_famous_guests_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/Button_GuestBook" to="MainMenu" method="_on_button_guest_book_pressed"]
