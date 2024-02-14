@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://85g1qf2ms0w4"]
+
+[ext_resource type="Script" path="res://FamousGuests/guest_scene.gd" id="1_i1s2g"]
+
+[node name="guest_scene" type="Control"]
+custom_minimum_size = Vector2(177, 169)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 177.0
+offset_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_i1s2g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(177, 169)
+layout_mode = 2
+offset_right = 177.0
+offset_bottom = 169.0
+size_flags_vertical = 3
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
