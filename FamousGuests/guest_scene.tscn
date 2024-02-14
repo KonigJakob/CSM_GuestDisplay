@@ -12,7 +12,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_i1s2g")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect_2" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(177, 169)
 layout_mode = 2
 offset_right = 177.0
@@ -20,4 +20,22 @@ offset_bottom = 169.0
 size_flags_vertical = 3
 expand_mode = 1
 
+[node name="TextureRect_Image2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(177, 169)
+layout_mode = 2
+offset_left = 157.0
+offset_top = 2.0
+offset_right = 334.0
+offset_bottom = 171.0
+size_flags_vertical = 3
+expand_mode = 1
+
 [node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 84.0
+offset_bottom = 88.0

@@ -10,9 +10,9 @@ var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 
 @onready var grid = $GridContainer
 var grid_blocks = []
-var occupied_blocks = []
+var occupied_blocks : int
+var shown_guests : int
 var max_occupied_blocks : int = 5
-var shown_guests = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,39 +37,25 @@ func _ready():
 
 func show_guests():
 	var new_occupied_block = grid_blocks.pick_random()
-	if occupied_blocks.has(new_occupied_block):
-		new_occupied_block = grid_blocks.pick_random()
-	else:
-		occupied_blocks.append(new_occupied_block)
-	var new_shown_guest = loaded_guests.pick_random()
-	if shown_guests.has(new_shown_guest):
-		new_shown_guest = loaded_guests.pick_random()
-	else:
-		shown_guests.append(new_shown_guest)
-	new_occupied_block.add_child(new_shown_guest)
+	if new_occupied_block is Grid_ColorRect:
+		if !new_occupied_block.occupied:
+			new_occupied_block.occupied = true
+			var new_shown_guest = loaded_guests.pick_random()
+			if new_shown_guest is Guest:
+				if !new_shown_guest.shown:
+					new_shown_guest.shown = true
+					new_occupied_block.add_child(new_shown_guest)
+					new_shown_guest.position = new_shown_guest.get_parent().position
+					print("Do you see a guest?")
+		else:
+			new_occupied_block = grid_blocks.pick_random()
 
-func hide_guests():
-	var random_block_to_remove = occupied_blocks.pick_random()
-	for o in random_block_to_remove.get_children():
-		if shown_guests.has(o):
-			random_block_to_remove.remove_child(o)
-			for sg in shown_guests:
-				if sg == o:
-					shown_guests.remove_at(shown_guests[sg])
-			for ob in occupied_blocks:
-				if ob == random_block_to_remove:
-					occupied_blocks.remove_at(occupied_blocks[ob])
+func hide_guest():
+	pass
 
 
 func _on_timer_timeout():
-	if occupied_blocks.size() == max_occupied_blocks:
-		if rng.randf_range(0,1) > chance:
-			hide_guests()
-			print("Hiding guest!")
-		else:
-			show_guests()
-	else:
-		show_guests()
-		
-func show_guest(guest : Guest):
+	show_guests()
 	
+func _on_guest_timer_timeout():
+	hide_guest()
