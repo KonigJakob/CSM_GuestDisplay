@@ -1,6 +1,49 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c8expo8ultkcm"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://c8expo8ultkcm"]
 
-[ext_resource type="FontFile" uid="uid://cfxkhjim3dbff" path="res://Assets/Fonts/visitor2 (1).ttf" id="1_8euok"]
+[ext_resource type="FontFile" uid="uid://cij5kl01d1wcu" path="res://Assets/Fonts/Atkinson-Hyperlegible-Regular-102.otf" id="1_40tun"]
+[ext_resource type="StyleBox" uid="uid://dlox2rr4jh60o" path="res://Assets/Resources/button_styleboxTextture.tres" id="2_vakjq"]
+[ext_resource type="StyleBox" uid="uid://bjron5dgxw6n4" path="res://Assets/Resources/button_hover__styleboxTextture.tres" id="3_m7ldi"]
+[ext_resource type="Texture2D" uid="uid://cj8vmxupq4sgi" path="res://Assets/Textures/UITextures/NinePatch_black_pressed.png" id="4_pa24g"]
+[ext_resource type="Texture2D" uid="uid://w1wjedh507om" path="res://Assets/Textures/UITextures/NinePatch_black_normal.png" id="5_dknkw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fudvw"]
+texture = ExtResource("4_pa24g")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frehm"]
+texture = ExtResource("5_dknkw")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bunt5"]
+texture = ExtResource("4_pa24g")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
 
 [resource]
-default_font = ExtResource("1_8euok")
+default_font = ExtResource("1_40tun")
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_40tun")
+Button/styles/disabled = ExtResource("2_vakjq")
+Button/styles/hover = ExtResource("3_m7ldi")
+Button/styles/normal = ExtResource("2_vakjq")
+Button/styles/pressed = SubResource("StyleBoxTexture_fudvw")
+Label/font_sizes/font_size = 42
+Label/fonts/font = ExtResource("1_40tun")
+Label/styles/normal = null
+LineEdit/colors/caret_color = Color(0.72549, 0.878431, 0.270588, 1)
+LineEdit/constants/caret_width = 3
+LineEdit/fonts/font = ExtResource("1_40tun")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_frehm")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_bunt5")
+OptionButton/fonts/font = ExtResource("1_40tun")
+OptionButton/styles/hover = ExtResource("2_vakjq")
+OptionButton/styles/normal = ExtResource("2_vakjq")
+PopupMenu/fonts/font = ExtResource("1_40tun")

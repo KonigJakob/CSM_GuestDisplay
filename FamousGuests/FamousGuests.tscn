@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="1_5hcky"]
 [ext_resource type="Script" path="res://FamousGuests/FamousGuests.gd" id="1_hh1al"]
-[ext_resource type="Script" path="res://FamousGuests/Grid_ColorRect.gd" id="3_diid8"]
 [ext_resource type="Script" path="res://FamousGuests/GuestBook_Timer.gd" id="3_ogycs"]
+[ext_resource type="Texture2D" uid="uid://cxk7e8fh612x0" path="res://Assets/Textures/UITextures/Arrow.png" id="4_ofqke"]
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -13,142 +13,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hh1al")
+portrait_gutter = 10.0
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 717.0
 offset_bottom = 1274.0
-color = Color(0, 0, 0, 1)
 script = ExtResource("1_5hcky")
-
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.295
-anchor_right = 1.0
-anchor_bottom = 0.832
-offset_top = 0.399963
-offset_bottom = 0.0400391
-grow_horizontal = 2
-grow_vertical = 2
-columns = 4
-
-[node name="Top1" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="Top2" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="Top3" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="Top4" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidTop1" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidTop2" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidTop3" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidTop4" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidBot1" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidBot2" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidBot3" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="MidBot4" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="Bot1" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="Bot2" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="Bot3" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
-
-[node name="Bot4" type="ColorRect" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.796078, 0, 0.105882, 1)
-script = ExtResource("3_diid8")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 script = ExtResource("3_ogycs")
 max_wait_time = 0.2
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(30, 644)
+scale = Vector2(0.0113591, 0.0113591)
+texture = ExtResource("4_ofqke")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 255.0
+offset_right = 561.0
+offset_bottom = 779.0
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 255.0
+offset_right = 982.0
+offset_bottom = 779.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

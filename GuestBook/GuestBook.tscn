@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://biq73pieyhg4y"]
+[gd_scene load_steps=4 format=3 uid="uid://biq73pieyhg4y"]
 
 [ext_resource type="Script" path="res://GuestBook/GuestBook.gd" id="1_i5vid"]
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_v86rj"]
+[ext_resource type="Theme" uid="uid://c8expo8ultkcm" path="res://Assets/Themes/visitorTheme.tres" id="3_8lblm"]
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -16,6 +17,7 @@ script = ExtResource("1_i5vid")
 layout_mode = 0
 offset_right = 717.0
 offset_bottom = 1274.0
+theme = ExtResource("3_8lblm")
 color = Color(0.756863, 0.756863, 0.756863, 1)
 script = ExtResource("2_v86rj")
 
@@ -25,6 +27,7 @@ offset_left = 537.0
 offset_top = 1.0
 offset_right = 718.0
 offset_bottom = 72.0
+theme = ExtResource("3_8lblm")
 text = "Return"
 
 [node name="Satisfaction" type="HBoxContainer" parent="."]
@@ -35,6 +38,7 @@ anchor_right = 1.001
 anchor_bottom = 0.245
 offset_right = 0.279968
 offset_bottom = -26.6
+theme = ExtResource("3_8lblm")
 
 [node name="Button_VBad" type="Button" parent="Satisfaction"]
 layout_mode = 2
@@ -75,22 +79,26 @@ anchor_bottom = 0.245
 offset_top = 198.0
 offset_right = 0.279968
 offset_bottom = 191.4
+theme = ExtResource("3_8lblm")
 
 [node name="Button_Baby" type="Button" parent="Age_Group"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_8lblm")
 toggle_mode = true
 text = "I'm a baby"
 
 [node name="Button_Young" type="Button" parent="Age_Group"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_8lblm")
 toggle_mode = true
 text = "I'm young"
 
 [node name="Button_Adult" type="Button" parent="Age_Group"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_8lblm")
 toggle_mode = true
 text = "I'm old"
 
@@ -99,6 +107,7 @@ layout_mode = 0
 offset_top = 616.0
 offset_right = 145.0
 offset_bottom = 676.0
+theme = ExtResource("3_8lblm")
 item_count = 12
 popup/item_0/text = "Chinese"
 popup/item_0/id = 0
@@ -131,6 +140,7 @@ offset_left = 104.0
 offset_top = 749.0
 offset_right = 605.0
 offset_bottom = 852.0
+theme = ExtResource("3_8lblm")
 placeholder_text = "Leave a message!"
 max_length = 250
 
@@ -140,9 +150,11 @@ offset_left = 239.0
 offset_top = 1054.0
 offset_right = 473.0
 offset_bottom = 1135.0
+theme = ExtResource("3_8lblm")
 text = "Submit"
 
 [node name="Promt_Panel" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 720.0
 offset_bottom = 1274.0
@@ -168,6 +180,7 @@ offset_bottom = 312.0
 [node name="Label" type="Label" parent="Promt_Panel/ColorRect2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Submit another answer?"
 horizontal_alignment = 1
@@ -179,12 +192,15 @@ size_flags_vertical = 3
 [node name="Button_No" type="Button" parent="Promt_Panel/ColorRect2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "NO"
+theme = ExtResource("3_8lblm")
+text = "NEIN
+"
 
 [node name="Button_Yes" type="Button" parent="Promt_Panel/ColorRect2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Yes"
+theme = ExtResource("3_8lblm")
+text = "JA"
 
 [connection signal="pressed" from="Button_Return" to="." method="_on_button_return_pressed"]
 [connection signal="pressed" from="Satisfaction/Button_VBad" to="." method="_on_button_v_bad_pressed"]

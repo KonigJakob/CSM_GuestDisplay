@@ -1,41 +1,105 @@
-[gd_scene load_steps=2 format=3 uid="uid://85g1qf2ms0w4"]
+[gd_scene load_steps=3 format=3 uid="uid://85g1qf2ms0w4"]
 
 [ext_resource type="Script" path="res://FamousGuests/guest_scene.gd" id="1_i1s2g"]
+[ext_resource type="Texture2D" uid="uid://d4hxuftrmuqx6" path="res://Assets/Textures/images (2).jpeg" id="2_qpgfk"]
 
 [node name="guest_scene" type="Control"]
-custom_minimum_size = Vector2(177, 169)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 177.0
-offset_bottom = 169.0
+offset_right = 394.0
+offset_bottom = 522.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_i1s2g")
 
-[node name="TextureRect_2" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(177, 169)
-layout_mode = 2
-offset_right = 177.0
-offset_bottom = 169.0
-size_flags_vertical = 3
-expand_mode = 1
-
-[node name="TextureRect_Image2" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(177, 169)
-layout_mode = 2
-offset_left = 157.0
-offset_top = 2.0
-offset_right = 334.0
-offset_bottom = 171.0
-size_flags_vertical = 3
-expand_mode = 1
-
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 84.0
-offset_bottom = 88.0
+offset_right = 394.0
+offset_bottom = 523.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button"]
+layout_mode = 0
+offset_right = 391.0
+offset_bottom = 524.0
+
+[node name="TextureRect" type="TextureRect" parent="Button/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_qpgfk")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Button/VBoxContainer"]
+layout_mode = 2
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Button"]
+visible = false
+layout_mode = 0
+offset_top = 1.0
+offset_right = 717.0
+offset_bottom = 1277.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/Button"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 656.0
+offset_bottom = 1036.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button/Button/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Button/Button/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qpgfk")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/Button/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.57
+
+[node name="TextureRect" type="TextureRect" parent="Button/Button/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_qpgfk")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Button/Button/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_qpgfk")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Button/Button/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_qpgfk")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Button/Button/VBoxContainer"]
+layout_mode = 2
+text = "Placholder"
+
+[node name="Label2" type="Label" parent="Button/Button/VBoxContainer"]
+layout_mode = 2
+text = "Placeholder date"
+
+[node name="Label3" type="Label" parent="Button/Button/VBoxContainer"]
+layout_mode = 2
+text = "Renowned tech pioneer and philanthropist Bill Gates, co-founder of Microsoft, recently graced the halls of Berlin's Computerspielemuseum, immersing himself in a journey through the evolution of gaming technology. From vintage consoles to cutting-edge virtual reality experiences, Gates delved into the rich history and innovative future of gaming, engaging with interactive exhibits that showcase the cultural significance and technological advancements of this dynamic industry.
+
+Der angesehene Technologiepionier und Philanthrop Bill Gates, Mitbegründer von Microsoft, besuchte kürzlich die Hallen des Computerspielemuseums in Berlin und tauchte ein in die Entwicklung der Gaming-Technologie. Von Vintage-Konsolen bis hin zu modernsten Virtual-Reality-Erlebnissen erkundete Gates die reiche Geschichte und innovative Zukunft des Gamings. Er interagierte mit interaktiven Ausstellungsstücken, die die kulturelle Bedeutung und technologischen Fortschritte dieser dynamischen Branche verdeutlichen."
+autowrap_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button/Button" to="." method="_on_button_pressed"]

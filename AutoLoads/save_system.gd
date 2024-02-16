@@ -58,7 +58,7 @@ func load_guest():
 		if error == OK:
 			var saved_data = json.data
 			if typeof(saved_data) == TYPE_DICTIONARY:
-				print(saved_data) # Prints dictionary
+				#print(saved_data) # Prints dictionary
 				return(saved_data)
 			else:
 				print("Unexpected data")

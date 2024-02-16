@@ -1,19 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4wbth8qxbiur"]
+[gd_scene load_steps=3 format=3 uid="uid://c4wbth8qxbiur"]
 
 [ext_resource type="Script" path="res://FamousGuests/ScrollContainerCarousel.gd" id="1_ch1qg"]
+[ext_resource type="PackedScene" uid="uid://85g1qf2ms0w4" path="res://FamousGuests/guest_scene.tscn" id="1_wktj0"]
 
-[node name="Control" type="Control"]
+[node name="FamousGuestsScroll" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = -3.0
+offset_bottom = -728.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_right = 378.0
-offset_bottom = 155.0
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 47.0
+offset_right = 674.0
+offset_bottom = -24.0
 script = ExtResource("1_ch1qg")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
@@ -21,59 +29,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+[node name="guest_scene" parent="ScrollContainer/HBoxContainer" instance=ExtResource("1_wktj0")]
 layout_mode = 2
-
-[node name="ColorRect2" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(0, 1, 1, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(1, 1, 0, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="ColorRect6" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(0, 1, 1, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect8" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(1, 1, 0, 1)
-
-[node name="ColorRect9" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="ColorRect10" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(0, 1, 1, 1)
-
-[node name="ColorRect11" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect12" type="ColorRect" parent="ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-color = Color(1, 1, 0, 1)

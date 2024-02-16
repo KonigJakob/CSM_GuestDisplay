@@ -1,28 +1,39 @@
 extends Control
 
-var rng = RandomNumberGenerator.new()
-var chance : float = 0.5
-
-var portraits : Array
-var guests = {}
-var loaded_guests = []
+var tween : Tween
+var guests = []
+var visible_guests = []
 var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 
-@onready var grid = $GridContainer
-var grid_blocks = []
-var occupied_blocks : int
-var shown_guests : int
-var max_occupied_blocks : int = 5
+@export var portrait_position_start : Vector2
+@export var portrait_gutter: float
 
+var current_portrait = 1
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	guests = load_guests()
+	carousel_guests()
+	print(visible_guests)
+	set_guest_positions(visible_guests, $Panel)
+
+func _process(delta):
+	if Input.is_action_just_pressed("move_right"):
+		tween = get_tree().create_tween().set_parallel(true)
+		for g in visible_guests:
+			move_guests_left(g)
+	if Input.is_action_just_pressed("move_left"):
+		tween = get_tree().create_tween().set_parallel(true)
+		for g in visible_guests:
+			move_guests_right(g)
+
+func load_guests() -> Array:
+	var loaded_guests = []
+	var guests = {}
 	#Load guests info, instantiate the scenes and save them in an array
 	if SaveSystem.load_guest():
-		grid_blocks = grid.get_children()
-		
 		guests = SaveSystem.load_guest()
 		for g in guests:
+			var i = 1
 			var _guest_portrait = guest_portrait.instantiate()
 			_guest_portrait.guest_name = guests[g]["Name"]
 			_guest_portrait.country = guests[g]["Country"]
@@ -31,31 +42,36 @@ func _ready():
 			_guest_portrait.famous_for = guests[g]["Famous for"]
 			_guest_portrait.image_1 = guests[g]["Image 1"]
 			loaded_guests.append(_guest_portrait)
-			
-	else: print("Couldn't load guests.")
-	#Add color blocks to array
+		print("Guests loaded")
+	else: 
+		print("Couldn't load guests.")
+	return loaded_guests
 
-func show_guests():
-	var new_occupied_block = grid_blocks.pick_random()
-	if new_occupied_block is Grid_ColorRect:
-		if !new_occupied_block.occupied:
-			new_occupied_block.occupied = true
-			var new_shown_guest = loaded_guests.pick_random()
-			if new_shown_guest is Guest:
-				if !new_shown_guest.shown:
-					new_shown_guest.shown = true
-					new_occupied_block.add_child(new_shown_guest)
-					new_shown_guest.position = new_shown_guest.get_parent().position
-					print("Do you see a guest?")
-		else:
-			new_occupied_block = grid_blocks.pick_random()
+func set_guest_positions(guest_array : Array, parent):
+	print("Setting position")
+	var current_x : int = 0
+	for g in guest_array:
+		#g.gloabl_position.y = parent.position.y
+		g.position.x = current_x
+		current_x += g.size.x + portrait_gutter
+		if g.position.x == parent.position.x:
+			current_portrait = g
 
-func hide_guest():
-	pass
+func carousel_guests():
+	for i in 5:
+		var new_visible_guest = guests.pop_front()
+		visible_guests.append(new_visible_guest)
+		#You need to add the children at some point but not necessarily here. Good luck! Love you :
+		#$Panel.add_child(new_visible_guest)
 
+func move_guests_right(g):
+	tween.tween_property(g, "position", Vector2(g.position.x - g.size.x - portrait_gutter, g.position.y), 1)
+	
+func move_guests_left(g):
+	tween.tween_property(g, "position", Vector2(g.position.x + g.size.x + portrait_gutter, g.position.y), 1)
 
 func _on_timer_timeout():
-	show_guests()
+	pass
 	
 func _on_guest_timer_timeout():
-	hide_guest()
+	pass
