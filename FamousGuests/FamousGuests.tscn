@@ -26,11 +26,6 @@ autostart = true
 script = ExtResource("3_ogycs")
 max_wait_time = 0.2
 
-[node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(30, 644)
-scale = Vector2(0.0113591, 0.0113591)
-texture = ExtResource("4_ofqke")
-
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 170.0
@@ -38,12 +33,29 @@ offset_top = 255.0
 offset_right = 561.0
 offset_bottom = 779.0
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Button_LeftArrow" type="Button" parent="."]
 layout_mode = 0
-offset_left = 591.0
-offset_top = 255.0
-offset_right = 982.0
-offset_bottom = 779.0
+offset_top = 404.0
+offset_right = 125.0
+offset_bottom = 889.0
+
+[node name="Arrow" type="Sprite2D" parent="Button_LeftArrow"]
+position = Vector2(30, 240)
+scale = Vector2(0.0113591, 0.0113591)
+texture = ExtResource("4_ofqke")
+
+[node name="Button_RightArrow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 716.0
+offset_top = 868.0
+offset_right = 841.0
+offset_bottom = 1353.0
+rotation = 3.14159
+
+[node name="Arrow" type="Sprite2D" parent="Button_RightArrow"]
+position = Vector2(30, 240)
+scale = Vector2(0.0113591, 0.0113591)
+texture = ExtResource("4_ofqke")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

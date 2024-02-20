@@ -8,14 +8,17 @@ var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 @export var portrait_position_start : Vector2
 @export var portrait_gutter: float
 
+@onready var portrait_panel = $Panel
+
 var right_clicks : int
 var left_clicks : int
 
 func _ready():
 	guests = load_guests()
 	set_guest_positions(guests, $Panel)
+	set_portrait_panel_position()
 	right_clicks = 0
-	left_clicks = guests.size()
+	left_clicks = guests.size() -1
 
 func _process(delta):
 	if Input.is_action_just_pressed("move_right") and right_clicks > 0:
@@ -50,6 +53,9 @@ func load_guests() -> Array:
 	else: 
 		print("Couldn't load guests.")
 	return loaded_guests
+
+func set_portrait_panel_position():
+	portrait_panel.position = get_viewport_rect().size/2 - portrait_panel.size/2
 
 func set_guest_positions(guest_array : Array, parent):
 	var current_x : int = 0

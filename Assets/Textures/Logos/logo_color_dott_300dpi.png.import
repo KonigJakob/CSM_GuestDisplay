@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w1wjedh507om"
-path="res://.godot/imported/NinePatch_black_normal.png-9a57e18c3d133e480fa71e3d1bbd1ae6.ctex"
+uid="uid://lge4q45juhj0"
+path="res://.godot/imported/logo_color_dott_300dpi.png-a8917faae57cc39a239eb6d2ac4895d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/UITextures/NinePatch_black_normal.png"
-dest_files=["res://.godot/imported/NinePatch_black_normal.png-9a57e18c3d133e480fa71e3d1bbd1ae6.ctex"]
+source_file="res://Assets/Textures/Logos/logo_color_dott_300dpi.png"
+dest_files=["res://.godot/imported/logo_color_dott_300dpi.png-a8917faae57cc39a239eb6d2ac4895d7.ctex"]
 
 [params]
 

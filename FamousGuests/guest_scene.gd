@@ -12,6 +12,8 @@ var image_2 : String
 
 var shown : bool = false
 
+@onready var info_panel = $Button/InfoPanel
+
 @export var default_values : bool = false
 
 
@@ -25,7 +27,5 @@ func _ready():
 
 
 func _on_button_pressed():
-	if $Button/Button.visible == false:
-		$Button/Button.visible = true
-	else:
-		$Button/Button.visible = false
+	if info_panel.visible == false:
+		info_panel.visible = true
