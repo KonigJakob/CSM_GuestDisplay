@@ -71,8 +71,23 @@ func move_guests_right(g):
 func move_guests_left(g):
 	tween.tween_property(g, "position", Vector2(g.position.x + g.size.x + portrait_gutter, g.position.y), 1)
 
-func _on_timer_timeout():
-	pass
-	
-func _on_guest_timer_timeout():
-	pass
+func _on_button_home_pressed():
+	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
+
+
+func _on_button_left_arrow_pressed():
+	if right_clicks > 0:
+		tween = get_tree().create_tween().set_parallel(true)
+		for g in guests:
+			move_guests_left(g)
+		right_clicks -= 1
+		left_clicks += 1
+
+
+func _on_button_right_arrow_pressed():
+	if left_clicks > 0:
+		tween = get_tree().create_tween().set_parallel(true)
+		for g in guests:
+			move_guests_right(g)
+		right_clicks += 1
+		left_clicks -= 1
