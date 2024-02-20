@@ -11,6 +11,29 @@ var JSON_string
 
 @onready var promt_panel : Control = $Promt_Panel
 
+enum PollPage {
+	STARS,
+	AGE,
+	LANGUAGE,
+	MESSAGE,
+}
+@onready var current_page = PollPage.STARS
+
+@export var forward_button: Button
+@export var back_button: Button
+@export var submit_button: Button
+
+@export var Star_One: Button
+@export var Star_Two: Button
+@export var Star_Three: Button
+@export var Star_Four: Button
+@export var Star_Five: Button
+
+@export var Age_Child: Button
+@export var Age_Teen: Button
+@export var Age_Adult: Button
+@export var Age_Senior: Button
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,74 +49,126 @@ func _process(delta):
 
 func _on_button_v_bad_pressed():
 	satisfaction_button = 1
-	$Satisfaction/Button_Bad.button_pressed = false
-	$Satisfaction/Button_Meh.button_pressed = false
-	$Satisfaction/Button_Good.button_pressed = false
-	$Satisfaction/Button_VGood.button_pressed = false
+	Star_Two.button_pressed = false
+	Star_Three.button_pressed = false
+	Star_Four.button_pressed = false
+	Star_Five.button_pressed = false
 func _on_button_bad_pressed():
 	satisfaction_button = 2
-	$Satisfaction/Button_VBad.button_pressed = false
-	$Satisfaction/Button_Meh.button_pressed = false
-	$Satisfaction/Button_Good.button_pressed = false
-	$Satisfaction/Button_VGood.button_pressed = false
+	Star_One.button_pressed = false
+	Star_Three.button_pressed = false
+	Star_Four.button_pressed = false
+	Star_Five.button_pressed = false
 func _on_button_meh_pressed():
 	satisfaction_button = 3
-	$Satisfaction/Button_VBad.button_pressed = false
-	$Satisfaction/Button_Bad.button_pressed = false
-	$Satisfaction/Button_Good.button_pressed = false
-	$Satisfaction/Button_VGood.button_pressed = false
+	Star_One.button_pressed = false
+	Star_Two.button_pressed = false
+	Star_Four.button_pressed = false
+	Star_Five.button_pressed = false
 func _on_button_good_pressed():
 	satisfaction_button = 4
-	$Satisfaction/Button_VBad.button_pressed = false
-	$Satisfaction/Button_Bad.button_pressed = false
-	$Satisfaction/Button_Meh.button_pressed = false
-	$Satisfaction/Button_VGood.button_pressed = false
+	Star_One.button_pressed = false
+	Star_Two.button_pressed = false
+	Star_Three.button_pressed = false
+	Star_Five.button_pressed = false
 func _on_button_v_good_pressed():
 	satisfaction_button = 5
-	$Satisfaction/Button_VBad.button_pressed = false
-	$Satisfaction/Button_Bad.button_pressed = false
-	$Satisfaction/Button_Meh.button_pressed = false
-	$Satisfaction/Button_Good.button_pressed = false
-
+	Star_One.button_pressed = false
+	Star_Two.button_pressed = false
+	Star_Three.button_pressed = false
+	Star_Four.button_pressed = false
 
 func _on_button_baby_pressed():
 	age_group_button = 1
-	$Age_Group/Button_Young.button_pressed = false
-	$Age_Group/Button_Adult.button_pressed = false
+	Age_Teen.button_pressed = false
+	Age_Adult.button_pressed = false
+	Age_Senior.button_pressed = false
 
 func _on_button_young_pressed():
 	age_group_button = 2
-	$Age_Group/Button_Baby.button_pressed = false
-	$Age_Group/Button_Adult.button_pressed = false
-
+	Age_Child.button_pressed = false
+	Age_Adult.button_pressed = false
+	Age_Senior.button_pressed = false
 
 func _on_button_adult_pressed():
 	age_group_button = 3
-	$Age_Group/Button_Baby.button_pressed = false
-	$Age_Group/Button_Young.button_pressed = false
+	Age_Child.button_pressed = false
+	Age_Teen.button_pressed = false
+	Age_Senior.button_pressed = false
 
+func _on_button_senior_pressed():
+	age_group_button = 4
+	Age_Child.button_pressed = false
+	Age_Teen.button_pressed = false
+	Age_Adult.button_pressed = false
 
 func _on_option_button_item_selected(index):
 	language = index
 
-
 func _on_line_edit_text_changed(new_text):
 	message = new_text
 
-
-func _on_button_pressed():
-	poll_data = {"Date" : date, "Satisfaction": satisfaction_button, 
-	"Age Group" : age_group_button, "Language" : language, "Message" : message}
-	JSON_string = JSON.stringify(poll_data)
-	SaveSystem.save(JSON_string)
-	add_child(promt_panel)
-	
 func _on_button_no_pressed():
 	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
 
 func _on_button_yes_pressed():
 	get_tree().reload_current_scene()
 
-
 func _on_button_return_pressed():
+	var panels = $Control
+	var panel_size = panels.size/panels.get_child_count()
+	var tween = get_tree().create_tween()
+	tween.tween_property(panels, "position", Vector2(panels.position.x + panel_size.x, panels.position.y),1)
+	current_page -= 1
+	match current_page: 
+		PollPage.STARS:
+			back_button.visible = false
+			forward_button.visible = true
+			submit_button.visible = false
+		PollPage.AGE:
+			back_button.visible = true
+			forward_button.visible = true
+			submit_button.visible = false
+		PollPage.LANGUAGE:
+			back_button.visible = true
+			forward_button.visible = true
+			submit_button.visible = false
+		PollPage.MESSAGE:
+			back_button.visible = true
+			forward_button.visible = false
+			submit_button.visible = true
+
+func _on_button_continue_pressed():
+	var panels = $Control
+	var panel_size = panels.size/panels.get_child_count()
+	var tween = get_tree().create_tween()
+	tween.tween_property(panels, "position", Vector2(panels.position.x - panel_size.x, panels.position.y),1)
+	current_page += 1
+	match current_page: 
+		PollPage.STARS:
+			back_button.visible = false
+			forward_button.visible = true
+			submit_button.visible = false
+		PollPage.AGE:
+			back_button.visible = true
+			forward_button.visible = true
+			submit_button.visible = false
+		PollPage.LANGUAGE:
+			back_button.visible = true
+			forward_button.visible = true
+			submit_button.visible = false
+		PollPage.MESSAGE:
+			back_button.visible = true
+			forward_button.visible = false
+			submit_button.visible = true
+
+func _on_button_home_pressed():
 	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
+
+func _on_button_submit_pressed():
+	poll_data = {"Date" : date, "Satisfaction": satisfaction_button, 
+	"Age Group" : age_group_button, "Language" : language, "Message" : message}
+	JSON_string = JSON.stringify(poll_data)
+	SaveSystem.save(JSON_string)
+	add_child(promt_panel)
+	promt_panel.global_position = Vector2.ZERO

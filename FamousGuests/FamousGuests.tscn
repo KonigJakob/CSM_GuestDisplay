@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1la0pgo1y5tp"]
+[gd_scene load_steps=6 format=3 uid="uid://1la0pgo1y5tp"]
 
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="1_5hcky"]
 [ext_resource type="Script" path="res://FamousGuests/FamousGuests.gd" id="1_hh1al"]
 [ext_resource type="Script" path="res://FamousGuests/GuestBook_Timer.gd" id="3_ogycs"]
 [ext_resource type="Texture2D" uid="uid://cxk7e8fh612x0" path="res://Assets/Textures/UITextures/Arrow.png" id="4_ofqke"]
+[ext_resource type="Texture2D" uid="uid://lge4q45juhj0" path="res://Assets/Textures/Logos/logo_color_dott_300dpi.png" id="5_6xri5"]
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -56,6 +57,15 @@ rotation = 3.14159
 position = Vector2(30, 240)
 scale = Vector2(0.0113591, 0.0113591)
 texture = ExtResource("4_ofqke")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 1083.0
+offset_right = 528.0
+offset_bottom = 1166.0
+texture = ExtResource("5_6xri5")
+expand_mode = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

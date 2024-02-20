@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://FamousGuests/guest_scene.gd" id="1_i1s2g"]
 [ext_resource type="Texture2D" uid="uid://d4hxuftrmuqx6" path="res://Assets/Textures/images (2).jpeg" id="2_qpgfk"]
-[ext_resource type="PackedScene" uid="uid://58byocegd2b8" path="res://guest_info_panel.tscn" id="3_gwpvm"]
+[ext_resource type="PackedScene" uid="uid://dl8lffvjrwol6" path="res://FamousGuests/guest_info_panel.tscn" id="3_fvxlt"]
 
 [node name="guest_scene" type="Control"]
 layout_mode = 3
@@ -35,7 +35,7 @@ text = "Placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InfoPanel" parent="Button" instance=ExtResource("3_gwpvm")]
+[node name="InfoPanel" parent="Button" instance=ExtResource("3_fvxlt")]
 visible = false
 layout_mode = 1
 offset_left = -1.5
