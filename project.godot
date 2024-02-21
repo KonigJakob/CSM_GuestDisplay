@@ -24,6 +24,11 @@ window/size/viewport_width=720
 window/size/viewport_height=1280
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom="res://Assets/Themes/visitorTheme.tres"
+theme/custom_font="res://Assets/Fonts/Atkinson-Hyperlegible-Regular-102.otf"
+
 [input]
 
 move_right={

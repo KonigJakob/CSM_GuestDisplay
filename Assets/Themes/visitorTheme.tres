@@ -1,7 +1,13 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c8expo8ultkcm"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c8expo8ultkcm"]
 
 [ext_resource type="FontFile" uid="uid://cij5kl01d1wcu" path="res://Assets/Fonts/Atkinson-Hyperlegible-Regular-102.otf" id="1_40tun"]
 [ext_resource type="StyleBox" uid="uid://dlox2rr4jh60o" path="res://Assets/Resources/button_styleboxTextture.tres" id="2_vakjq"]
+[ext_resource type="Texture2D" uid="uid://vlym6uqb51qc" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Panel_Normal.tres" id="3_ypi4y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0e0h1"]
+texture = ExtResource("3_ypi4y")
+texture_margin_top = 10.0
+expand_margin_top = 10.0
 
 [resource]
 default_font = ExtResource("1_40tun")
@@ -16,3 +22,7 @@ LineEdit/constants/caret_width = 3
 LineEdit/fonts/font = ExtResource("1_40tun")
 OptionButton/fonts/font = ExtResource("1_40tun")
 PopupMenu/fonts/font = ExtResource("1_40tun")
+PopupMenu/styles/hover = null
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_0e0h1")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://biq73pieyhg4y"]
+[gd_scene load_steps=45 format=3 uid="uid://biq73pieyhg4y"]
 
 [ext_resource type="Script" path="res://GuestBook/GuestBook.gd" id="1_i5vid"]
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_v86rj"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dfk15j3qmwivy" path="res://Assets/Textures/UITextures/AtlasTextures/Stars/AT_Star_Click.tres" id="6_pntc4"]
 [ext_resource type="Texture2D" uid="uid://dibf6uoptr36i" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Forward_Click.tres" id="6_wmx2h"]
 [ext_resource type="Texture2D" uid="uid://dx1j4p2leemir" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Click.tres" id="7_ilbkj"]
+[ext_resource type="Texture2D" uid="uid://bfcrqipmx7sa0" path="res://Assets/Textures/UITextures/Panel_Arrow.png" id="17_jyx48"]
 [ext_resource type="Texture2D" uid="uid://dko8thwhfqexi" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Normal.tres" id="17_uecf5"]
+[ext_resource type="Texture2D" uid="uid://vlym6uqb51qc" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Panel_Normal.tres" id="18_7py8i"]
 [ext_resource type="Texture2D" uid="uid://nrvsmp6oxc7x" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Hover.tres" id="18_n8y2k"]
 [ext_resource type="Texture2D" uid="uid://mosgiw56rl72" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Click.tres" id="19_t7py4"]
 
@@ -60,6 +62,19 @@ texture = ExtResource("6_pntc4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7la"]
 texture = ExtResource("6_gusho")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q664k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2rnw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hn5i2"]
+texture = ExtResource("18_7py8i")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4btq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04yqd"]
+content_margin_left = 30.0
+texture = ExtResource("18_7py8i")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5nbt"]
 texture = ExtResource("17_uecf5")
@@ -157,16 +172,16 @@ anchor_top = 0.157
 anchor_right = 1.0
 anchor_bottom = 0.617
 offset_left = -0.28
-offset_top = 242.04
+offset_top = 195.04
 offset_right = 2218.0
-offset_bottom = 0.239929
+offset_bottom = 0.23999
 
 [node name="StarContainer" type="PanelContainer" parent="Control"]
 layout_mode = 0
 offset_left = 71.0
-offset_top = -36.0
+offset_top = 25.0
 offset_right = 664.0
-offset_bottom = 109.0
+offset_bottom = 223.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5gh6t")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/StarContainer"]
@@ -235,9 +250,10 @@ toggle_mode = true
 [node name="AgeContainer" type="PanelContainer" parent="Control"]
 layout_mode = 2
 offset_left = 805.0
-offset_top = -35.0
+offset_top = 25.0
 offset_right = 1388.0
-offset_bottom = 182.0
+offset_bottom = 207.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q664k")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/AgeContainer"]
 layout_mode = 2
@@ -246,14 +262,13 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Wie alt bist du?"
-vertical_alignment = 2
 
 [node name="Panel" type="Panel" parent="Control/AgeContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
 [node name="Age_Group" type="HBoxContainer" parent="Control/AgeContainer/VBoxContainer"]
@@ -292,24 +307,36 @@ text = "I'm old"
 [node name="LanguageContainer" type="PanelContainer" parent="Control"]
 layout_mode = 2
 offset_left = 1530.0
-offset_top = 64.0
+offset_top = 25.0
 offset_right = 2113.0
-offset_bottom = 167.0
+offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j2rnw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/LanguageContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Control/LanguageContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/LanguageContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Was ist deine Muttersprache?"
-vertical_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Control/LanguageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
 [node name="OptionButton" type="OptionButton" parent="Control/LanguageContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_icons/arrow = ExtResource("17_jyx48")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hn5i2")
 item_count = 12
 popup/item_0/text = "Chinese"
 popup/item_0/id = 0
@@ -339,9 +366,10 @@ popup/item_11/id = 11
 [node name="MessageContainer" type="PanelContainer" parent="Control"]
 layout_mode = 2
 offset_left = 2248.0
-offset_top = 53.0
+offset_top = 25.0
 offset_right = 2831.0
-offset_bottom = 204.0
+offset_bottom = 176.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v4btq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MessageContainer"]
 layout_mode = 2
@@ -350,16 +378,28 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Hinterlasse eine Nachricht:"
 vertical_alignment = 2
+
+[node name="Panel" type="Panel" parent="Control/MessageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
 [node name="LineEdit" type="LineEdit" parent="Control/MessageContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_04yqd")
 placeholder_text = "..."
 max_length = 250
+caret_blink = true
 
 [node name="Button_Submit" type="Button" parent="."]
 layout_mode = 0

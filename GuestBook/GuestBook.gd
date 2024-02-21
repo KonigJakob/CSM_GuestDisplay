@@ -98,6 +98,7 @@ func _on_option_button_item_selected(index):
 
 func _on_line_edit_text_changed(new_text):
 	message = new_text
+	submit_button.visible = true
 
 func _on_button_no_pressed():
 	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
@@ -127,7 +128,6 @@ func _on_button_return_pressed():
 		PollPage.MESSAGE:
 			back_button.visible = true
 			forward_button.visible = false
-			submit_button.visible = true
 func _on_button_continue_pressed():
 	var panels = $Control
 	var panel_size = panels.size/panels.get_child_count()
@@ -150,7 +150,6 @@ func _on_button_continue_pressed():
 		PollPage.MESSAGE:
 			back_button.visible = true
 			forward_button.visible = false
-			submit_button.visible = true
 
 func _on_button_home_pressed():
 	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
