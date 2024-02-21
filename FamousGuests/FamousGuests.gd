@@ -5,10 +5,13 @@ var guests = []
 var visible_guests = []
 var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 
+@export var input_lock_rect : ColorRect
 @export var portrait_position_start : Vector2
 @export var portrait_gutter: float
 
 @onready var portrait_panel = $Panel
+@export var left_arrow : Button
+@export var right_arrow : Button 
 
 var right_clicks : int
 var left_clicks : int
@@ -77,7 +80,10 @@ func _on_button_home_pressed():
 
 func _on_button_left_arrow_pressed():
 	if right_clicks > 0:
+		left_arrow.disabled = true
 		tween = get_tree().create_tween().set_parallel(true)
+		tween.finished.connect(on_tween_finished)
+		input_lock_rect.visible = true
 		for g in guests:
 			move_guests_left(g)
 		right_clicks -= 1
@@ -86,8 +92,16 @@ func _on_button_left_arrow_pressed():
 
 func _on_button_right_arrow_pressed():
 	if left_clicks > 0:
+		right_arrow.disabled = true
 		tween = get_tree().create_tween().set_parallel(true)
+		input_lock_rect.visible = true
+		tween.finished.connect(on_tween_finished)
 		for g in guests:
 			move_guests_right(g)
 		right_clicks += 1
 		left_clicks -= 1
+		
+func on_tween_finished():
+	left_arrow.disabled = false
+	right_arrow.disabled = false
+	input_lock_rect.visible = false

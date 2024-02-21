@@ -1,13 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://1la0pgo1y5tp"]
+[gd_scene load_steps=23 format=3 uid="uid://1la0pgo1y5tp"]
 
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="1_5hcky"]
 [ext_resource type="Script" path="res://FamousGuests/FamousGuests.gd" id="1_hh1al"]
+[ext_resource type="Texture2D" uid="uid://cwj6i8k0t6lst" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Normal.tres" id="3_5qpyj"]
 [ext_resource type="Script" path="res://FamousGuests/GuestBook_Timer.gd" id="3_ogycs"]
-[ext_resource type="Texture2D" uid="uid://cxk7e8fh612x0" path="res://Assets/Textures/UITextures/Arrow.png" id="4_ofqke"]
+[ext_resource type="Texture2D" uid="uid://dddhklujrdm86" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Hover.tres" id="4_muoaq"]
 [ext_resource type="Texture2D" uid="uid://lge4q45juhj0" path="res://Assets/Textures/Logos/logo_color_dott_300dpi.png" id="5_6xri5"]
-[ext_resource type="Theme" uid="uid://c8expo8ultkcm" path="res://Assets/Themes/visitorTheme.tres" id="6_nntry"]
+[ext_resource type="Texture2D" uid="uid://dx1j4p2leemir" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Click.tres" id="5_84cdh"]
+[ext_resource type="Texture2D" uid="uid://bvjxi8m1l8fb1" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_NLast_Normal.tres" id="5_x75of"]
+[ext_resource type="Texture2D" uid="uid://baefw7y10b226" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_NLast_Click.tres" id="6_qvxyt"]
+[ext_resource type="Texture2D" uid="uid://42kosba4qlci" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Next_Normal.tres" id="7_tckhv"]
+[ext_resource type="Texture2D" uid="uid://0jueuejvo22o" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Next_Click.tres" id="8_lccp7"]
+[ext_resource type="Texture2D" uid="uid://ctnm1h053bvhc" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_NLast_Hover.tres" id="9_oqgl7"]
+[ext_resource type="Texture2D" uid="uid://dj6yusot4t8g5" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Next_Hover.tres" id="11_4uc66"]
 
-[node name="Root" type="Control"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fu6y"]
+texture = ExtResource("3_5qpyj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gpil"]
+texture = ExtResource("4_muoaq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etprq"]
+texture = ExtResource("5_84cdh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eg4hk"]
+texture = ExtResource("5_x75of")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbbey"]
+texture = ExtResource("9_oqgl7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ylint"]
+texture = ExtResource("6_qvxyt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjoqy"]
+texture = ExtResource("7_tckhv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmm3y"]
+texture = ExtResource("11_4uc66")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n2mkr"]
+texture = ExtResource("8_lccp7")
+
+[node name="Root" type="Control" node_paths=PackedStringArray("input_lock_rect", "left_arrow", "right_arrow")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +49,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hh1al")
+input_lock_rect = NodePath("InputLock")
 portrait_gutter = 10.0
+left_arrow = NodePath("HBoxContainer/Button_LeftArrow")
+right_arrow = NodePath("HBoxContainer/Button_RightArrow")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 717.0
+offset_bottom = 1274.0
+script = ExtResource("1_5hcky")
 
 [node name="Button_Home" type="Button" parent="."]
 layout_mode = 0
@@ -23,14 +66,9 @@ offset_left = 27.0
 offset_top = 20.0
 offset_right = 172.0
 offset_bottom = 72.0
-theme = ExtResource("6_nntry")
-text = "Startseite"
-
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 717.0
-offset_bottom = 1274.0
-script = ExtResource("1_5hcky")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8fu6y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8gpil")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_etprq")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -44,30 +82,6 @@ offset_top = 255.0
 offset_right = 561.0
 offset_bottom = 779.0
 
-[node name="Button_LeftArrow" type="Button" parent="."]
-layout_mode = 0
-offset_top = 404.0
-offset_right = 125.0
-offset_bottom = 889.0
-
-[node name="Arrow" type="Sprite2D" parent="Button_LeftArrow"]
-position = Vector2(30, 240)
-scale = Vector2(0.0113591, 0.0113591)
-texture = ExtResource("4_ofqke")
-
-[node name="Button_RightArrow" type="Button" parent="."]
-layout_mode = 0
-offset_left = 716.0
-offset_top = 868.0
-offset_right = 841.0
-offset_bottom = 1353.0
-rotation = 3.14159
-
-[node name="Arrow" type="Sprite2D" parent="Button_RightArrow"]
-position = Vector2(30, 240)
-scale = Vector2(0.0113591, 0.0113591)
-texture = ExtResource("4_ofqke")
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 201.0
@@ -77,8 +91,40 @@ offset_bottom = 1166.0
 texture = ExtResource("5_6xri5")
 expand_mode = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 185.0
+offset_right = 717.0
+offset_bottom = 905.0
+
+[node name="Button_LeftArrow" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_eg4hk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cbbey")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ylint")
+
+[node name="Button_RightArrow" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_mjoqy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmm3y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n2mkr")
+
+[node name="InputLock" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 717.0
+offset_bottom = 1271.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_5hcky")
+
 [connection signal="pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
-[connection signal="pressed" from="Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
-[connection signal="pressed" from="Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]
