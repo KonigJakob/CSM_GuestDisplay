@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://biq73pieyhg4y"]
+[gd_scene load_steps=38 format=3 uid="uid://biq73pieyhg4y"]
 
 [ext_resource type="Script" path="res://GuestBook/GuestBook.gd" id="1_i5vid"]
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_v86rj"]
@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dfk15j3qmwivy" path="res://Assets/Textures/UITextures/AtlasTextures/Stars/AT_Star_Click.tres" id="6_pntc4"]
 [ext_resource type="Texture2D" uid="uid://dibf6uoptr36i" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Forward_Click.tres" id="6_wmx2h"]
 [ext_resource type="Texture2D" uid="uid://dx1j4p2leemir" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Click.tres" id="7_ilbkj"]
+[ext_resource type="Texture2D" uid="uid://dko8thwhfqexi" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Normal.tres" id="17_uecf5"]
+[ext_resource type="Texture2D" uid="uid://nrvsmp6oxc7x" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Hover.tres" id="18_n8y2k"]
+[ext_resource type="Texture2D" uid="uid://mosgiw56rl72" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Click.tres" id="19_t7py4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ti2yo"]
 texture = ExtResource("4_7p71b")
@@ -57,6 +60,15 @@ texture = ExtResource("6_pntc4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7la"]
 texture = ExtResource("6_gusho")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5nbt"]
+texture = ExtResource("17_uecf5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4pt6"]
+texture = ExtResource("18_n8y2k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cermw"]
+texture = ExtResource("19_t7py4")
 
 [node name="Root" type="Control" node_paths=PackedStringArray("forward_button", "back_button", "submit_button", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_Adult", "Age_Senior")]
 layout_mode = 3
@@ -238,6 +250,12 @@ theme_override_font_sizes/font_size = 23
 text = "Wie alt bist du?"
 vertical_alignment = 2
 
+[node name="Panel" type="Panel" parent="Control/AgeContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
 [node name="Age_Group" type="HBoxContainer" parent="Control/AgeContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -350,7 +368,9 @@ offset_top = 965.0
 offset_right = 476.0
 offset_bottom = 1046.0
 theme = ExtResource("3_8lblm")
-text = "Submit"
+theme_override_styles/normal = SubResource("StyleBoxTexture_v5nbt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l4pt6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cermw")
 
 [node name="Promt_Panel" type="Control" parent="."]
 visible = false
