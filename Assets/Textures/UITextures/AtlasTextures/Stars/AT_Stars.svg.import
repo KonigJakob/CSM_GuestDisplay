@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxsdr1onnhkyk"
-path="res://.godot/imported/GreenDeatiails_2.png-e3e56adaa264c49eea07f263af192441.ctex"
+uid="uid://p6r3qgqr37xv"
+path="res://.godot/imported/AT_Stars.svg-9c1f6fe5b22304bdad6bd8be70bca3f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/UITextures/GreenDeatiails_2.png"
-dest_files=["res://.godot/imported/GreenDeatiails_2.png-e3e56adaa264c49eea07f263af192441.ctex"]
+source_file="res://Assets/Textures/UITextures/AtlasTextures/Stars/AT_Stars.svg"
+dest_files=["res://.godot/imported/AT_Stars.svg-9c1f6fe5b22304bdad6bd8be70bca3f7.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

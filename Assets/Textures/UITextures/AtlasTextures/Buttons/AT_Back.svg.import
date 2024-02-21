@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duw4jlnha16ha"
-path="res://.godot/imported/GreenDeatiails_3.png-0cbdaa649817647f7960015e0d03e426.ctex"
+uid="uid://8nti8rfcsvj5"
+path="res://.godot/imported/AT_Back.svg-6ddbdb8d0c9bff08f9c599be39fc65e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/UITextures/GreenDeatiails_3.png"
-dest_files=["res://.godot/imported/GreenDeatiails_3.png-0cbdaa649817647f7960015e0d03e426.ctex"]
+source_file="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Back.svg"
+dest_files=["res://.godot/imported/AT_Back.svg-6ddbdb8d0c9bff08f9c599be39fc65e5.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

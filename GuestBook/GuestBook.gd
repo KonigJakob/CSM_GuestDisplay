@@ -34,68 +34,59 @@ enum PollPage {
 @export var Age_Adult: Button
 @export var Age_Senior: Button
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	satisfaction_button = 0
 	age_group_button = 0
 	date = Time.get_date_string_from_system()
 	remove_child(promt_panel)
-	
-func _process(delta):
-	if Input.is_action_pressed("load"):
-		#SaveSystem.load()
-		pass
 
-func _on_button_v_bad_pressed():
+func _on_star_1_pressed():
 	satisfaction_button = 1
 	Star_Two.button_pressed = false
 	Star_Three.button_pressed = false
 	Star_Four.button_pressed = false
 	Star_Five.button_pressed = false
-func _on_button_bad_pressed():
+func _on_star_2_pressed():
 	satisfaction_button = 2
-	Star_One.button_pressed = false
+	Star_One.button_pressed = true
 	Star_Three.button_pressed = false
 	Star_Four.button_pressed = false
 	Star_Five.button_pressed = false
-func _on_button_meh_pressed():
+func _on_star_3_pressed():
 	satisfaction_button = 3
-	Star_One.button_pressed = false
-	Star_Two.button_pressed = false
+	Star_One.button_pressed = true
+	Star_Two.button_pressed = true
 	Star_Four.button_pressed = false
 	Star_Five.button_pressed = false
-func _on_button_good_pressed():
+func _on_star_4_pressed():
 	satisfaction_button = 4
-	Star_One.button_pressed = false
-	Star_Two.button_pressed = false
-	Star_Three.button_pressed = false
+	Star_One.button_pressed = true
+	Star_Two.button_pressed = true
+	Star_Three.button_pressed = true
 	Star_Five.button_pressed = false
-func _on_button_v_good_pressed():
+func _on_star_5_pressed():
 	satisfaction_button = 5
-	Star_One.button_pressed = false
-	Star_Two.button_pressed = false
-	Star_Three.button_pressed = false
-	Star_Four.button_pressed = false
+	Star_One.button_pressed = true
+	Star_Two.button_pressed = true
+	Star_Three.button_pressed = true
+	Star_Four.button_pressed = true
 
 func _on_button_baby_pressed():
 	age_group_button = 1
 	Age_Teen.button_pressed = false
 	Age_Adult.button_pressed = false
 	Age_Senior.button_pressed = false
-
 func _on_button_young_pressed():
 	age_group_button = 2
 	Age_Child.button_pressed = false
 	Age_Adult.button_pressed = false
 	Age_Senior.button_pressed = false
-
 func _on_button_adult_pressed():
 	age_group_button = 3
 	Age_Child.button_pressed = false
 	Age_Teen.button_pressed = false
 	Age_Senior.button_pressed = false
-
 func _on_button_senior_pressed():
 	age_group_button = 4
 	Age_Child.button_pressed = false
@@ -137,7 +128,6 @@ func _on_button_return_pressed():
 			back_button.visible = true
 			forward_button.visible = false
 			submit_button.visible = true
-
 func _on_button_continue_pressed():
 	var panels = $Control
 	var panel_size = panels.size/panels.get_child_count()
