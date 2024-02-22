@@ -102,6 +102,8 @@ grow_vertical = 2
 script = ExtResource("1_i5vid")
 forward_button = NodePath("CenterContainer/HBoxContainer/Button_Continue")
 back_button = NodePath("CenterContainer/HBoxContainer/Button_Return")
+tween_wait_interval = 0.25
+tween_movement_interval = 1.25
 submit_button = NodePath("Button_Submit")
 panels = NodePath("Panels")
 Star_One = NodePath("Panels/StarContainer/VBoxContainer/Satisfaction/Star_1")
@@ -475,7 +477,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 [node name="HBoxContainer" type="HBoxContainer" parent="Panels/MessageContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="LineEdit" type="TextEdit" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -488,10 +490,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_nj82l")
 placeholder_text = " 
  ..."
-wrap_mode = 1
 caret_blink = true
-caret_draw_when_editable_disabled = true
-caret_multiple = false
 
 [node name="Panel2" type="Panel" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 30)
@@ -600,7 +599,7 @@ expand_mode = 1
 [connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult" to="." method="_on_button_adult_pressed"]
 [connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Senior" to="." method="_on_button_senior_pressed"]
 [connection signal="item_selected" from="Panels/LanguageContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="text_changed" from="Panels/MessageContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_changed" from="Panels/MessageContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_text_changed"]
 [connection signal="pressed" from="Button_Submit" to="." method="_on_button_submit_pressed"]
 [connection signal="pressed" from="Promt_Panel/ColorRect2/VBoxContainer/HBoxContainer/Button_No" to="." method="_on_button_no_pressed"]
 [connection signal="pressed" from="Promt_Panel/ColorRect2/VBoxContainer/HBoxContainer/Button_Yes" to="." method="_on_button_yes_pressed"]
