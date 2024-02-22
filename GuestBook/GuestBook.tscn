@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://biq73pieyhg4y"]
+[gd_scene load_steps=47 format=3 uid="uid://biq73pieyhg4y"]
 
 [ext_resource type="Script" path="res://GuestBook/GuestBook.gd" id="1_i5vid"]
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_v86rj"]
@@ -18,10 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dx1j4p2leemir" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Click.tres" id="7_ilbkj"]
 [ext_resource type="Texture2D" uid="uid://cftygvbxdkx41" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Age_Normal.tres" id="16_2wh6w"]
 [ext_resource type="Texture2D" uid="uid://b50ghuao4x0v8" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Age_Hover.tres" id="17_c0ryx"]
-[ext_resource type="Texture2D" uid="uid://bfcrqipmx7sa0" path="res://Assets/Textures/UITextures/Panel_Arrow.png" id="17_jyx48"]
 [ext_resource type="Texture2D" uid="uid://dko8thwhfqexi" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Normal.tres" id="17_uecf5"]
 [ext_resource type="Texture2D" uid="uid://bqu5neuj8yalq" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Age_Click.tres" id="18_1h7ls"]
-[ext_resource type="Texture2D" uid="uid://vlym6uqb51qc" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Panel_Normal.tres" id="18_7py8i"]
 [ext_resource type="Texture2D" uid="uid://nrvsmp6oxc7x" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Hover.tres" id="18_n8y2k"]
 [ext_resource type="Texture2D" uid="uid://mosgiw56rl72" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Click.tres" id="19_t7py4"]
 
@@ -78,14 +76,12 @@ texture = ExtResource("18_1h7ls")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2rnw"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hn5i2"]
-texture = ExtResource("18_7py8i")
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4btq"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04yqd"]
-content_margin_left = 30.0
-texture = ExtResource("18_7py8i")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nj82l"]
+bg_color = Color(0.92549, 0.92549, 0.92549, 1)
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5nbt"]
 texture = ExtResource("17_uecf5")
@@ -104,8 +100,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i5vid")
-forward_button = NodePath("HBoxContainer/Button_Continue")
-back_button = NodePath("HBoxContainer/Button_Return")
+forward_button = NodePath("CenterContainer/HBoxContainer/Button_Continue")
+back_button = NodePath("CenterContainer/HBoxContainer/Button_Return")
 submit_button = NodePath("Button_Submit")
 panels = NodePath("Panels")
 Star_One = NodePath("Panels/StarContainer/VBoxContainer/Satisfaction/Star_1")
@@ -125,16 +121,17 @@ offset_bottom = 1274.0
 theme = ExtResource("3_8lblm")
 script = ExtResource("2_v86rj")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 778.0
-offset_right = 610.0
-offset_bottom = 865.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_top = 780.0
+offset_right = 720.0
+offset_bottom = 867.0
 
-[node name="Button_Return" type="Button" parent="HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(250, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Button_Return" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 2
 theme = ExtResource("3_8lblm")
@@ -142,8 +139,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ti2yo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_inl3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_awr3p")
 
-[node name="Button_Continue" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+[node name="Button_Continue" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("3_8lblm")
@@ -183,9 +180,9 @@ anchor_left = -0.001
 anchor_top = 0.157
 anchor_right = 1.0
 anchor_bottom = 0.617
-offset_left = 25.72
+offset_left = 38.72
 offset_top = 34.04
-offset_right = 2625.0
+offset_right = 2638.0
 offset_bottom = -54.76
 theme_override_constants/separation = 200
 
@@ -389,7 +386,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_j2rnw")
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Panels/LanguageContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/LanguageContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Panels/LanguageContainer/VBoxContainer"]
@@ -397,24 +394,26 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 32
 text = "Was ist deine Muttersprache?"
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Panels/LanguageContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 30)
+custom_minimum_size = Vector2(25, 30)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
-[node name="OptionButton" type="OptionButton" parent="Panels/LanguageContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/LanguageContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="Panels/LanguageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
-theme_override_icons/arrow = ExtResource("17_jyx48")
-theme_override_styles/normal = SubResource("StyleBoxTexture_hn5i2")
 item_count = 12
 popup/item_0/text = "Chinese"
 popup/item_0/id = 0
@@ -441,8 +440,8 @@ popup/item_10/id = 10
 popup/item_11/text = "Other"
 popup/item_11/id = 11
 
-[node name="Panel2" type="Panel" parent="Panels/LanguageContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 30)
+[node name="Panel2" type="Panel" parent="Panels/LanguageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
@@ -463,7 +462,7 @@ layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 32
 text = "Hinterlasse eine Nachricht:"
 vertical_alignment = 2
 
@@ -476,18 +475,23 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 [node name="HBoxContainer" type="HBoxContainer" parent="Panels/MessageContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
+[node name="LineEdit" type="TextEdit" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_04yqd")
-placeholder_text = "..."
-max_length = 250
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_nj82l")
+placeholder_text = " 
+ ..."
+wrap_mode = 1
 caret_blink = true
+caret_draw_when_editable_disabled = true
+caret_multiple = false
 
 [node name="Panel2" type="Panel" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 30)
@@ -505,6 +509,25 @@ theme = ExtResource("3_8lblm")
 theme_override_styles/normal = SubResource("StyleBoxTexture_v5nbt")
 theme_override_styles/hover = SubResource("StyleBoxTexture_l4pt6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cermw")
+
+[node name="Label" type="Label" parent="Button_Submit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 16.0
+offset_right = -4.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Submit"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="Promt_Panel" type="Control" parent="."]
 visible = false
@@ -555,7 +578,7 @@ size_flags_horizontal = 3
 theme = ExtResource("3_8lblm")
 text = "JA"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Logo" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 235.0
 offset_top = 1136.0
@@ -564,14 +587,8 @@ offset_bottom = 1204.0
 texture = ExtResource("4_a4l51")
 expand_mode = 1
 
-[node name="Page1" type="Marker2D" parent="."]
-position = Vector2(25, 235)
-
-[node name="Page2" type="Marker2D" parent="."]
-position = Vector2(-840, 235)
-
-[connection signal="pressed" from="HBoxContainer/Button_Return" to="." method="_on_button_return_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button_Continue" to="." method="_on_button_continue_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/Button_Return" to="." method="_on_button_return_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/Button_Continue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Satisfaction/Star_1" to="." method="_on_star_1_pressed"]
 [connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Satisfaction/Star_2" to="." method="_on_star_2_pressed"]
@@ -582,7 +599,7 @@ position = Vector2(-840, 235)
 [connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Teen" to="." method="_on_button_teen_pressed"]
 [connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult" to="." method="_on_button_adult_pressed"]
 [connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Senior" to="." method="_on_button_senior_pressed"]
-[connection signal="item_selected" from="Panels/LanguageContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Panels/LanguageContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="text_changed" from="Panels/MessageContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Button_Submit" to="." method="_on_button_submit_pressed"]
 [connection signal="pressed" from="Promt_Panel/ColorRect2/VBoxContainer/HBoxContainer/Button_No" to="." method="_on_button_no_pressed"]

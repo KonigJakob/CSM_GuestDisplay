@@ -1,13 +1,15 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c8expo8ultkcm"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c8expo8ultkcm"]
 
 [ext_resource type="FontFile" uid="uid://cij5kl01d1wcu" path="res://Assets/Fonts/Atkinson-Hyperlegible-Regular-102.otf" id="1_40tun"]
 [ext_resource type="StyleBox" uid="uid://dlox2rr4jh60o" path="res://Assets/Resources/button_styleboxTextture.tres" id="2_vakjq"]
-[ext_resource type="Texture2D" uid="uid://vlym6uqb51qc" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Panel_Normal.tres" id="3_ypi4y"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0e0h1"]
-texture = ExtResource("3_ypi4y")
-texture_margin_top = 10.0
-expand_margin_top = 10.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm6g"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [resource]
 default_font = ExtResource("1_40tun")
@@ -20,9 +22,17 @@ Label/styles/normal = null
 LineEdit/colors/caret_color = Color(0.72549, 0.878431, 0.270588, 1)
 LineEdit/constants/caret_width = 3
 LineEdit/fonts/font = ExtResource("1_40tun")
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+OptionButton/constants/arrow_margin = 15
 OptionButton/fonts/font = ExtResource("1_40tun")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_tpm6g")
+PopupMenu/colors/font_accelerator_color = Color(0.701961, 0.701961, 0.701961, 0.8)
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/constants/h_separation = 10
+PopupMenu/constants/icon_max_width = 10
+PopupMenu/constants/indent = 30
+PopupMenu/constants/item_end_padding = 50
+PopupMenu/font_sizes/font_size = 32
 PopupMenu/fonts/font = ExtResource("1_40tun")
-PopupMenu/styles/hover = null
-PopupMenu/styles/labeled_separator_left = null
-PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource("StyleBoxTexture_0e0h1")
