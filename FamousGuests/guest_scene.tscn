@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d4hxuftrmuqx6" path="res://Assets/Textures/images (2).jpeg" id="2_qpgfk"]
 [ext_resource type="PackedScene" uid="uid://dl8lffvjrwol6" path="res://FamousGuests/guest_info_panel.tscn" id="3_fvxlt"]
 
-[node name="guest_scene" type="Control"]
+[node name="guest_scene" type="Control" node_paths=PackedStringArray("info_panel", "button", "container")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 394.0
@@ -12,6 +12,9 @@ offset_bottom = 522.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_i1s2g")
+info_panel = NodePath("Button/InfoPanel")
+button = NodePath("Button")
+container = NodePath("Button/VBoxContainer")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

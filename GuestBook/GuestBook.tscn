@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://biq73pieyhg4y"]
+[gd_scene load_steps=50 format=3 uid="uid://biq73pieyhg4y"]
 
 [ext_resource type="Script" path="res://GuestBook/GuestBook.gd" id="1_i5vid"]
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_v86rj"]
@@ -14,11 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://dddhklujrdm86" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Hover.tres" id="6_3th6o"]
 [ext_resource type="Texture2D" uid="uid://b8j8r7ohfjk6v" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Back_Click.tres" id="6_16u4g"]
 [ext_resource type="Texture2D" uid="uid://bimmrqogoifkl" path="res://Assets/Textures/UITextures/AtlasTextures/Stars/AT_Star_Toggle.tres" id="6_gusho"]
-[ext_resource type="Texture2D" uid="uid://dfk15j3qmwivy" path="res://Assets/Textures/UITextures/AtlasTextures/Stars/AT_Star_Click.tres" id="6_pntc4"]
 [ext_resource type="Texture2D" uid="uid://dibf6uoptr36i" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Forward_Click.tres" id="6_wmx2h"]
 [ext_resource type="Texture2D" uid="uid://dx1j4p2leemir" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Click.tres" id="7_ilbkj"]
+[ext_resource type="Texture2D" uid="uid://cftygvbxdkx41" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Age_Normal.tres" id="16_2wh6w"]
+[ext_resource type="Texture2D" uid="uid://b50ghuao4x0v8" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Age_Hover.tres" id="17_c0ryx"]
 [ext_resource type="Texture2D" uid="uid://bfcrqipmx7sa0" path="res://Assets/Textures/UITextures/Panel_Arrow.png" id="17_jyx48"]
 [ext_resource type="Texture2D" uid="uid://dko8thwhfqexi" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Normal.tres" id="17_uecf5"]
+[ext_resource type="Texture2D" uid="uid://bqu5neuj8yalq" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Age_Click.tres" id="18_1h7ls"]
 [ext_resource type="Texture2D" uid="uid://vlym6uqb51qc" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Panel_Normal.tres" id="18_7py8i"]
 [ext_resource type="Texture2D" uid="uid://nrvsmp6oxc7x" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Hover.tres" id="18_n8y2k"]
 [ext_resource type="Texture2D" uid="uid://mosgiw56rl72" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit_Click.tres" id="19_t7py4"]
@@ -58,12 +60,21 @@ texture = ExtResource("7_ilbkj")
 texture = ExtResource("5_lmw77")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myial"]
-texture = ExtResource("6_pntc4")
+texture = ExtResource("6_gusho")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7la"]
 texture = ExtResource("6_gusho")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q664k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_155b0"]
+texture = ExtResource("16_2wh6w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vttwg"]
+texture = ExtResource("17_c0ryx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qd0od"]
+texture = ExtResource("18_1h7ls")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2rnw"]
 
@@ -85,7 +96,7 @@ texture = ExtResource("18_n8y2k")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cermw"]
 texture = ExtResource("19_t7py4")
 
-[node name="Root" type="Control" node_paths=PackedStringArray("forward_button", "back_button", "submit_button", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_Adult", "Age_Senior")]
+[node name="Root" type="Control" node_paths=PackedStringArray("forward_button", "back_button", "submit_button", "panels", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_Adult", "Age_Senior")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,15 +107,16 @@ script = ExtResource("1_i5vid")
 forward_button = NodePath("HBoxContainer/Button_Continue")
 back_button = NodePath("HBoxContainer/Button_Return")
 submit_button = NodePath("Button_Submit")
-Star_One = NodePath("Control/StarContainer/VBoxContainer/Satisfaction/Star_1")
-Star_Two = NodePath("Control/StarContainer/VBoxContainer/Satisfaction/Star_2")
-Star_Three = NodePath("Control/StarContainer/VBoxContainer/Satisfaction/Star_3")
-Star_Four = NodePath("Control/StarContainer/VBoxContainer/Satisfaction/Star_4")
-Star_Five = NodePath("Control/StarContainer/VBoxContainer/Satisfaction/Star_5")
-Age_Child = NodePath("Control/AgeContainer/VBoxContainer/Age_Group/Button_Baby")
-Age_Teen = NodePath("Control/AgeContainer/VBoxContainer/Age_Group/Button_Young")
-Age_Adult = NodePath("Control/AgeContainer/VBoxContainer/Age_Group/Button_Adult")
-Age_Senior = NodePath("Control/AgeContainer/VBoxContainer/Age_Group/Button_Senior")
+panels = NodePath("Panels")
+Star_One = NodePath("Panels/StarContainer/VBoxContainer/Satisfaction/Star_1")
+Star_Two = NodePath("Panels/StarContainer/VBoxContainer/Satisfaction/Star_2")
+Star_Three = NodePath("Panels/StarContainer/VBoxContainer/Satisfaction/Star_3")
+Star_Four = NodePath("Panels/StarContainer/VBoxContainer/Satisfaction/Star_4")
+Star_Five = NodePath("Panels/StarContainer/VBoxContainer/Satisfaction/Star_5")
+Age_Child = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Child")
+Age_Teen = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Teen")
+Age_Adult = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult")
+Age_Senior = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Senior")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -143,7 +155,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_r32av")
 layout_mode = 0
 offset_left = 15.0
 offset_top = 10.0
-offset_right = 196.0
+offset_right = 262.0
 offset_bottom = 81.0
 theme = ExtResource("4_sglxf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ypj1y")
@@ -153,60 +165,59 @@ alignment = 2
 
 [node name="Label" type="Label" parent="Button_Home"]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 20.0
-offset_right = 173.0
-offset_bottom = 55.0
+offset_left = 57.0
+offset_top = 12.0
+offset_right = 236.0
+offset_bottom = 67.0
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 text = "Startseite"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
-[node name="Control" type="Control" parent="."]
+[node name="Panels" type="HBoxContainer" parent="."]
 layout_mode = 2
-anchors_preset = 0
 anchor_left = -0.001
 anchor_top = 0.157
 anchor_right = 1.0
 anchor_bottom = 0.617
-offset_left = -0.28
-offset_top = 195.04
-offset_right = 2218.0
-offset_bottom = 0.23999
+offset_left = 25.72
+offset_top = 34.04
+offset_right = 2625.0
+offset_bottom = -54.76
+theme_override_constants/separation = 200
 
-[node name="StarContainer" type="PanelContainer" parent="Control"]
-layout_mode = 0
-offset_left = 71.0
-offset_top = 25.0
-offset_right = 664.0
-offset_bottom = 223.0
+[node name="StarContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5gh6t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/StarContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/StarContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/StarContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panels/StarContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 21
-text = "Wie würdest Du deinen Besuch zum CSM bewerten?"
+theme_override_font_sizes/font_size = 32
+text = "Wie würdest Du deinen Besuch bewerten?"
 
-[node name="Panel" type="Panel" parent="Control/StarContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Panels/StarContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
-[node name="Satisfaction" type="HBoxContainer" parent="Control/StarContainer/VBoxContainer"]
+[node name="Satisfaction" type="HBoxContainer" parent="Panels/StarContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_8lblm")
 
-[node name="Star_1" type="Button" parent="Control/StarContainer/VBoxContainer/Satisfaction"]
+[node name="Star_1" type="Button" parent="Panels/StarContainer/VBoxContainer/Satisfaction"]
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -215,7 +226,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
 toggle_mode = true
 
-[node name="Star_2" type="Button" parent="Control/StarContainer/VBoxContainer/Satisfaction"]
+[node name="Star_2" type="Button" parent="Panels/StarContainer/VBoxContainer/Satisfaction"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
@@ -223,7 +234,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
 toggle_mode = true
 
-[node name="Star_3" type="Button" parent="Control/StarContainer/VBoxContainer/Satisfaction"]
+[node name="Star_3" type="Button" parent="Panels/StarContainer/VBoxContainer/Satisfaction"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
@@ -231,7 +242,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
 toggle_mode = true
 
-[node name="Star_4" type="Button" parent="Control/StarContainer/VBoxContainer/Satisfaction"]
+[node name="Star_4" type="Button" parent="Panels/StarContainer/VBoxContainer/Satisfaction"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
@@ -239,7 +250,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
 toggle_mode = true
 
-[node name="Star_5" type="Button" parent="Control/StarContainer/VBoxContainer/Satisfaction"]
+[node name="Star_5" type="Button" parent="Panels/StarContainer/VBoxContainer/Satisfaction"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
@@ -247,75 +258,141 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
 toggle_mode = true
 
-[node name="AgeContainer" type="PanelContainer" parent="Control"]
+[node name="AgeContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(650, 200)
 layout_mode = 2
-offset_left = 805.0
-offset_top = 25.0
-offset_right = 1388.0
-offset_bottom = 207.0
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_q664k")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/AgeContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/AgeContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 
-[node name="Label" type="Label" parent="Control/AgeContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panels/AgeContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Wie alt bist du?"
+
+[node name="Panel" type="Panel" parent="Panels/AgeContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="Age_Group" type="HBoxContainer" parent="Panels/AgeContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("3_8lblm")
+theme_override_constants/separation = 10
+
+[node name="Button_Child" type="Button" parent="Panels/AgeContainer/VBoxContainer/Age_Group"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("3_8lblm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_155b0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vttwg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qd0od")
+toggle_mode = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Child"]
+offset_right = 150.0
+offset_bottom = 112.0
+
+[node name="Label" type="Label" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Child/CenterContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 23
-text = "Wie alt bist du?"
+theme_override_font_sizes/font_size = 32
+text = "12-"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Control/AgeContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
+[node name="Button_Teen" type="Button" parent="Panels/AgeContainer/VBoxContainer/Age_Group"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
-
-[node name="Age_Group" type="HBoxContainer" parent="Control/AgeContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
 theme = ExtResource("3_8lblm")
-
-[node name="Button_Baby" type="Button" parent="Control/AgeContainer/VBoxContainer/Age_Group"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("3_8lblm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_155b0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vttwg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qd0od")
 toggle_mode = true
-text = "I'm a baby"
 
-[node name="Button_Young" type="Button" parent="Control/AgeContainer/VBoxContainer/Age_Group"]
+[node name="CenterContainer" type="CenterContainer" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Teen"]
+offset_right = 150.0
+offset_bottom = 112.0
+
+[node name="Label" type="Label" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Teen/CenterContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-size_flags_horizontal = 3
 theme = ExtResource("3_8lblm")
-toggle_mode = true
-text = "I'm young"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "13-18"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button_Adult" type="Button" parent="Control/AgeContainer/VBoxContainer/Age_Group"]
+[node name="Button_Adult" type="Button" parent="Panels/AgeContainer/VBoxContainer/Age_Group"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 theme = ExtResource("3_8lblm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_155b0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vttwg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qd0od")
 toggle_mode = true
-text = "I'm old"
 
-[node name="Button_Senior" type="Button" parent="Control/AgeContainer/VBoxContainer/Age_Group"]
+[node name="CenterContainer" type="CenterContainer" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult"]
+offset_right = 150.0
+offset_bottom = 109.0
+
+[node name="Label" type="Label" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult/CenterContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-size_flags_horizontal = 3
 theme = ExtResource("3_8lblm")
-toggle_mode = true
-text = "I'm old"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "19-45"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LanguageContainer" type="PanelContainer" parent="Control"]
+[node name="Button_Senior" type="Button" parent="Panels/AgeContainer/VBoxContainer/Age_Group"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-offset_left = 1530.0
-offset_top = 25.0
-offset_right = 2113.0
-offset_bottom = 75.0
+theme = ExtResource("3_8lblm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_155b0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vttwg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qd0od")
+toggle_mode = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Senior"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 109.0
+
+[node name="Label" type="Label" parent="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Senior/CenterContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "45+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LanguageContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_j2rnw")
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Control/LanguageContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Panels/LanguageContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/LanguageContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panels/LanguageContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("3_8lblm")
@@ -324,14 +401,15 @@ theme_override_font_sizes/font_size = 23
 text = "Was ist deine Muttersprache?"
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Control/LanguageContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Panels/LanguageContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
-[node name="OptionButton" type="OptionButton" parent="Control/LanguageContainer/VBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="Panels/LanguageContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
@@ -363,35 +441,45 @@ popup/item_10/id = 10
 popup/item_11/text = "Other"
 popup/item_11/id = 11
 
-[node name="MessageContainer" type="PanelContainer" parent="Control"]
+[node name="Panel2" type="Panel" parent="Panels/LanguageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-offset_left = 2248.0
-offset_top = 25.0
-offset_right = 2831.0
-offset_bottom = 176.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="MessageContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_v4btq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MessageContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/MessageContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Control/MessageContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panels/MessageContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_vertical = 6
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Hinterlasse eine Nachricht:"
 vertical_alignment = 2
 
-[node name="Panel" type="Panel" parent="Control/MessageContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Panels/MessageContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
-[node name="LineEdit" type="LineEdit" parent="Control/MessageContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/MessageContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
@@ -400,6 +488,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_04yqd")
 placeholder_text = "..."
 max_length = 250
 caret_blink = true
+
+[node name="Panel2" type="Panel" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 
 [node name="Button_Submit" type="Button" parent="."]
 layout_mode = 0
@@ -470,20 +564,26 @@ offset_bottom = 1204.0
 texture = ExtResource("4_a4l51")
 expand_mode = 1
 
+[node name="Page1" type="Marker2D" parent="."]
+position = Vector2(25, 235)
+
+[node name="Page2" type="Marker2D" parent="."]
+position = Vector2(-840, 235)
+
 [connection signal="pressed" from="HBoxContainer/Button_Return" to="." method="_on_button_return_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button_Continue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
-[connection signal="pressed" from="Control/StarContainer/VBoxContainer/Satisfaction/Star_1" to="." method="_on_star_1_pressed"]
-[connection signal="pressed" from="Control/StarContainer/VBoxContainer/Satisfaction/Star_2" to="." method="_on_star_2_pressed"]
-[connection signal="pressed" from="Control/StarContainer/VBoxContainer/Satisfaction/Star_3" to="." method="_on_star_3_pressed"]
-[connection signal="pressed" from="Control/StarContainer/VBoxContainer/Satisfaction/Star_4" to="." method="_on_star_4_pressed"]
-[connection signal="pressed" from="Control/StarContainer/VBoxContainer/Satisfaction/Star_5" to="." method="_on_star_5_pressed"]
-[connection signal="pressed" from="Control/AgeContainer/VBoxContainer/Age_Group/Button_Baby" to="." method="_on_button_baby_pressed"]
-[connection signal="pressed" from="Control/AgeContainer/VBoxContainer/Age_Group/Button_Young" to="." method="_on_button_young_pressed"]
-[connection signal="pressed" from="Control/AgeContainer/VBoxContainer/Age_Group/Button_Adult" to="." method="_on_button_adult_pressed"]
-[connection signal="pressed" from="Control/AgeContainer/VBoxContainer/Age_Group/Button_Senior" to="." method="_on_button_senior_pressed"]
-[connection signal="item_selected" from="Control/LanguageContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="text_changed" from="Control/MessageContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Satisfaction/Star_1" to="." method="_on_star_1_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Satisfaction/Star_2" to="." method="_on_star_2_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Satisfaction/Star_3" to="." method="_on_star_3_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Satisfaction/Star_4" to="." method="_on_star_4_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Satisfaction/Star_5" to="." method="_on_star_5_pressed"]
+[connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Child" to="." method="_on_button_child_pressed"]
+[connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Teen" to="." method="_on_button_teen_pressed"]
+[connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult" to="." method="_on_button_adult_pressed"]
+[connection signal="pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Senior" to="." method="_on_button_senior_pressed"]
+[connection signal="item_selected" from="Panels/LanguageContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="text_changed" from="Panels/MessageContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Button_Submit" to="." method="_on_button_submit_pressed"]
 [connection signal="pressed" from="Promt_Panel/ColorRect2/VBoxContainer/HBoxContainer/Button_No" to="." method="_on_button_no_pressed"]
 [connection signal="pressed" from="Promt_Panel/ColorRect2/VBoxContainer/HBoxContainer/Button_Yes" to="." method="_on_button_yes_pressed"]

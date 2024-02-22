@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://1la0pgo1y5tp"]
+[gd_scene load_steps=26 format=3 uid="uid://1la0pgo1y5tp"]
 
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="1_5hcky"]
 [ext_resource type="Script" path="res://FamousGuests/FamousGuests.gd" id="1_hh1al"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://lge4q45juhj0" path="res://Assets/Textures/Logos/logo_color_dott_300dpi.png" id="5_6xri5"]
 [ext_resource type="Texture2D" uid="uid://dx1j4p2leemir" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Start_Click.tres" id="5_84cdh"]
 [ext_resource type="Texture2D" uid="uid://bvjxi8m1l8fb1" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_NLast_Normal.tres" id="5_x75of"]
+[ext_resource type="Theme" uid="uid://c8expo8ultkcm" path="res://Assets/Themes/visitorTheme.tres" id="6_j0tth"]
 [ext_resource type="Texture2D" uid="uid://baefw7y10b226" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_NLast_Click.tres" id="6_qvxyt"]
 [ext_resource type="Texture2D" uid="uid://42kosba4qlci" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Next_Normal.tres" id="7_tckhv"]
 [ext_resource type="Texture2D" uid="uid://0jueuejvo22o" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Next_Click.tres" id="8_lccp7"]
@@ -32,6 +33,9 @@ texture = ExtResource("9_oqgl7")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ylint"]
 texture = ExtResource("6_qvxyt")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0lam"]
+texture = ExtResource("6_qvxyt")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjoqy"]
 texture = ExtResource("7_tckhv")
 
@@ -41,18 +45,24 @@ texture = ExtResource("11_4uc66")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n2mkr"]
 texture = ExtResource("8_lccp7")
 
-[node name="Root" type="Control" node_paths=PackedStringArray("input_lock_rect", "left_arrow", "right_arrow")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cg0fj"]
+texture = ExtResource("8_lccp7")
+
+[node name="Root" type="Control" node_paths=PackedStringArray("input_lock_rect", "portrait_panel", "left_arrow", "right_arrow")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -720.0
+offset_bottom = -1280.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hh1al")
 input_lock_rect = NodePath("InputLock")
 portrait_gutter = 10.0
-left_arrow = NodePath("HBoxContainer/Button_LeftArrow")
-right_arrow = NodePath("HBoxContainer/Button_RightArrow")
+portrait_panel = NodePath("Panel")
+left_arrow = NodePath("Button_LeftArrow")
+right_arrow = NodePath("Button_RightArrow")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -62,13 +72,26 @@ script = ExtResource("1_5hcky")
 
 [node name="Button_Home" type="Button" parent="."]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 20.0
-offset_right = 172.0
-offset_bottom = 72.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 262.0
+offset_bottom = 81.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_8fu6y")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8gpil")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_etprq")
+
+[node name="Label" type="Label" parent="Button_Home"]
+offset_left = 57.0
+offset_top = 12.0
+offset_right = 236.0
+offset_bottom = 67.0
+theme = ExtResource("6_j0tth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Startseite"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -77,10 +100,10 @@ max_wait_time = 0.2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 255.0
-offset_right = 561.0
-offset_bottom = 779.0
+offset_left = 198.0
+offset_top = 399.0
+offset_right = 539.0
+offset_bottom = 874.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -91,27 +114,30 @@ offset_bottom = 1166.0
 texture = ExtResource("5_6xri5")
 expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 185.0
-offset_right = 717.0
-offset_bottom = 905.0
-
-[node name="Button_LeftArrow" type="Button" parent="HBoxContainer"]
+[node name="Button_LeftArrow" type="Button" parent="."]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+offset_top = 250.0
+offset_right = 150.0
+offset_bottom = 900.0
 size_flags_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_eg4hk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cbbey")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ylint")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c0lam")
 
-[node name="Button_RightArrow" type="Button" parent="HBoxContainer"]
+[node name="Button_RightArrow" type="Button" parent="."]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+offset_left = 566.0
+offset_top = 250.0
+offset_right = 719.0
+offset_bottom = 900.0
 size_flags_horizontal = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_mjoqy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pmm3y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n2mkr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cg0fj")
 
 [node name="InputLock" type="ColorRect" parent="."]
 visible = false
@@ -123,8 +149,19 @@ offset_bottom = 1271.0
 color = Color(1, 1, 1, 0)
 script = ExtResource("1_5hcky")
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 94.0
+offset_right = 719.0
+offset_bottom = 230.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Famous Guests"
+
 [connection signal="pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
-[connection signal="pressed" from="HBoxContainer/Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]
+[connection signal="pressed" from="Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
+[connection signal="pressed" from="Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]

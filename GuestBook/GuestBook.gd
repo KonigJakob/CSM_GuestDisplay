@@ -23,6 +23,8 @@ enum PollPage {
 @export var back_button: Button
 @export var submit_button: Button
 
+@export var panels : HBoxContainer
+
 @export var Star_One: Button
 @export var Star_Two: Button
 @export var Star_Three: Button
@@ -72,12 +74,12 @@ func _on_star_5_pressed():
 	Star_Three.button_pressed = true
 	Star_Four.button_pressed = true
 
-func _on_button_baby_pressed():
+func _on_button_child_pressed():
 	age_group_button = 1
 	Age_Teen.button_pressed = false
 	Age_Adult.button_pressed = false
 	Age_Senior.button_pressed = false
-func _on_button_young_pressed():
+func _on_button_teen_pressed():
 	age_group_button = 2
 	Age_Child.button_pressed = false
 	Age_Adult.button_pressed = false
@@ -107,9 +109,9 @@ func _on_button_yes_pressed():
 	get_tree().reload_current_scene()
 
 func _on_button_return_pressed():
-	var panels = $Control
 	var panel_size = panels.size/panels.get_child_count()
 	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 	tween.tween_property(panels, "position", Vector2(panels.position.x + panel_size.x, panels.position.y),1)
 	current_page -= 1
 	match current_page: 
@@ -128,10 +130,11 @@ func _on_button_return_pressed():
 		PollPage.MESSAGE:
 			back_button.visible = true
 			forward_button.visible = false
+
 func _on_button_continue_pressed():
-	var panels = $Control
 	var panel_size = panels.size/panels.get_child_count()
 	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 	tween.tween_property(panels, "position", Vector2(panels.position.x - panel_size.x, panels.position.y),1)
 	current_page += 1
 	match current_page: 
