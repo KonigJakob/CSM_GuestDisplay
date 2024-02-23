@@ -165,6 +165,7 @@ theme_override_constants/margin_right = 60
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 text = "Placholder"
 
@@ -177,7 +178,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Renowned tech pioneer and philanthropist Bill Gates, co-founder of Microsoft, recently graced the halls of Berlin's Computerspielemuseum, immersing himself in a journey through the evolution of gaming technology. From vintage consoles to cutting-edge virtual reality experiences, Gates delved into the rich history and innovative future of gaming, engaging with interactive exhibits that showcase the cultural significance and technological advancements of this dynamic industry.
 
 Der angesehene Technologiepionier und Philanthrop Bill Gates, Mitbegründer von Microsoft, besuchte kürzlich die Hallen des Computerspielemuseums in Berlin und tauchte ein in die Entwicklung der Gaming-Technologie. Von Vintage-Konsolen bis hin zu modernsten Virtual-Reality-Erlebnissen erkundete Gates die reiche Geschichte und innovative Zukunft des Gamings. Er interagierte mit interaktiven Ausstellungsstücken, die die kulturelle Bedeutung und technologischen Fortschritte dieser dynamischen Branche verdeutlichen."

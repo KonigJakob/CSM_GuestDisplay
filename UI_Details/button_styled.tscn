@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cigu3gjcmh4rx"]
+
+[ext_resource type="Theme" uid="uid://c8expo8ultkcm" path="res://Assets/Themes/visitorTheme.tres" id="1_7g7fw"]
+[ext_resource type="Script" path="res://UI_Details/button_styled.gd" id="1_vhlda"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwufu"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqk50"]
+bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgv25"]
+bg_color = Color(0.803922, 0.803922, 0.803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8rb4"]
+bg_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="button_styled" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -565.0
+offset_bottom = -1171.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vhlda")
+button_color = Color(0.505882, 0.435294, 0.839216, 1)
+
+[node name="Shadow" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 110.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwufu")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 0
+offset_left = 5.0
+offset_top = -5.0
+offset_right = 155.0
+offset_bottom = 105.0
+theme = ExtResource("1_7g7fw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eqk50")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pgv25")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f8rb4")
+toggle_mode = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Button"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 112.0
+
+[node name="Label" type="Label" parent="Button/CenterContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_7g7fw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

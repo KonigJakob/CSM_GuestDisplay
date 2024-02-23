@@ -1,15 +1,17 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c8expo8ultkcm"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c8expo8ultkcm"]
 
 [ext_resource type="FontFile" uid="uid://cij5kl01d1wcu" path="res://Assets/Fonts/Atkinson-Hyperlegible-Regular-102.otf" id="1_40tun"]
 [ext_resource type="StyleBox" uid="uid://dlox2rr4jh60o" path="res://Assets/Resources/button_styleboxTextture.tres" id="2_vakjq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm6g"]
 bg_color = Color(1, 1, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac6ew"]
+bg_color = Color(0.890196, 0.890196, 0.890196, 1)
+corner_detail = 10
+shadow_color = Color(0.0823529, 0.0823529, 0.0823529, 0.917647)
+shadow_offset = Vector2(-5, 5)
 
 [resource]
 default_font = ExtResource("1_40tun")
@@ -36,3 +38,5 @@ PopupMenu/constants/indent = 30
 PopupMenu/constants/item_end_padding = 50
 PopupMenu/font_sizes/font_size = 32
 PopupMenu/fonts/font = ExtResource("1_40tun")
+PopupMenu/styles/hover = null
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_ac6ew")

@@ -33,15 +33,17 @@ enum PollPage {
 @export var Star_Four: Button
 @export var Star_Five: Button
 
-@export var Age_Child: Button
-@export var Age_Teen: Button
-@export var Age_Adult: Button
-@export var Age_Senior: Button
+@export var Age_Child: button_syled
+@export var Age_Teen: button_syled
+@export var Age_Adult: button_syled
+@export var Age_Senior: button_syled
+var age_buttons = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	satisfaction_button = 0
 	age_group_button = 0
+	age_buttons = get_tree().get_nodes_in_group("age_buttons")
 	date = Time.get_date_string_from_system()
 	remove_child(promt_panel)
 
@@ -83,28 +85,30 @@ func _on_star_5_pressed():
 
 func _on_button_child_pressed():
 	age_group_button = 1
-	Age_Teen.button_pressed = false
-	Age_Adult.button_pressed = false
-	Age_Senior.button_pressed = false
+	unpress_buttons(Age_Child)
 	tween_forward()
 func _on_button_teen_pressed():
 	age_group_button = 2
-	Age_Child.button_pressed = false
-	Age_Adult.button_pressed = false
-	Age_Senior.button_pressed = false
+	unpress_buttons(Age_Teen)
 	tween_forward()
 func _on_button_adult_pressed():
 	age_group_button = 3
-	Age_Child.button_pressed = false
-	Age_Teen.button_pressed = false
-	Age_Senior.button_pressed = false
+	unpress_buttons(Age_Adult)
 	tween_forward()
 func _on_button_senior_pressed():
 	age_group_button = 4
-	Age_Child.button_pressed = false
-	Age_Teen.button_pressed = false
-	Age_Adult.button_pressed = false
+	unpress_buttons(Age_Senior)
 	tween_forward()
+
+func unpress_buttons(button_parent):
+	print(button_parent)
+	for b in age_buttons:
+		if b == button_parent:
+			continue
+		else:
+			if b is button_syled:
+				b.toggle_pressed()
+				print("toggled: ", b.name)
 
 func _on_option_button_item_selected(index):
 	language = index
@@ -112,7 +116,8 @@ func _on_option_button_item_selected(index):
 
 func _on_text_changed(new_text):
 	message = new_text
-	submit_button.visible = true
+	var tween = get_tree().create_tween()
+	tween.tween_property(submit_button, "visible", true, tween_wait_interval * 2)
 
 func _on_button_no_pressed():
 	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
@@ -143,46 +148,28 @@ func move_page_forward():
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 	tween.tween_property(panels, "position", Vector2(panels.position.x - panel_size.x, panels.position.y),tween_movement_interval)
 	current_page += 1
-	match current_page: 
-		PollPage.STARS:
-			back_button.visible = false
-			forward_button.visible = true
-			submit_button.visible = false
-		PollPage.AGE:
-			back_button.visible = true
-			forward_button.visible = true
-			submit_button.visible = false
-		PollPage.LANGUAGE:
-			back_button.visible = true
-			forward_button.visible = true
-			submit_button.visible = false
-		PollPage.MESSAGE:
-			back_button.visible = true
-			forward_button.visible = false
+	update_page_buttons()
 func move_page_backwards():
 	var panel_size = panels.size/panels.get_child_count()
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 	tween.tween_property(panels, "position", Vector2(panels.position.x + panel_size.x, panels.position.y),tween_movement_interval)
 	current_page -= 1
-	match current_page: 
-		PollPage.STARS:
-			back_button.visible = false
-			forward_button.visible = true
-			submit_button.visible = false
-		PollPage.AGE:
-			back_button.visible = true
-			forward_button.visible = true
-			submit_button.visible = false
-		PollPage.LANGUAGE:
-			back_button.visible = true
-			forward_button.visible = true
-			submit_button.visible = false
-		PollPage.MESSAGE:
-			back_button.visible = true
-			forward_button.visible = false
-			submit_button.visible = true
+	update_page_buttons()
 func tween_forward():
 	var tween = get_tree().create_tween()
 	tween.tween_interval(tween_wait_interval)
 	tween.tween_callback(move_page_forward)
+func update_page_buttons():
+	match current_page: 
+		PollPage.STARS:
+			back_button.visible = false
+			submit_button.visible = false
+		PollPage.AGE:
+			back_button.visible = true
+			submit_button.visible = false
+		PollPage.LANGUAGE:
+			back_button.visible = true
+			submit_button.visible = false
+		PollPage.MESSAGE:
+			back_button.visible = true

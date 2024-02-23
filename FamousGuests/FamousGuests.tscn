@@ -81,6 +81,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8gpil")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_etprq")
 
 [node name="Label" type="Label" parent="Button_Home"]
+layout_mode = 0
 offset_left = 57.0
 offset_top = 12.0
 offset_right = 236.0
