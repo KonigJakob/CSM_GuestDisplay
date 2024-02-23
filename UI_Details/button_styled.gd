@@ -5,9 +5,18 @@ extends Control
 signal child_button_pressed
 
 @export var button_color : Color
+@export var button_text : String
+@export var button_size : Vector2
+@export var button_toggle_mode : bool = true
+
 var button_pos
 
 func _ready():
+	$Button/CenterContainer/Label.text = button_text
+	$Shadow.size = button_size
+	$Button.size = button_size
+	$Button/CenterContainer.size = button_size
+	$Button.toggle_mode = button_toggle_mode
 	modulate = button_color
 	button_pos = $Button.position
 
