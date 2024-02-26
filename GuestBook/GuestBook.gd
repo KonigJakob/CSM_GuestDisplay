@@ -19,8 +19,7 @@ enum PollPage {
 }
 @onready var current_page = PollPage.STARS
 
-@export var forward_button: Button
-@export var back_button: Button
+@export var back_button: button_syled
 @export var tween_wait_interval: float
 @export var tween_movement_interval: float
 @export var submit_button: button_syled
@@ -39,23 +38,22 @@ enum PollPage {
 @export var Age_Senior: button_syled
 
 @export var lock_rect: ColorRect
+var stars = []
 var age_buttons = []
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	satisfaction_button = 0
 	age_group_button = 0
 	age_buttons = get_tree().get_nodes_in_group("age_buttons")
 	date = Time.get_date_string_from_system()
 	remove_child(promt_panel)
+	stars = get_tree().get_nodes_in_group("star_buttons")
+	update_page_buttons()
 
 func _on_star_1_pressed():
 	satisfaction_button = 1
-	Star_One.button_pressed = true
-	Star_Two.button_pressed = false
-	Star_Three.button_pressed = false
-	Star_Four.button_pressed = false
-	Star_Five.button_pressed = false
+	press_stars(satisfaction_button)
 	tween_forward()
 func _on_star_2_pressed():
 	satisfaction_button = 2
@@ -78,10 +76,7 @@ func _on_star_5_pressed():
 	tween_forward()
 
 func press_stars(star_index : int):
-	var stars = []
-	stars = get_tree().get_nodes_in_group("star_buttons")
 	for i in stars.size():
-		print(i)
 		if i+1 <= star_index:
 			stars[i].button_pressed = true
 		else: 
@@ -119,7 +114,8 @@ func _on_option_button_item_selected(index):
 func _on_text_changed(new_text):
 	message = new_text
 	var tween = get_tree().create_tween()
-	tween.tween_property(submit_button, "visible", true, tween_wait_interval * 2)
+	tween.tween_property(submit_button, "visible", true, tween_wait_interval)
+	tween_visibility(submit_button)
 
 func _on_button_no_pressed():
 	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
@@ -174,11 +170,22 @@ func update_page_buttons():
 		PollPage.STARS:
 			back_button.visible = false
 			submit_button.visible = false
+			tween_visibility(back_button)
+			tween_visibility(submit_button)
 		PollPage.AGE:
 			back_button.visible = true
-			submit_button.visible = false
+			tween_visibility(back_button)
 		PollPage.LANGUAGE:
 			back_button.visible = true
-			submit_button.visible = false
 		PollPage.MESSAGE:
 			back_button.visible = true
+			tween_visibility(submit_button)
+
+
+func tween_visibility(object_to_modulate) -> void:
+	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	if object_to_modulate.modulate.a == 0:
+		tween.tween_property(object_to_modulate, "modulate:a", 1, tween_movement_interval)
+	else:
+		tween.tween_property(object_to_modulate, "modulate:a", 0, tween_movement_interval)

@@ -39,10 +39,11 @@ func _process(delta):
 
 func set_ui_elements_transform():
 	portrait_panel.position = get_viewport_rect().size / 2 - (portrait_panel.size / 2)
-	left_arrow.position.y = portrait_panel.position.y
-	right_arrow.position.y = portrait_panel.position.y
-	left_arrow.size.y = portrait_panel.size.y
-	right_arrow.size.y = portrait_panel.size.y
+	left_arrow.position.y = portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y
+	right_arrow.position.y = left_arrow.position.y
+	right_arrow.position.x = get_viewport_rect().size.x - right_arrow.size.x - 35
+	#left_arrow.size.y = portrait_panel.size.y
+	#right_arrow.size.y = portrait_panel.size.y
 	
 func load_guests() -> Array:
 	var loaded_guests = []
