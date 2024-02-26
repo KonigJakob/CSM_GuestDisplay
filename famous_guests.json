@@ -1,0 +1,58 @@
+{
+    "guest_a": {
+        "Name": "Shigeru Miyamoto",
+        "Country": "Japan",
+        "Birth": "13-13-45",
+        "Death": "12-12-18",
+        "Famous for": "blah blah blach",
+        "Image 1": "res://Assets/Textures/images.jpeg"
+    },
+    "guest_b": {
+        "Name": "Shigeru Miyamoto",
+        "Country": "Japan",
+        "Birth": "13-13-45",
+        "Death": "12-12-18",
+        "Famous for": "blah blah blach",
+        "Image 1": "res://Assets/Textures/images.jpeg"
+    },
+    "guest_c": {
+        "Name": "Shigeru Miyamoto",
+        "Country": "Japan",
+        "Birth": "13-13-45",
+        "Death": "12-12-18",
+        "Famous for": "blah blah blach",
+        "Image 1": "res://Assets/Textures/images (2).jpeg"
+    },
+    "guest_f": {
+        "Name": "Shigeru Miyamoto",
+        "Country": "Japan",
+        "Birth": "13-13-45",
+        "Death": "12-12-18",
+        "Famous for": "blah blah blach",
+        "Image 1": "res://Assets/Textures/images.jpeg"
+    },
+    "guest_d": {
+        "Name": "Shigeru Miyamoto",
+        "Country": "Japan",
+        "Birth": "13-13-45",
+        "Death": "12-12-18",
+        "Famous for": "blah blah blach",
+        "Image 1": "res://Assets/Textures/images.jpeg"
+    },
+    "guest_e": {
+        "Name": "Shigeru Miyamoto",
+        "Country": "Japan",
+        "Birth": "13-13-45",
+        "Death": "12-12-18",
+        "Famous for": "blah blah blach",
+        "Image 1": "res://Assets/Textures/images.jpeg"
+    },
+    "guest_g": {
+        "Name": "Shigeru Miyamoto",
+        "Country": "Japan",
+        "Birth": "13-13-45",
+        "Death": "12-12-18",
+        "Famous for": "blah blah blach",
+        "Image 1": "res://Assets/Textures/images.jpeg"
+    }
+ }
