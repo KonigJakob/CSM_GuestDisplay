@@ -25,7 +25,8 @@ func _on_button_button_down():
 	$Button.position = $Shadow.position
 
 func _on_button_button_up():
-	pass
+	if !button_toggle_mode:
+		$Button.position = button_pos
 
 func _on_button_pressed():
 	child_button_pressed.emit()
@@ -38,6 +39,6 @@ func keep_pressed():
 	$Button.button_pressed = true
 	$Button.position = $Shadow.position
 
-func _on_button_toggled(button_pressed):
-	if !button_pressed:
+func _on_button_toggled(button_was_pressed):
+	if !button_was_pressed:
 		$Button.position = button_pos

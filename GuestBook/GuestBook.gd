@@ -111,7 +111,6 @@ func unpress_buttons(button_parent):
 		else:
 			if b is button_syled:
 				b.toggle_pressed()
-
 func keep_button_pressed(button_parent : button_syled):
 	if button_parent.button_pressed:
 		button_parent.keep_pressed()
@@ -175,8 +174,6 @@ func on_tween_finished():
 func update_page_buttons():
 	match current_page: 
 		PollPage.STARS:
-			back_button.visible = false
-			submit_button.visible = false
 			tween_visibility(back_button)
 			tween_visibility(submit_button)
 			keep_visible = false
@@ -196,3 +193,4 @@ func tween_visibility(object_to_modulate) -> void:
 		tween.tween_property(object_to_modulate, "modulate:a", 1, tween_movement_interval)
 	else:
 		tween.tween_property(object_to_modulate, "modulate:a", 0, tween_movement_interval)
+		tween.tween_property(object_to_modulate, "visible", false, tween_wait_interval/2)

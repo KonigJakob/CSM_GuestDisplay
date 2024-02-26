@@ -135,11 +135,11 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 35.0
 offset_top = 750.0
-offset_right = 235.0
+offset_right = 210.0
 offset_bottom = 820.0
 button_color = Color(0.243137, 0.45098, 0.737255, 1)
 button_text = "<<   Zurück"
-button_size = Vector2(245, 70)
+button_size = Vector2(175, 70)
 button_toggle_mode = false
 
 [node name="Button_Submit" parent="." instance=ExtResource("19_vj6oa")]
