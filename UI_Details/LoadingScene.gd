@@ -9,7 +9,7 @@ func _ready():
 	SceneManager.target_scene_changed.connect(on_target_scene_changed)
 	ResourceLoader.load_threaded_request(SceneManager.target_scene)
 
-func _process(delta):
+func _process(_delta):
 	if SceneManager.target_scene:
 		loading_status = ResourceLoader.load_threaded_get_status(SceneManager.target_scene, progress)
 	

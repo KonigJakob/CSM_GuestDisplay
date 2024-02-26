@@ -69,15 +69,6 @@ offset_top = 399.0
 offset_right = 539.0
 offset_bottom = 874.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 201.0
-offset_top = 1083.0
-offset_right = 528.0
-offset_bottom = 1166.0
-texture = ExtResource("5_6xri5")
-expand_mode = 1
-
 [node name="Button_LeftArrow" type="Button" parent="."]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -146,8 +137,19 @@ theme = ExtResource("10_bt386")
 theme_override_font_sizes/font_size = 110
 text = "Famous Guests"
 
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 1021.0
+offset_right = 718.0
+offset_bottom = 1275.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer2"]
+custom_minimum_size = Vector2(444, 118)
+layout_mode = 2
+texture = ExtResource("5_6xri5")
+expand_mode = 1
+stretch_mode = 6
+
 [connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
 [connection signal="pressed" from="Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
 [connection signal="pressed" from="Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]

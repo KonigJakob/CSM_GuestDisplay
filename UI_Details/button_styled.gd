@@ -8,6 +8,7 @@ signal child_button_pressed
 @export var button_text : String
 @export var button_size : Vector2
 @export var button_toggle_mode : bool = true
+@export var button_pressed : bool = false
 
 var button_pos
 
@@ -28,9 +29,14 @@ func _on_button_button_up():
 
 func _on_button_pressed():
 	child_button_pressed.emit()
+	button_pressed = !button_pressed
 	
 func toggle_pressed():
 	$Button.button_pressed = false
+
+func keep_pressed():
+	$Button.button_pressed = true
+	$Button.position = $Shadow.position
 
 func _on_button_toggled(button_pressed):
 	if !button_pressed:

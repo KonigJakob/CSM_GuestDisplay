@@ -40,7 +40,8 @@ enum PollPage {
 @export var lock_rect: ColorRect
 var stars = []
 var age_buttons = []
-
+var text_changed : bool  = false
+var keep_visible : bool = false
 
 func _ready():
 	satisfaction_button = 0
@@ -86,18 +87,22 @@ func _on_button_child_pressed():
 	age_group_button = 1
 	unpress_buttons(Age_Child)
 	tween_forward()
+	keep_button_pressed(Age_Child)
 func _on_button_teen_pressed():
 	age_group_button = 2
 	unpress_buttons(Age_Teen)
 	tween_forward()
+	keep_button_pressed(Age_Teen)
 func _on_button_adult_pressed():
 	age_group_button = 3
 	unpress_buttons(Age_Adult)
 	tween_forward()
+	keep_button_pressed(Age_Adult)
 func _on_button_senior_pressed():
 	age_group_button = 4
 	unpress_buttons(Age_Senior)
 	tween_forward()
+	keep_button_pressed(Age_Senior)
 
 func unpress_buttons(button_parent):
 	for b in age_buttons:
@@ -107,33 +112,33 @@ func unpress_buttons(button_parent):
 			if b is button_syled:
 				b.toggle_pressed()
 
+func keep_button_pressed(button_parent : button_syled):
+	if button_parent.button_pressed:
+		button_parent.keep_pressed()
+
 func _on_option_button_item_selected(index):
 	language = index
 	tween_forward()
 
 func _on_text_changed(new_text):
 	message = new_text
-	var tween = get_tree().create_tween()
-	tween.tween_property(submit_button, "visible", true, tween_wait_interval)
-	tween_visibility(submit_button)
+	if !text_changed:
+		text_changed = true
+		submit_button.visible = true
+		tween_visibility(submit_button)
 
 func _on_button_no_pressed():
 	SceneManager.target_scene = "res://MainMenu/main.tscn"
 	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")
-
 func _on_button_yes_pressed():
 	get_tree().reload_current_scene()
-
 func _on_button_return_pressed():
 	move_page_backwards()
-
 func _on_button_continue_pressed():
 	move_page_forward()
-
 func _on_button_home_pressed():
 	SceneManager.target_scene = "res://MainMenu/main.tscn"
 	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")
-
 func _on_button_submit_pressed():
 	poll_data = {"Date" : date, "Satisfaction": satisfaction_button, 
 	"Age Group" : age_group_button, "Language" : language, "Message" : message}
@@ -174,16 +179,16 @@ func update_page_buttons():
 			submit_button.visible = false
 			tween_visibility(back_button)
 			tween_visibility(submit_button)
+			keep_visible = false
 		PollPage.AGE:
 			back_button.visible = true
-			tween_visibility(back_button)
+			if !keep_visible:
+				tween_visibility(back_button)
+				keep_visible = true
 		PollPage.LANGUAGE:
 			back_button.visible = true
 		PollPage.MESSAGE:
 			back_button.visible = true
-			tween_visibility(submit_button)
-
-
 func tween_visibility(object_to_modulate) -> void:
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)

@@ -7,7 +7,7 @@ var date : String
 var guest_data_filepath : String = "user://famous_guests.json"
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("exit"):
 		save_on_exit()
 		get_tree().quit()
@@ -34,7 +34,7 @@ func save(content):
 		print(file.get_path_absolute())
 		file = null
 	
-func load():
+func load_guest_data():
 	if FileAccess.file_exists(save_data_filepath):
 		var file = FileAccess.open(save_data_filepath, FileAccess.READ)
 		var json = JSON.new()

@@ -23,7 +23,7 @@ func _ready():
 	right_clicks = 0
 	left_clicks = guests.size() -1
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("move_right") and right_clicks > 0:
 		tween = get_tree().create_tween().set_parallel(true)
 		for g in guests:
@@ -47,12 +47,10 @@ func set_ui_elements_transform():
 	
 func load_guests() -> Array:
 	var loaded_guests = []
-	var guests = {}
 	#Load guests info, instantiate the scenes and save them in an array
 	if SaveSystem.load_guest():
 		guests = SaveSystem.load_guest()
 		for g in guests:
-			var i = 1
 			var _guest_portrait = guest_portrait.instantiate()
 			_guest_portrait.guest_name = guests[g]["Name"]
 			_guest_portrait.country = guests[g]["Country"]

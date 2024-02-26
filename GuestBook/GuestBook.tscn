@@ -144,6 +144,7 @@ button_toggle_mode = false
 
 [node name="Button_Submit" parent="." instance=ExtResource("19_vj6oa")]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
@@ -570,15 +571,6 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
 
-[node name="Logo" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 235.0
-offset_top = 1136.0
-offset_right = 504.0
-offset_bottom = 1204.0
-texture = ExtResource("4_a4l51")
-expand_mode = 1
-
 [node name="OnscreenKeyboard" type="PanelContainer" parent="."]
 layout_mode = 2
 offset_left = 34.0
@@ -597,12 +589,23 @@ theme = ExtResource("3_8lblm")
 color = Color(1, 1, 1, 0)
 script = ExtResource("2_v86rj")
 
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 1021.0
+offset_right = 718.0
+offset_bottom = 1275.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer2"]
+custom_minimum_size = Vector2(444, 118)
+layout_mode = 2
+texture = ExtResource("4_a4l51")
+expand_mode = 1
+stretch_mode = 6
+
 [connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="child_button_pressed" from="Button_Return" to="." method="_on_button_return_pressed"]
 [connection signal="child_button_pressed" from="Button_Submit" to="." method="_on_button_submit_pressed"]
-[connection signal="mouse_entered" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_1" to="." method="_on_star_1_mouse_entered"]
 [connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_1" to="." method="_on_star_1_pressed"]
-[connection signal="mouse_entered" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_2" to="." method="_on_star_2_mouse_entered"]
 [connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_2" to="." method="_on_star_2_pressed"]
 [connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_3" to="." method="_on_star_3_pressed"]
 [connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_4" to="." method="_on_star_4_pressed"]
