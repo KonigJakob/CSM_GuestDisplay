@@ -181,10 +181,11 @@ text = "Guest Book"
 expand_icon = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 72.0
-offset_top = 93.0
-offset_right = 646.0
-offset_bottom = 246.0
+offset_left = 137.0
+offset_top = 121.0
+offset_right = 1913.0
+offset_bottom = 594.0
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_y8i78")
 expand_mode = 1
 

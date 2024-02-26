@@ -42,6 +42,7 @@ offset_bottom = 1274.0
 script = ExtResource("1_5hcky")
 
 [node name="Button_Home" parent="." instance=ExtResource("7_jwkf8")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

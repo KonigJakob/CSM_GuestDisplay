@@ -118,7 +118,8 @@ func _on_text_changed(new_text):
 	tween_visibility(submit_button)
 
 func _on_button_no_pressed():
-	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
+	SceneManager.target_scene = "res://MainMenu/main.tscn"
+	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")
 
 func _on_button_yes_pressed():
 	get_tree().reload_current_scene()
@@ -130,7 +131,8 @@ func _on_button_continue_pressed():
 	move_page_forward()
 
 func _on_button_home_pressed():
-	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
+	SceneManager.target_scene = "res://MainMenu/main.tscn"
+	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")
 
 func _on_button_submit_pressed():
 	poll_data = {"Date" : date, "Satisfaction": satisfaction_button, 

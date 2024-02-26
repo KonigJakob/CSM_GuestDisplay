@@ -82,7 +82,8 @@ func move_guests_left(g):
 	tween.tween_property(g, "position", Vector2(g.position.x + g.size.x + portrait_gutter, g.position.y), 1)
 
 func _on_button_home_pressed():
-	get_tree().change_scene_to_file("res://MainMenu/main.tscn")
+	SceneManager.target_scene = "res://MainMenu/main.tscn"
+	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")
 
 func _on_button_left_arrow_pressed():
 	if right_clicks > 0:
