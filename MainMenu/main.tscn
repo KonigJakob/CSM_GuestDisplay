@@ -214,4 +214,5 @@ expand_mode = 1
 
 [connection signal="pressed" from="MainMenu/Button_FamousGuests" to="MainMenu" method="_on_button_famous_guests_pressed"]
 [connection signal="pressed" from="MainMenu/Button_GuestBook" to="MainMenu" method="_on_button_guest_book_pressed"]
+[connection signal="child_button_pressed" from="MainMenu/Translation_DE" to="MainMenu" method="_on_translation_de_child_button_pressed"]
 [connection signal="child_button_pressed" from="MainMenu/Translation_EN" to="MainMenu" method="_on_translation_en_child_button_pressed"]

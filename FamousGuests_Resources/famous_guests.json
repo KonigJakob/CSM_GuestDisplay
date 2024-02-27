@@ -1,5 +1,6 @@
 {
 	"guest_a": {
+		"GuestID": "BAER",
 		"Name": "Ralph H. Baer",
 		"Country": "_USA / GERMANY",
 		"Birth": "8.3.1922 – 6.12.2014",
@@ -7,6 +8,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_b": {
+		"GuestID": "KOJIMA",
 		"Name": "Hideo Kojima",
 		"Country": "JAPAN",
 		"Birth": "24.8.1963",
@@ -14,6 +16,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_c": {
+		"GuestID": "PHILLIPS",
 		"Name": "Howard Phillips",
 		"Country": "_USA",
 		"Birth": "23.1.1958",
@@ -21,6 +24,7 @@
 		"Image 1": "res://Assets/Textures/images (2).jpeg"
 	},
 	"guest_d": {
+		"GuestID": "DAGLOW",
 		"Name": "Don Daglow",
 		"Country": "_USA",
 		"Birth": "12.9.1952",
@@ -28,6 +32,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_e": {
+		"GuestID": "FRIES",
 		"Name": "Ed Fries",
 		"Country": "_USA",
 		"Birth": "14.5.1964",
@@ -35,6 +40,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_f": {
+		"GuestID": "WOZNIAK",
 		"Name": "Steve Wozniak",
 		"Country": "_USA",
 		"Birth": "11.8.1950",
@@ -42,6 +48,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_g": {
+		"GuestID": "BUSCHNELL",
 		"Name": "Nolan Buschnell",
 		"Country": "_USA",
 		"Birth": "5.2.1943",
@@ -49,6 +56,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_h": {
+		"GuestID": "GAUME",
 		"Name": "Nicolas Gaume",
 		"Country": "FRANCE",
 		"Birth": "7.2.1971",
@@ -56,6 +64,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_i": {
+		"GuestID": "PITCHFORD",
 		"Name": "Randy Pitchford",
 		"Country": "_USA",
 		"Birth": "21.4.1971",
@@ -63,6 +72,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_j": {
+		"GuestID": "GRONKHSARAZAR",
 		"Name": "Erik \"Gronkh\" Range & Valentin Matthias \"Sarazar\" Rahmel",
 		"Country": "GERMANY",
 		"Birth": "10.4.1977 / 27.2.1984",
@@ -70,6 +80,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_k": {
+		"GuestID": "LIVINGSTONE",
 		"Name": "Ian Livingstone",
 		"Country": "_UK",
 		"Birth": "29.12.1949",
@@ -77,6 +88,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_l": {
+		"GuestID": "SHAW",
 		"Name": "Adrianne Shaw",
 		"Country": "_USA",
 		"Birth": "13.7.1983",
@@ -84,6 +96,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_m": {
+		"GuestID": "BROMERO",
 		"Name": "Brenda Romero",
 		"Country": "_USA",
 		"Birth": "12.10.1966",
@@ -91,6 +104,7 @@
 		"Image 1": "res://Assets/Textures/images.jpeg"
 	},
 	"guest_n": {
+		"GuestID": "JROMERO",
 		"Name": "John Romero",
 		"Country": "_USA",
 		"Birth": "28.10.1967",

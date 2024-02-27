@@ -2,6 +2,7 @@ extends Control
 
 class_name Guest
 
+var guest_id : String
 var guest_name : String
 var country : String
 var birth : String
@@ -39,4 +40,5 @@ func update_guest_info() -> void:
 	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Country.text = country
 	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Birth.text = birth
 	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Info.text = famous_for
-	$Button/InfoPanel/VBoxContainer/MarginContainer/HBoxContainer/Image_1.texture = load(image_1)
+	$Button/InfoPanel/VBoxContainer/MarginContainer/HBoxContainer/Image_1.texture = load(SaveSystem.guest_images_folder_path + guest_id + "1")
+	$Button/InfoPanel/VBoxContainer/MarginContainer/HBoxContainer/Image_1.texture = load(SaveSystem.guest_images_folder_path + guest_id + "2")

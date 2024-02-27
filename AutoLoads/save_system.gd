@@ -4,8 +4,8 @@ extends Node
 var file_name_dated : String
 var date : String
 
-var guest_data_filepath : String = "user://famous_guests.json"
-
+var guest_data_filepath : String = "user://FamousGuests_Resources/famous_guests.json"
+var guest_images_folder_path : String = "user://FamousGuests_Resources/"
 
 func _process(_delta):
 	if Input.is_action_pressed("exit"):

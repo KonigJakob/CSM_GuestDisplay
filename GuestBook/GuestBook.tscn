@@ -571,24 +571,6 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
 
-[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
-layout_mode = 2
-offset_left = 34.0
-offset_top = 653.0
-offset_right = 684.0
-offset_bottom = 941.0
-script = ExtResource("19_axxdl")
-customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
-
-[node name="LockRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 717.0
-offset_bottom = 1274.0
-theme = ExtResource("3_8lblm")
-color = Color(1, 1, 1, 0)
-script = ExtResource("2_v86rj")
-
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 0
 offset_top = 1021.0
@@ -601,6 +583,24 @@ layout_mode = 2
 texture = ExtResource("4_a4l51")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 34.0
+offset_top = 473.0
+offset_right = 684.0
+offset_bottom = 761.0
+script = ExtResource("19_axxdl")
+customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
+
+[node name="LockRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 717.0
+offset_bottom = 1274.0
+theme = ExtResource("3_8lblm")
+color = Color(1, 1, 1, 0)
+script = ExtResource("2_v86rj")
 
 [node name="Translation_DE" parent="." instance=ExtResource("19_vj6oa")]
 layout_mode = 1
