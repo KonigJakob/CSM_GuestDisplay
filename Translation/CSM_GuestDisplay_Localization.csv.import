@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bnlw14xai32"
+
+[deps]
+
+files=["res://Translation/CSM_GuestDisplay_Localization.en.translation", "res://Translation/CSM_GuestDisplay_Localization.de.translation", "res://Translation/CSM_GuestDisplay_Localization.es.translation"]
+
+source_file="res://Translation/CSM_GuestDisplay_Localization.csv"
+dest_files=["res://Translation/CSM_GuestDisplay_Localization.en.translation", "res://Translation/CSM_GuestDisplay_Localization.de.translation", "res://Translation/CSM_GuestDisplay_Localization.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

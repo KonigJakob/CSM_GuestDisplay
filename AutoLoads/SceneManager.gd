@@ -8,4 +8,7 @@ var target_scene : String :
 			target_scene = value
 			target_scene_changed.emit(target_scene)
 
+func set_language(language : String) -> void: 
+	TranslationServer.set_locale(language)
+
 

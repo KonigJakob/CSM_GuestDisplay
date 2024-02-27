@@ -20,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_77r23")
 
 [node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 717.0
 offset_bottom = 1274.0
 script = ExtResource("2_rjbbc")

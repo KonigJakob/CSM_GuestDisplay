@@ -42,8 +42,6 @@ func set_ui_elements_transform():
 	left_arrow.position.y = portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y
 	right_arrow.position.y = left_arrow.position.y
 	right_arrow.position.x = get_viewport_rect().size.x - right_arrow.size.x - 35
-	#left_arrow.size.y = portrait_panel.size.y
-	#right_arrow.size.y = portrait_panel.size.y
 	
 func load_guests() -> Array:
 	var loaded_guests = []
@@ -55,13 +53,14 @@ func load_guests() -> Array:
 			_guest_portrait.guest_name = guests[g]["Name"]
 			_guest_portrait.country = guests[g]["Country"]
 			_guest_portrait.birth = guests[g]["Birth"]
-			_guest_portrait.death = guests[g]["Death"]
 			_guest_portrait.famous_for = guests[g]["Famous for"]
 			_guest_portrait.image_1 = guests[g]["Image 1"]
+			_guest_portrait.update_guest_info()
 			loaded_guests.append(_guest_portrait)
 	else: 
 		print("Couldn't load guests.")
 	return loaded_guests
+
 
 func set_guest_positions(guest_array : Array, parent):
 	var current_x : int = 0
@@ -109,3 +108,11 @@ func on_tween_finished():
 	left_arrow.disabled = false
 	right_arrow.disabled = false
 	input_lock_rect.visible = false
+
+
+func _on_translation_de_child_button_pressed():
+	SceneManager.set_language("de")
+
+
+func _on_translation_en_child_button_pressed():
+	SceneManager.set_language("en")

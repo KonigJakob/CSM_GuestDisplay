@@ -5,7 +5,6 @@ class_name Guest
 var guest_name : String
 var country : String
 var birth : String
-var death : String
 var famous_for : String
 var image_1 : String
 var image_2 : String
@@ -32,3 +31,12 @@ func _ready():
 func _on_button_pressed():
 	if info_panel.visible == false:
 		info_panel.visible = true
+
+func update_guest_info() -> void:
+	$Button/VBoxContainer/PortraitName.text = guest_name
+	$Button/VBoxContainer/TextureRect.texture = load(image_1)
+	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Name.text = guest_name
+	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Country.text = country
+	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Birth.text = birth
+	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Info.text = famous_for
+	$Button/InfoPanel/VBoxContainer/MarginContainer/HBoxContainer/Image_1.texture = load(image_1)

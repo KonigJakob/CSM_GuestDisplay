@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://s4mr31xgwy8"]
+[gd_scene load_steps=9 format=3 uid="uid://s4mr31xgwy8"]
 
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_c0ywe"]
 [ext_resource type="FontFile" uid="uid://cfxkhjim3dbff" path="res://Assets/Fonts/visitor2 (1).ttf" id="2_vsk7g"]
+[ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="3_vk3j7"]
 [ext_resource type="Texture2D" uid="uid://lge4q45juhj0" path="res://Assets/Textures/Logos/logo_color_dott_300dpi.png" id="3_y8i78"]
 
 [sub_resource type="Theme" id="Theme_7lbj6"]
@@ -163,7 +164,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_l88qq")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
-text = "Famous Guests"
+text = "FAMOUS_GUESTS"
 expand_icon = true
 
 [node name="Button_GuestBook" type="Button" parent="MainMenu"]
@@ -180,6 +181,28 @@ theme_override_font_sizes/font_size = 63
 text = "Guest Book"
 expand_icon = true
 
+[node name="Translation_DE" parent="MainMenu" instance=ExtResource("3_vk3j7")]
+layout_mode = 1
+offset_left = 530.0
+offset_top = 1120.0
+offset_right = -115.0
+offset_bottom = -85.0
+button_color = Color(1, 1, 1, 1)
+button_text = "De"
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+
+[node name="Translation_EN" parent="MainMenu" instance=ExtResource("3_vk3j7")]
+layout_mode = 1
+offset_left = 615.0
+offset_top = 1120.0
+offset_right = -30.0
+offset_bottom = -85.0
+button_color = Color(1, 1, 1, 1)
+button_text = "En"
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 137.0
 offset_top = 121.0
@@ -191,3 +214,4 @@ expand_mode = 1
 
 [connection signal="pressed" from="MainMenu/Button_FamousGuests" to="MainMenu" method="_on_button_famous_guests_pressed"]
 [connection signal="pressed" from="MainMenu/Button_GuestBook" to="MainMenu" method="_on_button_guest_book_pressed"]
+[connection signal="child_button_pressed" from="MainMenu/Translation_EN" to="MainMenu" method="_on_translation_en_child_button_pressed"]

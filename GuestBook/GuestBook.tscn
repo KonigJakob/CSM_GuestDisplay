@@ -123,7 +123,7 @@ offset_bottom = -1175.0
 grow_horizontal = 1
 grow_vertical = 1
 button_color = Color(0.541176, 0.466667, 0.631373, 1)
-button_text = "⏎ Startseite"
+button_text = "HOME_PAGE"
 button_size = Vector2(245, 70)
 button_toggle_mode = false
 
@@ -138,7 +138,7 @@ offset_top = 750.0
 offset_right = 210.0
 offset_bottom = 820.0
 button_color = Color(0.243137, 0.45098, 0.737255, 1)
-button_text = "<<   Zurück"
+button_text = "<<   BACK"
 button_size = Vector2(175, 70)
 button_toggle_mode = false
 
@@ -156,7 +156,7 @@ offset_bottom = 825.0
 grow_horizontal = 1
 grow_vertical = 1
 button_color = Color(0.976471, 0.203922, 0, 1)
-button_text = "Einreichen"
+button_text = "SUBMIT"
 button_size = Vector2(200, 75)
 button_toggle_mode = false
 
@@ -187,7 +187,7 @@ size_flags_vertical = 1
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Wie würdest Du deinen Besuch bewerten?"
+text = "POLL_EXPERIENCE"
 
 [node name="Panel" type="Panel" parent="Panels/StarContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -277,7 +277,7 @@ size_flags_horizontal = 0
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Wie alt bist du?"
+text = "POLL_AGE"
 
 [node name="Panel" type="Panel" parent="Panels/AgeContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -334,7 +334,7 @@ layout_mode = 2
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Was ist deine Muttersprache?"
+text = "POLL_LANGUAGE"
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Panels/LanguageContainer/VBoxContainer"]
@@ -412,7 +412,7 @@ size_flags_vertical = 6
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Hinterlasse eine Nachricht:"
+text = "POLL_MESSAGE"
 vertical_alignment = 2
 
 [node name="Panel" type="Panel" parent="Panels/MessageContainer/VBoxContainer"]
@@ -498,7 +498,7 @@ layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Vielen Dank! :)"
+text = "THANK_YOU"
 horizontal_alignment = 1
 
 [node name="Panel4" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer"]
@@ -520,7 +520,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 theme = ExtResource("3_8lblm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Möchtest du eine weitere Antwort einreichen?"
+text = "EXTRA_ANSWER"
 autowrap_mode = 3
 
 [node name="Panel" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer"]
@@ -544,7 +544,7 @@ theme = ExtResource("3_8lblm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sqgfw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yemdj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t0hbh")
-text = "NEIN
+text = "NO
 "
 
 [node name="Panel3" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer"]
@@ -559,7 +559,7 @@ theme = ExtResource("3_8lblm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ep331")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dufi0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hdqwl")
-text = "JA"
+text = "YES"
 
 [node name="Panel2" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(25, 25)
@@ -602,6 +602,28 @@ texture = ExtResource("4_a4l51")
 expand_mode = 1
 stretch_mode = 6
 
+[node name="Translation_DE" parent="." instance=ExtResource("19_vj6oa")]
+layout_mode = 1
+offset_left = 520.0
+offset_top = 35.0
+offset_right = -200.0
+offset_bottom = -1245.0
+button_color = Color(1, 1, 1, 1)
+button_text = "De"
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+
+[node name="Translation_EN" parent="." instance=ExtResource("19_vj6oa")]
+layout_mode = 1
+offset_left = 605.0
+offset_top = 35.0
+offset_right = -115.0
+offset_bottom = -1245.0
+button_color = Color(1, 1, 1, 1)
+button_text = "En"
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+
 [connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="child_button_pressed" from="Button_Return" to="." method="_on_button_return_pressed"]
 [connection signal="child_button_pressed" from="Button_Submit" to="." method="_on_button_submit_pressed"]
@@ -618,3 +640,5 @@ stretch_mode = 6
 [connection signal="text_changed" from="Panels/MessageContainer/VBoxContainer/HBoxContainer/Panel2/LineEdit" to="." method="_on_text_changed"]
 [connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_No" to="." method="_on_button_no_pressed"]
 [connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_Yes" to="." method="_on_button_yes_pressed"]
+[connection signal="child_button_pressed" from="Translation_DE" to="." method="_on_translation_de_child_button_pressed"]
+[connection signal="child_button_pressed" from="Translation_EN" to="." method="_on_translation_en_child_button_pressed"]

@@ -74,6 +74,10 @@ BUTTON_WHEEL_DOWN={
 
 pointing/emulate_touch_from_mouse=true
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Translation/CSM_GuestDisplay_Localization.de.translation", "res://Translation/CSM_GuestDisplay_Localization.en.translation", "res://Translation/CSM_GuestDisplay_Localization.es.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

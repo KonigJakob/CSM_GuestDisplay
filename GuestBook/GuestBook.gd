@@ -194,3 +194,9 @@ func tween_visibility(object_to_modulate) -> void:
 	else:
 		tween.tween_property(object_to_modulate, "modulate:a", 0, tween_movement_interval)
 		tween.tween_property(object_to_modulate, "visible", false, tween_wait_interval/2)
+
+
+func _on_translation_de_child_button_pressed():
+	SceneManager.set_language("de")
+func _on_translation_en_child_button_pressed():
+	SceneManager.set_language("en")

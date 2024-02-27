@@ -1,58 +1,100 @@
 {
-    "guest_a": {
-        "Name": "Shigeru Miyamoto",
-        "Country": "Japan",
-        "Birth": "13-13-45",
-        "Death": "12-12-18",
-        "Famous for": "blah blah blach",
-        "Image 1": "res://Assets/Textures/images.jpeg"
-    },
-    "guest_b": {
-        "Name": "Shigeru Miyamoto",
-        "Country": "Japan",
-        "Birth": "13-13-45",
-        "Death": "12-12-18",
-        "Famous for": "blah blah blach",
-        "Image 1": "res://Assets/Textures/images.jpeg"
-    },
-    "guest_c": {
-        "Name": "Shigeru Miyamoto",
-        "Country": "Japan",
-        "Birth": "13-13-45",
-        "Death": "12-12-18",
-        "Famous for": "blah blah blach",
-        "Image 1": "res://Assets/Textures/images (2).jpeg"
-    },
-    "guest_f": {
-        "Name": "Shigeru Miyamoto",
-        "Country": "Japan",
-        "Birth": "13-13-45",
-        "Death": "12-12-18",
-        "Famous for": "blah blah blach",
-        "Image 1": "res://Assets/Textures/images.jpeg"
-    },
-    "guest_d": {
-        "Name": "Shigeru Miyamoto",
-        "Country": "Japan",
-        "Birth": "13-13-45",
-        "Death": "12-12-18",
-        "Famous for": "blah blah blach",
-        "Image 1": "res://Assets/Textures/images.jpeg"
-    },
-    "guest_e": {
-        "Name": "Shigeru Miyamoto",
-        "Country": "Japan",
-        "Birth": "13-13-45",
-        "Death": "12-12-18",
-        "Famous for": "blah blah blach",
-        "Image 1": "res://Assets/Textures/images.jpeg"
-    },
-    "guest_g": {
-        "Name": "Shigeru Miyamoto",
-        "Country": "Japan",
-        "Birth": "13-13-45",
-        "Death": "12-12-18",
-        "Famous for": "blah blah blach",
-        "Image 1": "res://Assets/Textures/images.jpeg"
-    }
+	"guest_a": {
+		"Name": "Ralph H. Baer",
+		"Country": "_USA / GERMANY",
+		"Birth": "8.3.1922 – 6.12.2014",
+		"Famous for": "BAER",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_b": {
+		"Name": "Hideo Kojima",
+		"Country": "JAPAN",
+		"Birth": "24.8.1963",
+		"Famous for": "KOJIMA",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_c": {
+		"Name": "Howard Phillips",
+		"Country": "_USA",
+		"Birth": "23.1.1958",
+		"Famous for": "PHILLIPS",
+		"Image 1": "res://Assets/Textures/images (2).jpeg"
+	},
+	"guest_d": {
+		"Name": "Don Daglow",
+		"Country": "_USA",
+		"Birth": "12.9.1952",
+		"Famous for": "DAGLOW",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_e": {
+		"Name": "Ed Fries",
+		"Country": "_USA",
+		"Birth": "14.5.1964",
+		"Famous for": "FRIES",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_f": {
+		"Name": "Steve Wozniak",
+		"Country": "_USA",
+		"Birth": "11.8.1950",
+		"Famous for": "WOZNIAK",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_g": {
+		"Name": "Nolan Buschnell",
+		"Country": "_USA",
+		"Birth": "5.2.1943",
+		"Famous for": "BUSCHNELL",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_h": {
+		"Name": "Nicolas Gaume",
+		"Country": "FRANCE",
+		"Birth": "7.2.1971",
+		"Famous for": "GAUME",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_i": {
+		"Name": "Randy Pitchford",
+		"Country": "_USA",
+		"Birth": "21.4.1971",
+		"Famous for": "PITCHFORD",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_j": {
+		"Name": "Erik \"Gronkh\" Range & Valentin Matthias \"Sarazar\" Rahmel",
+		"Country": "GERMANY",
+		"Birth": "10.4.1977 / 27.2.1984",
+		"Famous for": "GRONKHSARAZAR",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_k": {
+		"Name": "Ian Livingstone",
+		"Country": "_UK",
+		"Birth": "29.12.1949",
+		"Famous for": "LIVINGSTONE",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_l": {
+		"Name": "Adrianne Shaw",
+		"Country": "_USA",
+		"Birth": "13.7.1983",
+		"Famous for": "SHAW",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_m": {
+		"Name": "Brenda Romero",
+		"Country": "_USA",
+		"Birth": "12.10.1966",
+		"Famous for": "BROMERO",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	},
+	"guest_n": {
+		"Name": "John Romero",
+		"Country": "_USA",
+		"Birth": "28.10.1967",
+		"Famous for": "JROMERO",
+		"Image 1": "res://Assets/Textures/images.jpeg"
+	}
  }
