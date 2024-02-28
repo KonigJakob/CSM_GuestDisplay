@@ -10,5 +10,3 @@ var target_scene : String :
 
 func set_language(language : String) -> void: 
 	TranslationServer.set_locale(language)
-
-

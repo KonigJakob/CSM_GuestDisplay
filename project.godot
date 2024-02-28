@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 SaveSystem="*res://AutoLoads/save_system.gd"
 SceneManager="*res://AutoLoads/SceneManager.gd"
-TranslationImporter="*res://AutoLoads/TranslationImporter.gd"
 
 [display]
 
@@ -74,6 +73,10 @@ BUTTON_WHEEL_DOWN={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Translation/CSM_GuestDisplay_Localization.de.translation", "res://Translation/CSM_GuestDisplay_Localization.en.translation", "res://Translation/CSM_GuestDisplay_Localization.es.translation")
 
 [rendering]
 
