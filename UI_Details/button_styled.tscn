@@ -33,7 +33,6 @@ offset_bottom = 110.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wwufu")
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(150, 0)
 layout_mode = 0
 offset_left = 5.0
 offset_top = -5.0

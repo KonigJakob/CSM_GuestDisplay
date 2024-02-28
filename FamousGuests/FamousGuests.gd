@@ -23,23 +23,9 @@ func _ready():
 	right_clicks = 0
 	left_clicks = guests.size() -1
 
-func _process(_delta):
-	if Input.is_action_just_pressed("move_right") and right_clicks > 0:
-		tween = get_tree().create_tween().set_parallel(true)
-		for g in guests:
-			move_guests_left(g)
-		right_clicks -= 1
-		left_clicks += 1
-	if Input.is_action_just_pressed("move_left") and left_clicks > 0:
-		tween = get_tree().create_tween().set_parallel(true)
-		for g in guests:
-			move_guests_right(g)
-		right_clicks += 1
-		left_clicks -= 1
-
 func set_ui_elements_transform():
 	portrait_panel.position = get_viewport_rect().size / 2 - (portrait_panel.size / 2)
-	left_arrow.position.y = portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y
+	left_arrow.position.y = portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y * 1.5
 	right_arrow.position.y = left_arrow.position.y
 	right_arrow.position.x = get_viewport_rect().size.x - right_arrow.size.x - 35
 	
@@ -60,7 +46,6 @@ func load_guests() -> Array:
 	else: 
 		print("Couldn't load guests.")
 	return loaded_guests
-
 
 func set_guest_positions(guest_array : Array, parent):
 	var current_x : int = 0
@@ -109,10 +94,9 @@ func on_tween_finished():
 	right_arrow.disabled = false
 	input_lock_rect.visible = false
 
-
 func _on_translation_de_child_button_pressed():
 	SceneManager.set_language("de")
 
-
 func _on_translation_en_child_button_pressed():
 	SceneManager.set_language("en")
+

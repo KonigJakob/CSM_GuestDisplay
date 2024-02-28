@@ -121,19 +121,6 @@ theme = ExtResource("10_bt386")
 theme_override_font_sizes/font_size = 110
 text = "FAMOUS_GUESTS"
 
-[node name="CenterContainer2" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_top = 1021.0
-offset_right = 718.0
-offset_bottom = 1275.0
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer2"]
-custom_minimum_size = Vector2(222, 59)
-layout_mode = 2
-texture = ExtResource("5_6xri5")
-expand_mode = 1
-stretch_mode = 6
-
 [node name="Button_Home" parent="." instance=ExtResource("7_jwkf8")]
 z_index = 3
 z_as_relative = false
@@ -142,23 +129,23 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 35.0
-offset_top = 35.0
+offset_top = 1120.0
 offset_right = 35.0
-offset_bottom = 35.0
+offset_bottom = 1120.0
 grow_horizontal = 1
 grow_vertical = 1
 button_color = Color(0.541176, 0.466667, 0.631373, 1)
-button_text = "HOME_PAGE"
-button_size = Vector2(245, 70)
+button_text = "START"
+button_size = Vector2(100, 70)
 button_toggle_mode = false
 
 [node name="Translation_DE" parent="." instance=ExtResource("7_jwkf8")]
 z_index = 3
 layout_mode = 1
 offset_left = 445.0
-offset_top = 35.0
+offset_top = 1120.0
 offset_right = 445.0
-offset_bottom = 35.0
+offset_bottom = 1120.0
 button_color = Color(1, 1, 1, 1)
 button_text = "De"
 button_size = Vector2(75, 75)
@@ -169,13 +156,26 @@ z_index = 3
 z_as_relative = false
 layout_mode = 1
 offset_left = 530.0
-offset_top = 35.0
+offset_top = 1120.0
 offset_right = 530.0
-offset_bottom = 35.0
+offset_bottom = 1120.0
 button_color = Color(1, 1, 1, 1)
 button_text = "En"
 button_size = Vector2(75, 75)
 button_toggle_mode = false
+
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 718.0
+offset_bottom = 234.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer3"]
+custom_minimum_size = Vector2(444, 118)
+layout_mode = 2
+texture = ExtResource("5_6xri5")
+expand_mode = 1
+stretch_mode = 6
 
 [connection signal="pressed" from="Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
 [connection signal="pressed" from="Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]
