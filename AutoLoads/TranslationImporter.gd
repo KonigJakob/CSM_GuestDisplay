@@ -12,7 +12,9 @@ func import_csv_file():
 		var csv = FileAccess.open(csv_filepath, FileAccess.READ)
 		if csv:
 			while csv.get_position() < csv.get_length():
-				data = csv.get_csv_line()
+				var line : int = 0
+				#translation = csv.get_csv_line()
+				
 		else:
 			print("Error loading CSV File at ", csv_filepath)
 	else:
