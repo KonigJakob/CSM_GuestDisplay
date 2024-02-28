@@ -24,6 +24,6 @@ Adding Famous Guest Translation Text:
 	- If editing the file externally, don't forget to replace the existing file.
 
 Copy and paste this folder in:
-	Windows: %APPDATA%\Godot\app_userdata\CSM_GuestDisplay
+	Windows: %APPDATA%\Roaming\Godot\app_userdata\CSM_GuestDisplay
 	MAC: ~/Library/Application Support/Godot/app_userdata/CSM_GuestDisplay
 	Linux: ~/.local/share/godot/app_userdata/CSM_GuestDisplay

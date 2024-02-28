@@ -1,9 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl8lffvjrwol6"]
+[gd_scene load_steps=8 format=3 uid="uid://dl8lffvjrwol6"]
 
 [ext_resource type="Texture2D" uid="uid://d4hxuftrmuqx6" path="res://Assets/Textures/images (2).jpeg" id="1_ajcbw"]
-[ext_resource type="Texture2D" uid="uid://cvy803kskym0v" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Close_Normal.tres" id="2_bsvs2"]
-[ext_resource type="Texture2D" uid="uid://dt40tp4mcq3fw" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Close_Hover.tres" id="3_pqd8b"]
-[ext_resource type="Texture2D" uid="uid://rxv3a13bjgfo" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Close_Click.tres" id="4_d0jqj"]
 
 [sub_resource type="GDScript" id="GDScript_av1n2"]
 script/source = "extends Control
@@ -38,13 +35,11 @@ func _on_visibility_changed():
 		tween.tween_property(top_container, \"size\", viewport.size, tween_duration)
 		tween.tween_property(back_panel, \"size\", viewport.size, tween_duration)
 		tween.tween_property(self, \"global_position\", Vector2(0,0), tween_duration)
-		z_index = 10
+		z_index = 2
 		is_hidden = false
 		call_deferred(\"start_timer\")
-		input_lock_rect.visible = true
 	else:
 		is_hidden = true
-		input_lock_rect.visible = false
 
 func start_timer():
 	timer.start()
@@ -72,14 +67,11 @@ func _on_timer_timeout():
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37mns"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7kdm"]
-texture = ExtResource("2_bsvs2")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lvmn"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4tvwh"]
-texture = ExtResource("3_pqd8b")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uek1e"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o2s8"]
-texture = ExtResource("4_d0jqj")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utlub"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("input_lock_rect")]
 layout_mode = 3
@@ -91,7 +83,7 @@ offset_bottom = -1280.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_av1n2")
-input_lock_rect = NodePath("InputLock")
+input_lock_rect = NodePath("")
 tween_duration = 0.5
 
 [node name="Panel" type="Panel" parent="."]
@@ -104,7 +96,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e1iba")
 layout_mode = 0
 offset_left = -1.0
 offset_right = 724.0
-offset_bottom = 1275.0
+offset_bottom = 1337.0
+
+[node name="Panel2" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1iba")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -193,25 +190,17 @@ autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 645.0
+offset_left = -2.0
 offset_top = 22.0
 offset_right = 695.0
-offset_bottom = 72.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_r7kdm")
-theme_override_styles/hover = SubResource("StyleBoxTexture_4tvwh")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_3o2s8")
+offset_bottom = 1267.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7lvmn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uek1e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_utlub")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
-
-[node name="InputLock" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -23.0
-offset_top = 300.0
-offset_right = 743.0
-offset_bottom = 909.0
-color = Color(1, 1, 1, 0)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
