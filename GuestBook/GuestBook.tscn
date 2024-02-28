@@ -587,9 +587,9 @@ stretch_mode = 6
 [node name="OnscreenKeyboard" type="PanelContainer" parent="."]
 layout_mode = 2
 offset_left = 34.0
-offset_top = 473.0
+offset_top = 12.0
 offset_right = 684.0
-offset_bottom = 761.0
+offset_bottom = 300.0
 script = ExtResource("19_axxdl")
 customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
 
