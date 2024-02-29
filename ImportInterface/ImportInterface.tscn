@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0jrgwvdm51yo"]
+
+[ext_resource type="Script" path="res://ImportInterface/ImportInterface.gd" id="1_ir0br"]
+
+[node name="ImportInterface" type="Control" node_paths=PackedStringArray("guest_id_edit")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ir0br")
+guest_id_edit = NodePath("VBoxContainer/ID_Label2/ID_Line")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NAME_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "NAME:"
+vertical_alignment = 1
+
+[node name="NAME_Line" type="LineEdit" parent="VBoxContainer/NAME_Label" groups=["line_edits"]]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="COUNTRY_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "COUNTRY: "
+vertical_alignment = 1
+
+[node name="COUNTRY_Line" type="LineEdit" parent="VBoxContainer/COUNTRY_Label" groups=["line_edits"]]
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="DATES_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "DATE(S):"
+vertical_alignment = 1
+
+[node name="DATES_Line" type="LineEdit" parent="VBoxContainer/DATES_Label" groups=["line_edits"]]
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="INFO_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INFO:"
+vertical_alignment = 1
+
+[node name="INFO_Line" type="LineEdit" parent="VBoxContainer/INFO_Label" groups=["line_edits"]]
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="ID_Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "ID:"
+vertical_alignment = 1
+
+[node name="ID_Line" type="LineEdit" parent="VBoxContainer/ID_Label2" groups=["line_edits"]]
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PORTRAIT" type="TextureRect" parent="VBoxContainer/HBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 337)
+layout_mode = 2
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="IMAGE1" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 141)
+layout_mode = 2
+expand_mode = 1
+
+[node name="IMAGE2" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 141)
+layout_mode = 2
+expand_mode = 1
+
+[node name="IMAGE3" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 141)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 42.0
+offset_right = 635.0
+offset_bottom = 92.0
+text = "SUBMIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
