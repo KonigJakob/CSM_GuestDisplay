@@ -9,6 +9,8 @@ var birth : String
 var famous_for : String
 var image_1 : String
 var image_2 : String
+var image_3 : String
+var portrait : String
 
 var shown : bool = false
 var portrait_panel
@@ -35,10 +37,8 @@ func _on_button_pressed():
 
 func update_guest_info() -> void:
 	$Button/VBoxContainer/PortraitName.text = guest_name
-	$Button/VBoxContainer/TextureRect.texture = load(image_1)
+	$Button/VBoxContainer/TextureRect.texture = SaveSystem.guest_image_as_texture(image_1)
 	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Name.text = guest_name
 	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Country.text = country
 	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Birth.text = birth
 	$Button/InfoPanel/VBoxContainer/MarginContainer2/VBoxContainer/Info.text = famous_for
-	#$Button/InfoPanel/VBoxContainer/MarginContainer/HBoxContainer/Image_1.texture = load(SaveSystem.guest_images_folder_path + guest_id + "1")
-	#$Button/InfoPanel/VBoxContainer/MarginContainer/HBoxContainer/Image_1.texture = load(SaveSystem.guest_images_folder_path + guest_id + "2")

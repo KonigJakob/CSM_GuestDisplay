@@ -141,7 +141,7 @@ func _on_button_home_pressed():
 func _on_button_submit_pressed():
 	poll_data = {"Date" : date, "Satisfaction": satisfaction_button, 
 	"Age Group" : age_group_button, "Language" : language, "Message" : message}
-	JSON_string = JSON.stringify(poll_data)
+	JSON_string = JSON.stringify(poll_data, "\t")
 	SaveSystem.save(JSON_string)
 	add_child(promt_panel)
 	promt_panel.global_position = Vector2.ZERO

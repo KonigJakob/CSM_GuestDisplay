@@ -6,6 +6,8 @@ var date : String
 
 var guest_data_filepath : String = "user://FamousGuests_Resources/famous_guests.json"
 var guest_images_folder_path : String = "user://FamousGuests_Resources/Images/"
+var placeholder_image : String = "res://Assets/Textures/images.jpeg"
+var number_of_guests : int
 
 func _process(_delta):
 	if Input.is_action_pressed("exit"):
@@ -50,9 +52,9 @@ func load_guest_data():
 	else:
 		print("File does not exist!")
 
-func load_images_from_folder(path) -> Array:
+func load_images_from_folder(folder_path : String, file_paths : bool) -> Array:
 	var loaded_images = []
-	var dir = DirAccess.open(path)
+	var dir = DirAccess.open(folder_path)
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
@@ -61,17 +63,20 @@ func load_images_from_folder(path) -> Array:
 				print("Found directory: " + file_name)
 			else:
 				print("Found file: " + file_name)
-				var ext = file_name.get_extension()
-				if ext == "png" || "jpg" || "webp":
-					var image = Image.new()
-					var error = image.load("user://FamousGuests_Resources/Images/" + file_name)
-					if error:
-						print("Couldn't load image.")
-					else:
-						var image_texture = ImageTexture.create_from_image(image)
-						loaded_images.append(image_texture)
-				else: 
-					print("No images found.")
+				if file_paths:
+					loaded_images.append("user://FamousGuests_Resources/Images/" + file_name)
+				else:
+					var ext = file_name.get_extension()
+					if ext == "png" || "jpg" || "webp":
+						var image = Image.new()
+						var error = image.load("user://FamousGuests_Resources/Images/" + file_name)
+						if error:
+							print("Couldn't load image.")
+						else:
+							loaded_images.append(error)
+							print(loaded_images)
+					else: 
+						print("No images found.")
 			file_name = dir.get_next()
 		dir.list_dir_end()
 	else:
@@ -87,6 +92,7 @@ func load_guest():
 			var saved_data = json.data
 			if typeof(saved_data) == TYPE_DICTIONARY:
 				#print(saved_data) # Prints dictionary
+				number_of_guests = saved_data.size()
 				return(saved_data)
 			else:
 				print("Unexpected data")
@@ -94,7 +100,7 @@ func load_guest():
 			print("JSON Parse Error: ", json.get_error_message(), " in ", file.get_as_text(), " at line ", json.get_error_line())
 	else:
 		print("File does not exist!")
-	
+
 func save_on_exit():
 	var dummy_data = "{\"Dummy\": \"dummy\"}"
 	var file = FileAccess.open(save_data_filepath, FileAccess.READ_WRITE)
@@ -104,13 +110,56 @@ func save_on_exit():
 	print(file.get_path_absolute())
 	file = null
 
-func add_guest(guest_info : Array):
-	var file = FileAccess.open(guest_data_filepath, FileAccess.READ_WRITE)
-	file.seek_end()
-	#Remove or go to line before closing brackets
-	for g in guest_info:
-		file.store_string("{\"" + guest_info[0] + "\": \"")
-		file.store_string(g)
-	file.store_string("]}]")
-	print(file.get_path_absolute())
-	file = null
+func add_guest(guest_info : String):
+	if FileAccess.file_exists(guest_data_filepath):
+		var file = FileAccess.open(guest_data_filepath, FileAccess.READ_WRITE)
+		file.seek_end(-2)
+		file.store_string(",")
+		print(guest_info)
+		var guest_info_trimmed = guest_info.trim_prefix("{").trim_suffix("}")
+		file.store_string(guest_info_trimmed)
+		file.store_string("}")
+		file = null
+	else:
+		print("Guest file does not exist!")
+
+func assign_images(guests : Dictionary) -> Dictionary:
+	var guest_images = load_images_from_folder(guest_images_folder_path, true)
+	for g in guests:
+			for i in guest_images:
+				var i_trimmed = i.get_file()
+				if guests[g]["GuestID"] in i_trimmed:
+					if "1" in i_trimmed:
+						guests[g]["Image 1"] = i
+						print("Image found: " + i)
+					else:
+						guests[g]["Image 1"] = placeholder_image
+						print("Image 1 for " + guests[g]["GuestID"] + " not found.")
+					if "2" in i_trimmed:
+						guests[g]["Image 2"] = i
+					else:
+						guests[g]["Image 2"] = placeholder_image
+						print("Image 2 for " + guests[g]["GuestID"] + " not found.")
+					if "3" in i_trimmed:
+						guests[g]["Image 3"] = i
+					else:
+						guests[g]["Image 3"] = placeholder_image
+						print("Image 3 for " + guests[g]["GuestID"] + " not found.")
+					if "PORTRAIT" in i_trimmed:
+						guests[g]["Portrait"] = i
+					else:
+						guests[g]["Portrait"] = placeholder_image
+						print("Portrait for " + guests[g]["GuestID"] + " not found.")
+				else:
+					print("No images found for " + guests[g]["GuestID"])
+	return guests
+
+func guest_image_as_texture(path : String) -> ImageTexture:
+	var image = Image.new()
+	var loaded_texture
+	var error = image.load(path)
+	if error:
+		print("Couldn't load image. " + path)
+	else:
+		loaded_texture = ImageTexture.create_from_image(image)
+	return loaded_texture
