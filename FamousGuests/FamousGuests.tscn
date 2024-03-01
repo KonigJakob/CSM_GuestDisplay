@@ -50,8 +50,8 @@ max_wait_time = 0.2
 layout_mode = 0
 offset_left = 198.0
 offset_top = 399.0
-offset_right = 539.0
-offset_bottom = 874.0
+offset_right = 558.0
+offset_bottom = 897.0
 
 [node name="Button_LeftArrow" type="Button" parent="."]
 custom_minimum_size = Vector2(150, 0)

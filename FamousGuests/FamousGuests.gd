@@ -30,13 +30,13 @@ func set_ui_elements_transform():
 	right_arrow.position.x = get_viewport_rect().size.x - right_arrow.size.x - 35
 	
 func load_guests() -> Array:
-	var guests_w_images
+	#var guests_w_images
 	var loaded_guests = []
 	#Load guests info, instantiate the scenes and save them in an array
 	if SaveSystem.load_guest():
 		guests = SaveSystem.load_guest()
-		guests_w_images = SaveSystem.assign_images(guests)
-		for g in guests_w_images:
+		#guests_w_images = SaveSystem.assign_images(guests)
+		for g in guests:
 			var _guest_portrait = guest_portrait.instantiate()
 			_guest_portrait.guest_name = guests[g]["Name"]
 			_guest_portrait.country = guests[g]["Country"]

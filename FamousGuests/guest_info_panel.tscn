@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl8lffvjrwol6"]
+[gd_scene load_steps=8 format=3 uid="uid://dl8lffvjrwol6"]
 
-[ext_resource type="Texture2D" uid="uid://d4hxuftrmuqx6" path="res://Assets/Textures/images (2).jpeg" id="1_ajcbw"]
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="2_n80u1"]
 
 [sub_resource type="GDScript" id="GDScript_av1n2"]
@@ -122,7 +121,6 @@ size_flags_vertical = 3
 [node name="Image_1" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_ajcbw")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
@@ -134,21 +132,18 @@ size_flags_stretch_ratio = 0.57
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("1_ajcbw")
 expand_mode = 1
 
 [node name="Image_3" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("1_ajcbw")
 expand_mode = 1
 
 [node name="Image_4" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("1_ajcbw")
 expand_mode = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]

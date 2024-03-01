@@ -6,7 +6,7 @@ var date : String
 
 var guest_data_filepath : String = "user://FamousGuests_Resources/famous_guests.json"
 var guest_images_folder_path : String = "user://FamousGuests_Resources/Images/"
-var placeholder_image : String = "res://Assets/Textures/images.jpeg"
+var placeholder_image : String = "res://Assets/Textures/no_image.jpg"
 var number_of_guests : int
 
 func _process(_delta):
@@ -126,32 +126,34 @@ func add_guest(guest_info : String):
 func assign_images(guests : Dictionary) -> Dictionary:
 	var guest_images = load_images_from_folder(guest_images_folder_path, true)
 	for g in guests:
-			for i in guest_images:
-				var i_trimmed = i.get_file()
-				if guests[g]["GuestID"] in i_trimmed:
-					if "1" in i_trimmed:
-						guests[g]["Image 1"] = i
-						print("Image found: " + i)
-					else:
-						guests[g]["Image 1"] = placeholder_image
-						print("Image 1 for " + guests[g]["GuestID"] + " not found.")
-					if "2" in i_trimmed:
-						guests[g]["Image 2"] = i
-					else:
-						guests[g]["Image 2"] = placeholder_image
-						print("Image 2 for " + guests[g]["GuestID"] + " not found.")
-					if "3" in i_trimmed:
-						guests[g]["Image 3"] = i
-					else:
-						guests[g]["Image 3"] = placeholder_image
-						print("Image 3 for " + guests[g]["GuestID"] + " not found.")
-					if "PORTRAIT" in i_trimmed:
-						guests[g]["Portrait"] = i
-					else:
-						guests[g]["Portrait"] = placeholder_image
-						print("Portrait for " + guests[g]["GuestID"] + " not found.")
+		print("Guest: " + g)
+		for i in guest_images:
+			var i_trimmed = i.get_file()
+			if guests[g]["GuestID"] in i_trimmed:
+				if "1" in i_trimmed:
+					guests[g]["Image 1"] = i
+					print("Image found: " + i)
 				else:
-					print("No images found for " + guests[g]["GuestID"])
+					guests[g]["Image 1"] = placeholder_image
+					print("Image 1 for " + guests[g]["GuestID"] + " not found.")
+				if "2" in i_trimmed:
+					guests[g]["Image 2"] = i
+				else:
+					guests[g]["Image 2"] = placeholder_image
+					print("Image 2 for " + guests[g]["GuestID"] + " not found.")
+				if "3" in i_trimmed:
+					guests[g]["Image 3"] = i
+				else:
+					guests[g]["Image 3"] = placeholder_image
+					print("Image 3 for " + guests[g]["GuestID"] + " not found.")
+				if "PORTRAIT" in i_trimmed:
+					guests[g]["Portrait"] = i
+				else:
+					guests[g]["Portrait"] = placeholder_image
+					print("Portrait for " + guests[g]["GuestID"] + " not found.")
+			else:
+				print("No images found for " + guests[g]["GuestID"])
+				continue
 	return guests
 
 func guest_image_as_texture(path : String) -> ImageTexture:

@@ -33,11 +33,11 @@ func signal_connect():
 		le.text_changed.connect(_on_text_changed_id.bind(le))
 
 func on_files_dropped(files):
+	print("Portrait: ", portrait, "|Image: ", other_image)
 	if portrait || other_image:
 		var ext = files[0].get_extension()
 		var file_name = files[0].get_file()
 		if ext == "png" || "jpg" || "webp":
-			print("File is an image")
 			if portrait:
 				var image = Image.new()
 				image.load(files[0])
@@ -71,19 +71,23 @@ func _on_portrait_rect_mouse_exited():
 	print(portrait)
 
 func _on_mouse_entered_id(rect):
-	print("Entered: ", rect)
+	#print("Entered: ", rect)
 	current_rect = rect
 	if rect.name.contains("IMAGE"):
 		other_image = true
+		print("Entered.")
 	elif rect.name.contains("PORTRAIT"):
 		portrait = true
+		print("Entered.")
 func _on_mouse_exited_id(rect):
-	print("Exited: ", rect)
+	#print("Exited: ", rect)
 	current_rect = null
 	if rect.name.contains("IMAGE"):
+		print("Exited.")
 		other_image = false
 	elif rect.name.contains("PORTRAIT"):
 		portrait = false
+		print("Exited.")
 
 func _on_text_changed_id(new_text : String, line):
 	print("Text changed")
