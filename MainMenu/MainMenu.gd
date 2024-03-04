@@ -1,5 +1,10 @@
 extends Control
 
+@export var localization_buttons : HBoxContainer
+
+func _ready():
+	localization_buttons.position.x = get_viewport_rect().size.x - localization_buttons.size.x - 35
+
 func _on_button_famous_guests_pressed():
 	SceneManager.target_scene = "res://FamousGuests/FamousGuests.tscn"
 	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")

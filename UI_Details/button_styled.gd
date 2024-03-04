@@ -9,10 +9,13 @@ signal child_button_pressed
 @export var button_size : Vector2
 @export var button_toggle_mode : bool = true
 @export var button_pressed : bool = false
+@export var home_icon : bool = false
 
 var button_pos
 
 func _ready():
+	if !home_icon:
+		$Button.icon = null
 	$Button/CenterContainer/Label.text = button_text
 	$Shadow.size = button_size
 	$Button.size = button_size

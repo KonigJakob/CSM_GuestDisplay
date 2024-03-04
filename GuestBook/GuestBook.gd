@@ -23,6 +23,7 @@ enum PollPage {
 @export var tween_wait_interval: float
 @export var tween_movement_interval: float
 @export var submit_button: button_syled
+@export var logo_rect : TextureRect
 
 @export var panels : HBoxContainer
 
@@ -34,7 +35,9 @@ enum PollPage {
 
 @export var Age_Child: button_syled
 @export var Age_Teen: button_syled
+@export var Age_YoungAdult : button_syled
 @export var Age_Adult: button_syled
+@export var Age_MidAged : button_syled
 @export var Age_Senior: button_syled
 
 @export var lock_rect: ColorRect
@@ -44,6 +47,7 @@ var text_changed : bool  = false
 var keep_visible : bool = false
 
 func _ready():
+	set_up_ui_elements()
 	satisfaction_button = 0
 	age_group_button = 0
 	age_buttons = get_tree().get_nodes_in_group("age_buttons")
@@ -51,6 +55,11 @@ func _ready():
 	remove_child(promt_panel)
 	stars = get_tree().get_nodes_in_group("star_buttons")
 	update_page_buttons()
+
+func set_up_ui_elements():
+	logo_rect.position = Vector2(get_viewport_rect().size.x - logo_rect.size.x - 35, 35)
+	back_button.position.y = panels.position.y + panels.size.y + 75
+	submit_button.position.y = panels.position.y - submit_button.size.y
 
 func _on_star_1_pressed():
 	satisfaction_button = 1
@@ -94,12 +103,22 @@ func _on_button_teen_pressed():
 	tween_forward()
 	keep_button_pressed(Age_Teen)
 func _on_button_adult_pressed():
-	age_group_button = 3
+	age_group_button = 4
 	unpress_buttons(Age_Adult)
 	tween_forward()
 	keep_button_pressed(Age_Adult)
+func _on_button_young_adult_pressed():
+	age_group_button = 3
+	unpress_buttons(Age_YoungAdult)
+	tween_forward()
+	keep_button_pressed(Age_YoungAdult)
+func _on_button_mid_aged_pressed():
+	age_group_button = 5
+	unpress_buttons(Age_MidAged)
+	tween_forward()
+	keep_button_pressed(Age_MidAged)
 func _on_button_senior_pressed():
-	age_group_button = 4
+	age_group_button = 6
 	unpress_buttons(Age_Senior)
 	tween_forward()
 	keep_button_pressed(Age_Senior)
@@ -144,6 +163,7 @@ func _on_button_submit_pressed():
 	JSON_string = JSON.stringify(poll_data, "\t")
 	SaveSystem.save(JSON_string)
 	add_child(promt_panel)
+	tween_visibility(promt_panel)
 	promt_panel.global_position = Vector2.ZERO
 
 func move_page_forward():

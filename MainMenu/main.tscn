@@ -27,7 +27,7 @@ LineEdit/fonts/font = SubResource("FontFile_wriq0")
 
 [node name="Main" type="Node"]
 
-[node name="MainMenu" type="Control" parent="."]
+[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("localization_buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,12 +36,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_7lbj6")
 script = ExtResource("1_c0ywe")
+localization_buttons = NodePath("../Localization_Buttons")
 
 [node name="ColorRect" type="ColorRect" parent="MainMenu"]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 1275.0
 theme = SubResource("Theme_wipqd")
+color = Color(0, 0.498039, 0.552941, 1)
 
 [node name="GridContainer" type="GridContainer" parent="MainMenu"]
 layout_mode = 1
@@ -181,38 +183,47 @@ theme_override_font_sizes/font_size = 63
 text = "Guest Book"
 expand_icon = true
 
-[node name="Translation_DE" parent="MainMenu" instance=ExtResource("3_vk3j7")]
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 1
-offset_left = 530.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.22
+offset_left = 143.0
+offset_top = 97.0
+offset_right = 1199.0
+offset_bottom = 288.4
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_y8i78")
+
+[node name="Localization_Buttons" type="HBoxContainer" parent="."]
+offset_left = 408.0
 offset_top = 1120.0
-offset_right = -115.0
-offset_bottom = -85.0
+offset_right = 573.0
+offset_bottom = 1195.0
+theme_override_constants/separation = 15
+
+[node name="Translation_DE" parent="Localization_Buttons" instance=ExtResource("3_vk3j7")]
+z_index = 3
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
 button_color = Color(1, 1, 1, 1)
 button_text = "De"
 button_size = Vector2(75, 75)
 button_toggle_mode = false
 
-[node name="Translation_EN" parent="MainMenu" instance=ExtResource("3_vk3j7")]
-layout_mode = 1
-offset_left = 615.0
-offset_top = 1120.0
-offset_right = -30.0
-offset_bottom = -85.0
+[node name="Translation_EN" parent="Localization_Buttons" instance=ExtResource("3_vk3j7")]
+z_index = 3
+z_as_relative = false
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
 button_color = Color(1, 1, 1, 1)
 button_text = "En"
 button_size = Vector2(75, 75)
 button_toggle_mode = false
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 137.0
-offset_top = 121.0
-offset_right = 1913.0
-offset_bottom = 594.0
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_y8i78")
-expand_mode = 1
-
 [connection signal="pressed" from="MainMenu/Button_FamousGuests" to="MainMenu" method="_on_button_famous_guests_pressed"]
 [connection signal="pressed" from="MainMenu/Button_GuestBook" to="MainMenu" method="_on_button_guest_book_pressed"]
-[connection signal="child_button_pressed" from="MainMenu/Translation_DE" to="MainMenu" method="_on_translation_de_child_button_pressed"]
-[connection signal="child_button_pressed" from="MainMenu/Translation_EN" to="MainMenu" method="_on_translation_en_child_button_pressed"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_DE" to="MainMenu" method="_on_translation_de_child_button_pressed"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_EN" to="MainMenu" method="_on_translation_en_child_button_pressed"]

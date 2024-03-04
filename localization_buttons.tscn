@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtv3ofagdt7lu"]
+
+[ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="1_62daa"]
+
+[node name="Localization_Buttons" type="HBoxContainer"]
+offset_left = 408.0
+offset_top = 1120.0
+offset_right = 573.0
+offset_bottom = 1195.0
+theme_override_constants/separation = 15
+
+[node name="Translation_DE" parent="." instance=ExtResource("1_62daa")]
+z_index = 3
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(1, 1, 1, 1)
+button_text = "De"
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+
+[node name="Translation_EN" parent="." instance=ExtResource("1_62daa")]
+z_index = 3
+z_as_relative = false
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(1, 1, 1, 1)
+button_text = "En"
+button_size = Vector2(75, 75)
+button_toggle_mode = false

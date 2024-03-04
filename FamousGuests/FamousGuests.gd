@@ -5,18 +5,22 @@ var guests = []
 var visible_guests = []
 var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 
+var viewport
+
 @export var input_lock_rect : ColorRect
 @export var portrait_position_start : Vector2
 @export var portrait_gutter: float
 
 @export var portrait_panel : Panel
-@export var left_arrow : Button
-@export var right_arrow : Button 
+@export var left_arrow : button_syled
+@export var right_arrow : button_syled
+@export var localization_buttons : HBoxContainer
 
 var right_clicks : int
 var left_clicks : int
 
 func _ready():
+	viewport = get_viewport_rect().size
 	guests = load_guests()
 	set_guest_positions(guests, portrait_panel)
 	set_ui_elements_transform()
@@ -24,10 +28,12 @@ func _ready():
 	left_clicks = guests.size() -1
 
 func set_ui_elements_transform():
-	portrait_panel.position = get_viewport_rect().size / 2 - (portrait_panel.size / 2)
+	portrait_panel.position = viewport / 2 - (portrait_panel.size / 2)
 	left_arrow.position.y = portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y * 1.5
+	left_arrow.position.x = 35
 	right_arrow.position.y = left_arrow.position.y
-	right_arrow.position.x = get_viewport_rect().size.x - right_arrow.size.x - 35
+	right_arrow.position.x = viewport.x - right_arrow.size.x - 35
+	localization_buttons.position.x = viewport.x - localization_buttons.size.x - 35
 	
 func load_guests() -> Array:
 	#var guests_w_images
@@ -75,7 +81,7 @@ func _on_button_home_pressed():
 
 func _on_button_left_arrow_pressed():
 	if right_clicks > 0:
-		left_arrow.disabled = true
+		left_arrow.get_node("Button").disabled = true
 		tween = get_tree().create_tween().set_parallel(true)
 		tween.finished.connect(on_tween_finished)
 		input_lock_rect.visible = true
@@ -86,7 +92,7 @@ func _on_button_left_arrow_pressed():
 
 func _on_button_right_arrow_pressed():
 	if left_clicks > 0:
-		right_arrow.disabled = true
+		right_arrow.get_node("Button").disabled = true
 		tween = get_tree().create_tween().set_parallel(true)
 		input_lock_rect.visible = true
 		tween.finished.connect(on_tween_finished)
@@ -96,8 +102,8 @@ func _on_button_right_arrow_pressed():
 		left_clicks -= 1
 		
 func on_tween_finished():
-	left_arrow.disabled = false
-	right_arrow.disabled = false
+	left_arrow.get_node("Button").disabled = false
+	right_arrow.get_node("Button").disabled = false
 	input_lock_rect.visible = false
 
 func _on_translation_de_child_button_pressed():
