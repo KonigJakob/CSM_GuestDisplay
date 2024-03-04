@@ -12,9 +12,6 @@ func _ready():
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 
-func _process(delta):
-	print(timer.time_left)
-
 func _input(event):
 	if event.is_pressed():
 		timer.start()
