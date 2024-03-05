@@ -8,6 +8,7 @@ var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 var viewport
 
 @export var input_lock_rect : ColorRect
+@export var panel_input_lock : ColorRect
 @export var portrait_position_start : Vector2
 @export var portrait_gutter: float
 
@@ -53,8 +54,10 @@ func load_guests() -> Array:
 			_guest_portrait.image_3 = guests[g]["Image 3"]
 			_guest_portrait.portrait = guests[g]["Portrait"]
 			_guest_portrait.update_guest_info()
+			_guest_portrait.info_panel_changed.connect(_on_info_panel_changed)
 			loaded_guests.append(_guest_portrait)
 			SaveSystem.number_of_guests += 1
+			
 	else: 
 		print("Couldn't load guests.")
 	return loaded_guests
@@ -111,4 +114,10 @@ func _on_translation_de_child_button_pressed():
 
 func _on_translation_en_child_button_pressed():
 	SceneManager.set_language("en")
+	
+func _on_info_panel_changed(_value):
+	if panel_input_lock.visible == true:
+		panel_input_lock.visible = false
+	else:
+		panel_input_lock.visible = true
 

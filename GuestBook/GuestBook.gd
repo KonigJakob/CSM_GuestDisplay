@@ -55,6 +55,7 @@ func _ready():
 	remove_child(promt_panel)
 	stars = get_tree().get_nodes_in_group("star_buttons")
 	update_page_buttons()
+	submit_button.modulate.a = 0
 
 func set_up_ui_elements():
 	logo_rect.position = Vector2(get_viewport_rect().size.x - logo_rect.size.x - 35, 35)
@@ -142,7 +143,6 @@ func _on_text_changed(new_text):
 	message = new_text
 	if !text_changed:
 		text_changed = true
-		submit_button.visible = true
 		tween_visibility(submit_button)
 
 func _on_button_no_pressed():
@@ -195,7 +195,6 @@ func update_page_buttons():
 	match current_page: 
 		PollPage.STARS:
 			tween_visibility(back_button)
-			tween_visibility(submit_button)
 			keep_visible = false
 		PollPage.AGE:
 			back_button.visible = true

@@ -67,7 +67,7 @@ func load_images_from_folder(folder_path : String, file_paths : bool) -> Array:
 					loaded_images.append("user://FamousGuests_Resources/Images/" + file_name)
 				else:
 					var ext = file_name.get_extension()
-					if ext == "png" || "jpg" || "webp":
+					if ext == "png" || "jpg" || "webp" || "jpeg":
 						var image = Image.new()
 						var error = image.load("user://FamousGuests_Resources/Images/" + file_name)
 						if error:
@@ -161,7 +161,7 @@ func guest_image_as_texture(path : String) -> ImageTexture:
 	var loaded_texture
 	var error = image.load(path)
 	if error:
-		print("Couldn't load image. " + path)
+		print("Couldn't load image: " + path)
 	else:
 		loaded_texture = ImageTexture.create_from_image(image)
 	return loaded_texture
