@@ -16,9 +16,11 @@ var viewport
 @export var left_arrow : button_syled
 @export var right_arrow : button_syled
 @export var localization_buttons : HBoxContainer
+@export var timer : Timer
 
 var right_clicks : int
 var left_clicks : int
+var move_right : bool
 
 func _ready():
 	viewport = get_viewport_rect().size
@@ -27,6 +29,10 @@ func _ready():
 	set_ui_elements_transform()
 	right_clicks = 0
 	left_clicks = guests.size() -1
+
+func _input(event):
+	if event is InputEventMouseButton:
+		timer.start(timer.wait_time)
 
 func set_ui_elements_transform():
 	portrait_panel.position = viewport / 2 - (portrait_panel.size / 2)
@@ -121,3 +127,28 @@ func _on_info_panel_changed(_value):
 	else:
 		panel_input_lock.visible = true
 
+func _on_timer_timeout():
+	if move_right:
+		if left_clicks > 0:
+			right_arrow.get_node("Button").disabled = true
+			tween = get_tree().create_tween().set_parallel(true)
+			input_lock_rect.visible = true
+			tween.finished.connect(on_tween_finished)
+			for g in guests:
+				move_guests_right(g)
+			right_clicks += 1
+			left_clicks -= 1
+		else:
+			move_right = false
+	else:
+		if right_clicks > 0:
+			left_arrow.get_node("Button").disabled = true
+			tween = get_tree().create_tween().set_parallel(true)
+			tween.finished.connect(on_tween_finished)
+			input_lock_rect.visible = true
+			for g in guests:
+				move_guests_left(g)
+			right_clicks -= 1
+			left_clicks += 1
+		else:
+			move_right = true
