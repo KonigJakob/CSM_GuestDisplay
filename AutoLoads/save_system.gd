@@ -159,9 +159,11 @@ func assign_images(guests : Dictionary) -> Dictionary:
 func guest_image_as_texture(path : String) -> ImageTexture:
 	var image = Image.new()
 	var loaded_texture
-	var error = image.load(path)
-	if error:
-		print("Couldn't load image: " + path)
-	else:
-		loaded_texture = ImageTexture.create_from_image(image)
+	if path.is_absolute_path():
+		var error = image.load(path)
+		if error:
+			print("Couldn't load image: " + path)
+			print(error)
+		else:
+			loaded_texture = ImageTexture.create_from_image(image)
 	return loaded_texture

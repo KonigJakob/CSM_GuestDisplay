@@ -9,13 +9,14 @@ var viewport
 
 @export var input_lock_rect : ColorRect
 @export var panel_input_lock : ColorRect
-@export var portrait_position_start : Vector2
 @export var portrait_gutter: float
 
 @export var portrait_panel : Panel
 @export var left_arrow : button_syled
 @export var right_arrow : button_syled
 @export var localization_buttons : HBoxContainer
+@export var home_button: button_syled
+@export var logo
 @export var timer : Timer
 
 var right_clicks : int
@@ -32,15 +33,16 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
+		print("restart timer")
 		timer.start(timer.wait_time)
 
 func set_ui_elements_transform():
 	portrait_panel.position = viewport / 2 - (portrait_panel.size / 2)
-	left_arrow.position.y = portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y * 1.5
-	left_arrow.position.x = 35
-	right_arrow.position.y = left_arrow.position.y
-	right_arrow.position.x = viewport.x - right_arrow.size.x - 35
-	localization_buttons.position.x = viewport.x - localization_buttons.size.x - 35
+	left_arrow.position = Vector2(35, portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y * 1.5)
+	right_arrow.position = Vector2(viewport.x - right_arrow.size.x - 35, left_arrow.position.y)
+	localization_buttons.position = Vector2(viewport.x - localization_buttons.size.x - 35, viewport.y - localization_buttons.size.y - 35)
+	home_button.position = Vector2(35, viewport.y - home_button.size.y - 35)
+	logo.position = Vector2(get_viewport_rect().size.x/2 - logo.size.x/2, 100)
 	
 func load_guests() -> Array:
 	#var guests_w_images
@@ -122,12 +124,17 @@ func _on_translation_en_child_button_pressed():
 	SceneManager.set_language("en")
 	
 func _on_info_panel_changed(_value):
+	if _value:
+		timer.stop()
+	else:
+		timer.start(timer.wait_time)
 	if panel_input_lock.visible == true:
 		panel_input_lock.visible = false
 	else:
 		panel_input_lock.visible = true
 
 func _on_timer_timeout():
+	pass
 	if move_right:
 		if left_clicks > 0:
 			right_arrow.get_node("Button").disabled = true

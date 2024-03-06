@@ -24,6 +24,8 @@ enum PollPage {
 @export var tween_movement_interval: float
 @export var submit_button: button_syled
 @export var logo_rect : TextureRect
+@export var button_home : button_syled
+@export var localization_buttons : HBoxContainer
 
 @export var panels : HBoxContainer
 
@@ -58,9 +60,11 @@ func _ready():
 	submit_button.modulate.a = 0
 
 func set_up_ui_elements():
-	logo_rect.position = Vector2(get_viewport_rect().size.x - logo_rect.size.x - 35, 35)
-	back_button.position.y = panels.position.y + panels.size.y + 75
-	submit_button.position.y = panels.position.y - submit_button.size.y
+	logo_rect.position = Vector2(get_viewport_rect().size.x/2 - logo_rect.size.x/2, 100)
+	back_button.position = Vector2(panels.position.x, panels.position.y + panels.size.y + 75)
+	submit_button.position = Vector2(get_viewport_rect().size.x - submit_button.size.x - 200, panels.position.y - submit_button.size.y)
+	localization_buttons.position = Vector2(get_viewport_rect().size.x - localization_buttons.size.x - 35, get_viewport_rect().size.y - localization_buttons.size.y - 35)
+	button_home.position = Vector2(35, get_viewport_rect().size.y - button_home.size.y - 35)
 
 func _on_star_1_pressed():
 	satisfaction_button = 1
@@ -171,7 +175,7 @@ func move_page_forward():
 	var tween = get_tree().create_tween()
 	lock_rect.visible = true
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
-	tween.tween_property(panels, "position", Vector2(panels.position.x - panel_size.x, panels.position.y),tween_movement_interval)
+	tween.tween_property(panels, "position", Vector2(panels.position.x - panel_size.x - 75, panels.position.y),tween_movement_interval)
 	current_page += 1
 	update_page_buttons()
 	tween.finished.connect(on_tween_finished)
@@ -180,7 +184,7 @@ func move_page_backwards():
 	var tween = get_tree().create_tween()
 	lock_rect.visible = true
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
-	tween.tween_property(panels, "position", Vector2(panels.position.x + panel_size.x, panels.position.y),tween_movement_interval)
+	tween.tween_property(panels, "position", Vector2(panels.position.x + panel_size.x + 75, panels.position.y),tween_movement_interval)
 	current_page -= 1
 	update_page_buttons()
 	tween.finished.connect(on_tween_finished)

@@ -2,8 +2,9 @@ extends Control
 
 var loading_status : int
 var progress : Array[float]
+@export var logo : TextureRect
 
-@onready var progress_bar : ProgressBar = $ProgressBar
+@onready var progress_bar : TextureProgressBar = $TextureProgressBar
 
 func _ready():
 	SceneManager.target_scene_changed.connect(on_target_scene_changed)
@@ -16,6 +17,7 @@ func _process(_delta):
 		match loading_status:
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 				progress_bar.value = progress[0] * 100
+				
 			ResourceLoader.THREAD_LOAD_LOADED:
 				get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(SceneManager.target_scene))
 			ResourceLoader.THREAD_LOAD_FAILED:

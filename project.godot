@@ -22,8 +22,8 @@ SceneManager="*res://AutoLoads/SceneManager.gd"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=1280
+window/size/viewport_width=1080
+window/size/viewport_height=1920
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 
