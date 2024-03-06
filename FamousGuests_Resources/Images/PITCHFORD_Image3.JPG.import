@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k64t8qvg67ea"
-path="res://.godot/imported/PITCHFORD_Image3.JPG-6a5210138d4c81d7d2ab956090ed1f02.ctex"
+uid="uid://cy8ij7eh27bo5"
+path="res://.godot/imported/PITCHFORD_Image3.jpg-52b152490e38fe927293cc14c97430c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FamousGuests_Resources/Images/PITCHFORD_Image3.JPG"
-dest_files=["res://.godot/imported/PITCHFORD_Image3.JPG-6a5210138d4c81d7d2ab956090ed1f02.ctex"]
+source_file="res://FamousGuests_Resources/Images/PITCHFORD_Image3.jpg"
+dest_files=["res://.godot/imported/PITCHFORD_Image3.jpg-52b152490e38fe927293cc14c97430c4.ctex"]
 
 [params]
 

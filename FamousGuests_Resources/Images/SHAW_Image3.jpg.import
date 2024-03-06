@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5pc10khdmhnd"
-path="res://.godot/imported/BAER_Portraitjpg.jpg-11a7fa11fc49705bad076decce38ffee.ctex"
+uid="uid://ca5ktgo3ah4jd"
+path="res://.godot/imported/SHAW_Image3.jpg-67cf56476772070b70b87347f6414a52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FamousGuests_Resources/Images/BAER_Portraitjpg.jpg"
-dest_files=["res://.godot/imported/BAER_Portraitjpg.jpg-11a7fa11fc49705bad076decce38ffee.ctex"]
+source_file="res://FamousGuests_Resources/Images/SHAW_Image3.jpg"
+dest_files=["res://.godot/imported/SHAW_Image3.jpg-67cf56476772070b70b87347f6414a52.ctex"]
 
 [params]
 

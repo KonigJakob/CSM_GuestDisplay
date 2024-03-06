@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do6qjbtkptc02"
-path="res://.godot/imported/FRIES_Portrait.jpeg-688d002d49ecff9e4c7c3b2ce1205c9b.ctex"
+uid="uid://dg3gk4vdsyerg"
+path="res://.godot/imported/KOJIMA_Image1.jpg-37167c5239c6a8268f3b226bf29609e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FamousGuests_Resources/Images/FRIES_Portrait.jpeg"
-dest_files=["res://.godot/imported/FRIES_Portrait.jpeg-688d002d49ecff9e4c7c3b2ce1205c9b.ctex"]
+source_file="res://FamousGuests_Resources/Images/KOJIMA_Image1.jpg"
+dest_files=["res://.godot/imported/KOJIMA_Image1.jpg-37167c5239c6a8268f3b226bf29609e8.ctex"]
 
 [params]
 

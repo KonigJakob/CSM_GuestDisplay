@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxykf0tc61h01"
-path="res://.godot/imported/WOZNIAK_Image1.JPG-c5227e7e50f7c8dceebfd087f9a0e30c.ctex"
+uid="uid://bqu5xpkrawils"
+path="res://.godot/imported/WOZNIAK_Image1.jpg-6deb95e14bd812c1492446f85081f49c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FamousGuests_Resources/Images/WOZNIAK_Image1.JPG"
-dest_files=["res://.godot/imported/WOZNIAK_Image1.JPG-c5227e7e50f7c8dceebfd087f9a0e30c.ctex"]
+source_file="res://FamousGuests_Resources/Images/WOZNIAK_Image1.jpg"
+dest_files=["res://.godot/imported/WOZNIAK_Image1.jpg-6deb95e14bd812c1492446f85081f49c.ctex"]
 
 [params]
 

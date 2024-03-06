@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clytxlldbyuhj"
-path="res://.godot/imported/LIVINGSTONE_Image.jpg-5ceba72f846b22660ccdcb84361a7379.ctex"
+uid="uid://cu4r0rrtmleqe"
+path="res://.godot/imported/BROMERO_Portrait.jpg-f84af4fa52936938da50474e7cebbb1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FamousGuests_Resources/Images/LIVINGSTONE_Image.jpg"
-dest_files=["res://.godot/imported/LIVINGSTONE_Image.jpg-5ceba72f846b22660ccdcb84361a7379.ctex"]
+source_file="res://FamousGuests_Resources/Images/BROMERO_Portrait.jpg"
+dest_files=["res://.godot/imported/BROMERO_Portrait.jpg-f84af4fa52936938da50474e7cebbb1c.ctex"]
 
 [params]
 
