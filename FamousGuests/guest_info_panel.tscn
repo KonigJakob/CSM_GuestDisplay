@@ -79,7 +79,7 @@ func _on_back_button_child_button_pressed():
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1iba"]
-bg_color = Color(0.410717, 0.330895, 0.73897, 1)
+bg_color = Color(0.241156, 0.241156, 0.241156, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37mns"]
 
@@ -110,9 +110,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e1iba")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_right = 1079.0
-offset_bottom = 1600.0
+offset_right = 1080.0
+offset_bottom = 1902.0
 
 [node name="Panel2" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -122,9 +121,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e1iba")
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 60
+theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 60
+theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 60
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
@@ -132,7 +131,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Image_1" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(450, 562.5)
+custom_minimum_size = Vector2(562.5, 703.125)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
@@ -142,26 +141,27 @@ expand_mode = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_constants/separation = 35
 
 [node name="Image_2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(360, 188)
+custom_minimum_size = Vector2(450, 211.5)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 2
+size_flags_vertical = 6
 expand_mode = 1
 
 [node name="Image_3" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(360, 188)
+custom_minimum_size = Vector2(450, 211.5)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 expand_mode = 1
 
 [node name="Image_4" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(360, 188)
+custom_minimum_size = Vector2(450, 211.5)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
+size_flags_vertical = 6
 expand_mode = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
@@ -176,20 +176,22 @@ layout_mode = 2
 [node name="Name" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_font_sizes/font_size = 80
 text = "Name Placholder"
+autowrap_mode = 2
 
 [node name="Country" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 48
 text = "Country Placholder"
 vertical_alignment = 1
 
 [node name="Birth" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 48
 text = "Placeholder date"
 
 [node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
@@ -200,7 +202,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_37mns")
 [node name="Info" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Renowned tech pioneer and philanthropist Bill Gates, co-founder of Microsoft, recently graced the halls of Berlin's Computerspielemuseum, immersing himself in a journey through the evolution of gaming technology. From vintage consoles to cutting-edge virtual reality experiences, Gates delved into the rich history and innovative future of gaming, engaging with interactive exhibits that showcase the cultural significance and technological advancements of this dynamic industry.
 
 Der angesehene Technologiepionier und Philanthrop Bill Gates, Mitbegründer von Microsoft, besuchte kürzlich die Hallen des Computerspielemuseums in Berlin und tauchte ein in die Entwicklung der Gaming-Technologie. Von Vintage-Konsolen bis hin zu modernsten Virtual-Reality-Erlebnissen erkundete Gates die reiche Geschichte und innovative Zukunft des Gamings. Er interagierte mit interaktiven Ausstellungsstücken, die die kulturelle Bedeutung und technologischen Fortschritte dieser dynamischen Branche verdeutlichen."
@@ -225,7 +227,7 @@ offset_left = 165.0
 offset_top = 1117.5
 offset_right = -120.0
 offset_bottom = 552.5
-button_color = Color(1, 1, 1, 1)
+button_color = Color(0.72549, 0.878431, 0.270588, 1)
 button_text = "X"
 button_size = Vector2(75, 75)
 button_toggle_mode = false

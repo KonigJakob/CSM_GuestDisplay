@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_c0ywe"]
 [ext_resource type="FontFile" uid="uid://cfxkhjim3dbff" path="res://Assets/Fonts/visitor2 (1).ttf" id="2_vsk7g"]
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="3_vk3j7"]
-[ext_resource type="Texture2D" uid="uid://lge4q45juhj0" path="res://Assets/Textures/Logos/logo_color_dott_300dpi.png" id="3_y8i78"]
+[ext_resource type="Texture2D" uid="uid://ba4edxqqhlpwk" path="res://Assets/Textures/Logos/logo_color_dott__light_300dpi.png" id="3_y2aqm"]
 
 [sub_resource type="Theme" id="Theme_7lbj6"]
 
@@ -44,7 +44,7 @@ layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 1920.0
 theme = SubResource("Theme_wipqd")
-color = Color(0, 0.498039, 0.552941, 1)
+color = Color(0.0687983, 0.0687983, 0.0687982, 1)
 
 [node name="GridContainer" type="GridContainer" parent="MainMenu"]
 layout_mode = 1
@@ -166,7 +166,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_l88qq")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 80
 text = "FAMOUS_GUESTS"
 expand_icon = true
 
@@ -180,7 +180,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_l88qq")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 63
+theme_override_font_sizes/font_size = 94
 text = "Guest Book"
 expand_icon = true
 
@@ -191,7 +191,7 @@ anchor_right = 1.0
 anchor_bottom = 0.22
 offset_right = -295.0
 offset_bottom = -213.4
-texture = ExtResource("3_y8i78")
+texture = ExtResource("3_y2aqm")
 expand_mode = 1
 
 [node name="Localization_Buttons" type="HBoxContainer" parent="."]

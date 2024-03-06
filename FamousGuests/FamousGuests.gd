@@ -16,7 +16,7 @@ var viewport
 @export var right_arrow : button_syled
 @export var localization_buttons : HBoxContainer
 @export var home_button: button_syled
-@export var logo
+@export var logo : TextureRect
 @export var timer : Timer
 
 var right_clicks : int

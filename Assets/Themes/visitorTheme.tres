@@ -4,14 +4,14 @@
 [ext_resource type="StyleBox" uid="uid://dlox2rr4jh60o" path="res://Assets/Resources/button_styleboxTextture.tres" id="2_vakjq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5dmg"]
-bg_color = Color(0, 0.419608, 0.729412, 1)
+bg_color = Color(0.72549, 0.878431, 0.270588, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm6g"]
 bg_color = Color(1, 1, 1, 1)
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rd10q"]
-bg_color = Color(0.054902, 0.298039, 0.662745, 0.556863)
+bg_color = Color(0.72549, 0.878431, 0.270588, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac6ew"]
 bg_color = Color(0.890196, 0.890196, 0.890196, 1)
@@ -32,6 +32,7 @@ LineEdit/constants/caret_width = 5
 LineEdit/fonts/font = ExtResource("1_40tun")
 OptionButton/colors/font_color = Color(0, 0, 0, 1)
 OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_color = Color(0.203922, 0.203922, 0.203922, 1)
 OptionButton/colors/font_pressed_color = Color(0, 0, 0, 1)
 OptionButton/constants/arrow_margin = 15
 OptionButton/fonts/font = ExtResource("1_40tun")
@@ -39,6 +40,7 @@ OptionButton/styles/hover = SubResource("StyleBoxFlat_n5dmg")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_tpm6g")
 PopupMenu/colors/font_accelerator_color = Color(0.701961, 0.701961, 0.701961, 0.8)
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_hover_color = Color(0, 0, 0, 1)
 PopupMenu/constants/h_separation = 10
 PopupMenu/constants/icon_max_width = 10
 PopupMenu/constants/indent = 30
