@@ -77,7 +77,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Translation/CSM_GuestDisplay_Localization.de.translation", "res://Translation/CSM_GuestDisplay_Localization.en.translation", "res://Translation/CSM_GuestDisplay_Localization.es.translation")
+locale/translations=PackedStringArray("res://Translation/CSM_GuestDisplay - Localization.de.translation", "res://Translation/CSM_GuestDisplay - Localization.en.translation", "res://Translation/CSM_GuestDisplay - Localization.es.translation")
 
 [rendering]
 
