@@ -1,114 +1,156 @@
 {
-	"guest_a": {
+	"guest_0": {
 		"GuestID": "BAER",
 		"Name": "Ralph H. Baer",
-		"Country": "_USA / GERMANY",
-		"Birth": "8.3.1922 – 6.12.2014",
-		"Famous for": "BAER",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Country": "USA / GERMANY",
+		"Birth": "8.3.1922 - 6.12.2014",
+		"Famous for": "Erfinder der Heimvideospiele. Hauptentwickler der Brown Box und später der Magnavox Odyssey, der ersten Videospielkonsole der Welt.\n\n\nInventor of home video games. Main developer of the Brown Box and later the Magnavox Odyssey, the world's first video game console.",
+		"Image 1": "user://FamousGuests_Resources/Images/BAER_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/BAER_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/BAER_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/BAER_Portrait.jpg"
 	},
-	"guest_b": {
+	"guest_1": {
 		"GuestID": "KOJIMA",
 		"Name": "Hideo Kojima",
 		"Country": "JAPAN",
 		"Birth": "24.8.1963",
-		"Famous for": "KOJIMA",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Leitender Entwickler von Metal Gear Solid und Death Stranding. Gründer von Kojima Productions und ehemaliger Vizepräsident von Konami.Lead designer of Metal Gear Solid and Death Stranding.\n\n\nFounder of Kojima Productions and former vice president of Konami.",
+		"Image 1": "user://FamousGuests_Resources/Images/KOJIMA_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/KOJIMA_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/KOJIMA_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/KOJIMA_Portrait.jpg"
 	},
-	"guest_c": {
+	"guest_2": {
 		"GuestID": "PHILLIPS",
 		"Name": "Howard Phillips",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "23.1.1958",
-		"Famous for": "PHILLIPS",
-		"Image 1": "res://Assets/Textures/images (2).jpeg"
+		"Famous for": "Öffentliches Gesicht von Nintendo of America in den 1980ern, damals bekannt unter seinem Pseudonym \"Game Master\". Später Produzent und kreativer Leiter für große Spielefirmen.\n\n\nPublic face of Nintendo of America in the 1980s, then known by his pseudonym \"Game Master.\" Later producer and creative director for major game companies.",
+		"Image 1": "user://FamousGuests_Resources/Images/PHILLIPS_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/PHILLIPS_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/PHILLIPS_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/PHILLIPS_Portrait.jpg"
 	},
-	"guest_d": {
+	"guest_3": {
 		"GuestID": "DAGLOW",
 		"Name": "Don Daglow",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "12.9.1952",
-		"Famous for": "DAGLOW",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Industrieveteran seit den 1970ern. Entwickler von Spielen wie Dungeon, Utopia, Intellivision World Series Baseball, Amnesia und Neverwinter Nights. Gründer von Stormfront Studios.\n\n\nIndustry veteran since the 1970s. Developer of games such as Dungeon, Utopia, Intellivision World Series Baseball, Amnesia and Neverwinter Nights. Founder of Stormfront Studios.",
+		"Image 1": "user://FamousGuests_Resources/Images/DAGLOW_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/DAGLOW_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/DAGLOW_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/DAGLOW_Portrait.jpg"
 	},
-	"guest_e": {
+	"guest_4": {
 		"GuestID": "FRIES",
 		"Name": "Ed Fries",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "14.5.1964",
-		"Famous for": "FRIES",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Leiter des Teams, das die originale Xbox-Spielkonsole entwickelte.\n\n\nHead of the team that developed the original Xbox games console.",
+		"Image 1": "user://FamousGuests_Resources/Images/FRIES_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/FRIES_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/FRIES_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/FRIES_Portrait.jpg"
 	},
-	"guest_f": {
+	"guest_5": {
 		"GuestID": "WOZNIAK",
 		"Name": "Steve Wozniak",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "11.8.1950",
-		"Famous for": "WOZNIAK",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Mitgründer von Apple. Entwickler der frühen PCs Apple I und Apple II.\n\n\nCo-founder of Apple. Developer of the early PCs Apple I and Apple II.",
+		"Image 1": "user://FamousGuests_Resources/Images/WOZNIAK_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/WOZNIAK_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/WOZNIAK_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/WOZNIAK_Portrait.jpg"
 	},
-	"guest_g": {
+	"guest_6": {
 		"GuestID": "BUSCHNELL",
 		"Name": "Nolan Buschnell",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "5.2.1943",
-		"Famous for": "BUSCHNELL",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Initiator der frühen Arcadespiele Computer Space und Pong. Gründer von Atari.\n\n\nInitiator of the early arcade games Computer Space and Pong. Founder of Atari.",
+		"Image 1": "user://FamousGuests_Resources/Images/BUSCHNELL_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/BUSCHNELL_Image2.jpeg",
+		"Image 3": "user://FamousGuests_Resources/Images/BUSCHNELL_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/BUSCHNELL_Portrait.jpg"
 	},
-	"guest_h": {
+	"guest_7": {
 		"GuestID": "GAUME",
 		"Name": "Nicolas Gaume",
 		"Country": "FRANCE",
 		"Birth": "7.2.1971",
-		"Famous for": "GAUME",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Ehemaliger Präsident des Verbands der französischen Videospielindustrie SNJV (Syndicat National du Jeu Vidéo). Mitgründer von Kalisto Entertainment und Mimesis Republic.\n\n\nFormer president of the French video game trade association SNJV (Syndicat National du Jeu Vidéo). Co-founder of Kalisto Entertainment and Mimesis Republic.",
+		"Image 1": "user://FamousGuests_Resources/Images/GAUME_Image1.jpg",
+		"Image 2": "",
+		"Image 3": "",
+		"Portrait": "user://FamousGuests_Resources/Images/GAUME_Portrait.jpg"
 	},
-	"guest_i": {
+	"guest_8": {
 		"GuestID": "PITCHFORD",
 		"Name": "Randy Pitchford",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "21.4.1971",
-		"Famous for": "PITCHFORD",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Mitentwickler von Spielen wie Duke Nukem 3D, Shadow Warrior und Half-Life: Opposing Force. Mitgründer von Gearbox Software, wo er unter anderem die Borderlands-Serie betreute.\n\n\nCo-developer of games such as Duke Nukem 3D, Shadow Warrior and Half-Life: Opposing Force. Co-founder of Gearbox Software, where he oversaw the Borderlands series, among others.",
+		"Image 1": "user://FamousGuests_Resources/Images/PITCHFORD_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/PITCHFORD_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/PITCHFORD_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/PITCHFORD_Portrait.jpg"
 	},
-	"guest_j": {
+	"guest_9": {
 		"GuestID": "GRONKHSARAZAR",
 		"Name": "Erik \"Gronkh\" Range & Valentin Matthias \"Sarazar\" Rahmel",
 		"Country": "GERMANY",
 		"Birth": "10.4.1977 / 27.2.1984",
-		"Famous for": "GRONKHSARAZAR",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Let's Player und Streamer.\n\n\nLet's players and streamers.",
+		"Image 1": "user://FamousGuests_Resources/Images/GRONKHSARAZAR_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/GRONKHSARAZAR_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/GRONKHSARAZAR_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/GRONKHSARAZAR_Portrait.jpg"
 	},
-	"guest_k": {
+	"guest_10": {
 		"GuestID": "LIVINGSTONE",
 		"Name": "Ian Livingstone",
-		"Country": "_UK",
+		"Country": "UK",
 		"Birth": "29.12.1949",
-		"Famous for": "LIVINGSTONE",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Mitgründer von Games Workshop, Co-Autor der Fighting Fantasy-Rollenspielbücher und ehemaliger Vorstandsvorsitzender von Eidos.\n\n\nCo-founder of Games Workshop, co-author of the Fighting Fantasy role-playing gamebooks and former executive chairman of Eidos.",
+		"Image 1": "user://FamousGuests_Resources/Images/LIVINGSTONE_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/LIVINGSTONE_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/LIVINGSTONE_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/LIVINGSTONE_Portrait.jpg"
 	},
-	"guest_l": {
+	"guest_11": {
 		"GuestID": "SHAW",
 		"Name": "Adrianne Shaw",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "13.7.1983",
-		"Famous for": "SHAW",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Gründerin des LGBTQ-Spielarchivs. Spielwissenschaftlerin und außerordentliche Professorin im Bereich der Queer Game Studies.\n\n\nFounder of the LGBTQ Game Archive. Game studies scholar and associate professor in the field of queer game studies.",
+		"Image 1": "user://FamousGuests_Resources/Images/SHAW_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/SHAW_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/SHAW_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/SHAW_Portrait.jpg"
 	},
-	"guest_m": {
+	"guest_12": {
 		"GuestID": "BROMERO",
 		"Name": "Brenda Romero",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "12.10.1966",
-		"Famous for": "BROMERO",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Seit 1981 Teil der Spielebranche. Autorin von Jagged Alliance 2, leitende Entwicklerin von Wizardry 8, Dungeons & Dragons: Heroes und Empire of Sin. Mitgründerin von Romero Games.\n\n\nPart of the games industry since 1981. Author of Jagged Alliance 2, lead designer of Wizardry 8, Dungeons & Dragons: Heroes and Empire of Sin. Co-founder of Romero Games.",
+		"Image 1": "user://FamousGuests_Resources/Images/BROMERO_Image1.webp",
+		"Image 2": "user://FamousGuests_Resources/Images/BROMERO_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/BROMERO_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/BROMERO_Portrait.jpg"
 	},
-	"guest_n": {
+	"guest_13": {
 		"GuestID": "JROMERO",
 		"Name": "John Romero",
-		"Country": "_USA",
+		"Country": "USA",
 		"Birth": "28.10.1967",
-		"Famous for": "JROMERO",
-		"Image 1": "res://Assets/Textures/images.jpeg"
+		"Famous for": "Mitentwickler von Spielen wie Commander Keen, Wolfenstein 3D, Doom, Quake und Anachronox. Mitgründer von id Software, Ion Storm und Romero Games.\n\n\nCo-developer of games such as Commander Keen, Wolfenstein 3D, Doom, Quake and Anachronox. Co-founder of id Software, Ion Storm and Romero Games.",
+		"Image 1": "user://FamousGuests_Resources/Images/JROMERO_Image1.jpg",
+		"Image 2": "user://FamousGuests_Resources/Images/JROMERO_Image2.jpg",
+		"Image 3": "user://FamousGuests_Resources/Images/JROMERO_Image3.jpg",
+		"Portrait": "user://FamousGuests_Resources/Images/JROMERO_Portrait.jpg"
 	}
- }
+}
