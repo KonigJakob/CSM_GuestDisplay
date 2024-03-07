@@ -687,9 +687,10 @@ button_toggle_mode = false
 [node name="OnscreenKeyboard" type="PanelContainer" parent="."]
 layout_mode = 2
 offset_left = 40.0
-offset_top = 423.0
+offset_top = 473.0
 offset_right = 1040.0
-offset_bottom = 868.0
+offset_bottom = 918.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1p38")
 script = ExtResource("19_axxdl")
 customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
 background = SubResource("StyleBoxFlat_x1p38")

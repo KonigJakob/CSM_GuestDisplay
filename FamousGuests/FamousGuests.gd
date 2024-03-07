@@ -56,7 +56,7 @@ func load_guests() -> Array:
 			_guest_portrait.guest_name = guests[g]["Name"]
 			_guest_portrait.country = guests[g]["Country"]
 			_guest_portrait.birth = guests[g]["Birth"]
-			_guest_portrait.famous_for = guests[g]["Famous for"]
+			_guest_portrait.famous_for = SaveSystem.replace_unicode_characters(guests[g]["Famous for"])
 			_guest_portrait.image_1 = guests[g]["Image 1"]
 			_guest_portrait.image_2 = guests[g]["Image 2"]
 			_guest_portrait.image_3 = guests[g]["Image 3"]
@@ -135,28 +135,32 @@ func _on_info_panel_changed(_value):
 		panel_input_lock.visible = true
 
 func _on_timer_timeout():
-	pass
-	if move_right:
-		if left_clicks > 0:
-			right_arrow.get_node("Button").disabled = true
-			tween = get_tree().create_tween().set_parallel(true)
-			input_lock_rect.visible = true
-			tween.finished.connect(on_tween_finished)
-			for g in guests:
-				move_guests_right(g)
-			right_clicks += 1
-			left_clicks -= 1
+	if panel_input_lock.visible == false:
+		if move_right:
+			if left_clicks > 0:
+				right_arrow.get_node("Button").disabled = true
+				tween = get_tree().create_tween().set_parallel(true)
+				input_lock_rect.visible = true
+				tween.finished.connect(on_tween_finished)
+				for g in guests:
+					move_guests_right(g)
+				right_clicks += 1
+				left_clicks -= 1
+				timer.start(timer.wait_time)
+			else:
+				move_right = false
 		else:
-			move_right = false
+			if right_clicks > 0:
+				left_arrow.get_node("Button").disabled = true
+				tween = get_tree().create_tween().set_parallel(true)
+				tween.finished.connect(on_tween_finished)
+				input_lock_rect.visible = true
+				for g in guests:
+					move_guests_left(g)
+				right_clicks -= 1
+				left_clicks += 1
+				timer.start(timer.wait_time)
+			else:
+				move_right = true
 	else:
-		if right_clicks > 0:
-			left_arrow.get_node("Button").disabled = true
-			tween = get_tree().create_tween().set_parallel(true)
-			tween.finished.connect(on_tween_finished)
-			input_lock_rect.visible = true
-			for g in guests:
-				move_guests_left(g)
-			right_clicks -= 1
-			left_clicks += 1
-		else:
-			move_right = true
+		timer.start(timer.wait_time)

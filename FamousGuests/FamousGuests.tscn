@@ -93,7 +93,8 @@ layout_mode = 2
 theme = ExtResource("10_bt386")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 64
-text = "FAMOUS_GUESTS"
+text = "FAMOUS_GUESTS \\u00fc
+"
 
 [node name="Button_Home" parent="." instance=ExtResource("7_jwkf8")]
 z_index = 3

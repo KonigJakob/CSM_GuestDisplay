@@ -167,3 +167,45 @@ func guest_image_as_texture(path : String) -> ImageTexture:
 		else:
 			loaded_texture = ImageTexture.create_from_image(image)
 	return loaded_texture
+
+func replace_unicode_characters(string_to_replace : String) -> String:
+	var replaced_string : String
+	var characters_to_replace = ["[&auml;]","[&uuml;]","[&ouml;]","[&Ouml;]","[&Auml;]","[&Uuml;]","[&szlig;]"]
+	var characters = ["ä","ü","ö","Ö","Ä","Ü","ß"]
+	for i in characters_to_replace.size():
+		for c in characters_to_replace:
+			print(c)
+			if string_to_replace.contains(c):
+				var new_string
+				print("Replacing with: " + characters[i-1])
+				new_string = string_to_replace.replace(c,characters[i-1])
+				replaced_string = new_string
+				
+	return replaced_string
+	#Make an array with all replacable strings. Loop through the array and update replaced_string
+#	if string_to_replace.contains("[&auml;]") ||\
+#		string_to_replace.contains("[&uuml;]") ||\
+#		string_to_replace.contains("[&ouml;]") ||\
+#		string_to_replace.contains("[&Ouml;]") ||\
+#		string_to_replace.contains("[&Auml;]") ||\
+#		string_to_replace.contains("[&Uuml;]") ||\
+#		string_to_replace.contains("[&szlig;]"):
+#			print("Replacing")
+#			if string_to_replace.contains("[&auml;]"):
+#				print("1: " + string_to_replace)
+#				replaced_string = string_to_replace.replace("[&auml;]","ä")
+#				print("2: " + string_to_replace)
+#			if string_to_replace.contains("[&uuml;]"):
+#				string_to_replace.replace("[&uuml;]","ü")
+#			if string_to_replace.contains("[&ouml;]"):
+#				string_to_replace.replace("[&ouml;]","ö")
+#			if string_to_replace.contains("[&Ouml;]"):
+#				string_to_replace.replace("[&Ouml;]","Ö")
+#			if string_to_replace.contains("[&Auml;]"):
+#				string_to_replace.replace("[&Auml;]","Ä")
+#			if string_to_replace.contains("[&Uuml;]"):
+#				string_to_replace.replace("[&Uuml;]","Ü")
+#			if string_to_replace.contains("[&auml;]"):
+#				string_to_replace.replace("[&szlig;]","ß")
+#	replaced_string = string_to_replace
+#	return replaced_string

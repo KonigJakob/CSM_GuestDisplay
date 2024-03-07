@@ -55,10 +55,10 @@ func scale_panel(up : bool):
 		tween.tween_property(top_container, \"size\", viewport.size, tween_duration)
 		tween.tween_property(back_panel, \"size\", viewport.size, tween_duration)
 		tween.tween_property(self, \"global_position\", Vector2(0,0), tween_duration)
+		tween.finished.connect(on_tween_finished.bind(up))
 		z_index = 2
 		is_hidden = false
 		call_deferred(\"start_timer\")
-		panel_opened.emit()
 	else:
 		x_button.visible = false
 		tween = get_tree().create_tween().set_parallel(true)
@@ -67,13 +67,20 @@ func scale_panel(up : bool):
 		#tween.tween_property(back_panel, \"size\", Vector2(0,0), tween_duration)
 		#tween.tween_property(back_panel, \"global_position\", screen_center, tween_duration)
 		tween.set_parallel(false)
-		tween.tween_property(self, \"visible\", false, tween_duration)
+		tween.tween_property(self, \"visible\", false, 0.01)
+		tween.finished.connect(on_tween_finished.bind(up))
 		z_index = 0
-		panel_closed.emit()
 
 func _on_back_button_child_button_pressed():
 	scale_panel(false)
 	panel_closed.emit()
+	
+func on_tween_finished(up :bool):
+	if up:
+		timer.start()
+		panel_opened.emit()
+	else:
+		panel_closed.emit()
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1iba"]
@@ -232,7 +239,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_uek1e")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_utlub")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 120.0
 one_shot = true
 
 [node name="Back_Button" parent="." instance=ExtResource("2_n80u1")]
