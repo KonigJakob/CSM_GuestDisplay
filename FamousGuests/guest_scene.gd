@@ -4,6 +4,7 @@ class_name Guest
 
 signal info_panel_changed(new_value : bool)
 
+
 var guest_id : String
 var guest_name : String
 var country : String
