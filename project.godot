@@ -12,11 +12,12 @@ config_version=5
 
 config/name="CSM_GuestDisplay"
 run/main_scene="res://MainMenu/main.tscn"
+config/auto_accept_quit=false
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0.807843, 0.807843, 0.807843, 1)
-boot_splash/image="res://Assets/Textures/Logos/logo_small.png"
+boot_splash/image="res://Assets/Textures/Logos/logo_color_solo.png"
 boot_splash/fullsize=false
-config/icon="res://icon.svg"
+config/icon="res://Assets/Textures/Logos/logo_color_solo.png"
 
 [autoload]
 
