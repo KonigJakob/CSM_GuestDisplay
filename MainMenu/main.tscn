@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://s4mr31xgwy8"]
+[gd_scene load_steps=10 format=3 uid="uid://s4mr31xgwy8"]
 
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_c0ywe"]
+[ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="2_hosmq"]
 [ext_resource type="FontFile" uid="uid://df1w6lgghcy18" path="res://Assets/Fonts/visitor2 (1).ttf" id="2_vsk7g"]
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="3_vk3j7"]
 [ext_resource type="Texture2D" uid="uid://ba4edxqqhlpwk" path="res://Assets/Textures/Logos/logo_color_dott__light_300dpi.png" id="3_y2aqm"]
@@ -27,7 +28,7 @@ LineEdit/fonts/font = SubResource("FontFile_wriq0")
 
 [node name="Main" type="Node"]
 
-[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("localization_buttons", "logo")]
+[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("localization_buttons", "logo", "welcome")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,13 +39,25 @@ theme = SubResource("Theme_7lbj6")
 script = ExtResource("1_c0ywe")
 localization_buttons = NodePath("../Localization_Buttons")
 logo = NodePath("TextureRect")
+welcome = NodePath("Label")
 
 [node name="ColorRect" type="ColorRect" parent="MainMenu"]
 layout_mode = 0
-offset_right = 1080.0
-offset_bottom = 1920.0
+offset_left = -27.0
+offset_top = -27.0
+offset_right = 1100.0
+offset_bottom = 1940.0
 theme = SubResource("Theme_wipqd")
 color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_right = 390.0
+offset_bottom = 48.0
+theme = ExtResource("2_hosmq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "WELCOME_MESSAGE"
 
 [node name="GridContainer" type="GridContainer" parent="MainMenu"]
 layout_mode = 1

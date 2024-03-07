@@ -5,10 +5,12 @@ var progress : Array[float]
 @export var logo : TextureRect
 
 @onready var progress_bar : TextureProgressBar = $TextureProgressBar
+@onready var loading_message : Label = $Label
 
 func _ready():
 	SceneManager.target_scene_changed.connect(on_target_scene_changed)
 	ResourceLoader.load_threaded_request(SceneManager.target_scene)
+	loading_message.position = Vector2(get_viewport_rect().size.x/2 - loading_message.size.x/2, progress_bar.position.y + progress_bar.size.y + 70)
 
 func _process(_delta):
 	if SceneManager.target_scene:

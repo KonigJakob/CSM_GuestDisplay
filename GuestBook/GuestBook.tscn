@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://biq73pieyhg4y"]
+[gd_scene load_steps=32 format=3 uid="uid://biq73pieyhg4y"]
 
 [ext_resource type="Script" path="res://GuestBook/GuestBook.gd" id="1_i5vid"]
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_v86rj"]
@@ -95,6 +95,9 @@ bg_color = Color(0.243137, 0.45098, 0.737255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdqwl"]
 bg_color = Color(0.054902, 0.298039, 0.662745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1p38"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Root" type="Control" node_paths=PackedStringArray("back_button", "submit_button", "logo_rect", "button_home", "localization_buttons", "panels", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_YoungAdult", "Age_Adult", "Age_MidAged", "Age_Senior", "lock_rect")]
 layout_mode = 3
@@ -689,6 +692,7 @@ offset_right = 1040.0
 offset_bottom = 868.0
 script = ExtResource("19_axxdl")
 customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
+background = SubResource("StyleBoxFlat_x1p38")
 
 [connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="child_button_pressed" from="Button_Return" to="." method="_on_button_return_pressed"]
