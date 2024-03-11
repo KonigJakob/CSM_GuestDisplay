@@ -1,8 +1,6 @@
 extends Node
 
 @onready var save_data_filepath = new_data_file()
-var file_name_dated : String
-var date : String
 
 var guest_data_filepath : String = "user://FamousGuests_Resources/famous_guests.json"
 var guest_images_folder_path : String = "user://FamousGuests_Resources/Images/"
@@ -11,28 +9,29 @@ var number_of_guests : int
 
 func _process(_delta):
 	if Input.is_action_pressed("exit"):
-		save_on_exit()
+		#save_on_exit()
 		get_tree().quit()
 		
-func new_data_file():
-	date = Time.get_date_string_from_system()
-	var new_file = "user://" + date + "-" + "poll-data.json"
+func new_data_file() -> String:
+	var date = Time.get_date_string_from_system()
+	var new_file = "user://GuestAnswers/" + date + "-" + "poll-data.json"
 	return new_file
 
 func save(content):
 	if FileAccess.file_exists(save_data_filepath):
 		var file = FileAccess.open(save_data_filepath, FileAccess.READ_WRITE)
-		file.seek_end()
-		file.store_string(content)
+		file.seek_end(-2)
 		file.store_string(",")
-		print(file.get_path_absolute())
+		var content_trimmed = content.trim_prefix("{").trim_suffix("}")
+		file.store_string(content_trimmed)
+		file.store_string("}")
 		file = null
 	else:
 		var file = FileAccess.open(save_data_filepath, FileAccess.WRITE)
-		print("Creating data file")
-		file.store_string("[{\"participants\": [")
-		file.store_string(content)
-		file.store_string(",")
+		file.store_string("{\t")
+		var content_trimmed = content.trim_prefix("{").trim_suffix("}")
+		file.store_string(content_trimmed)
+		file.store_string("}")
 		print(file.get_path_absolute())
 		file = null
 	
@@ -102,20 +101,21 @@ func load_guest():
 		print("File does not exist!")
 
 func save_on_exit():
-	var dummy_data = "{\"Dummy\": \"dummy\"}"
-	var file = FileAccess.open(save_data_filepath, FileAccess.READ_WRITE)
-	file.seek_end()
-	file.store_string(dummy_data)
-	file.store_string("]}]")
-	print(file.get_path_absolute())
-	file = null
+	var file
+	if !FileAccess.file_exists(save_data_filepath):
+		pass
+	else:
+		file = FileAccess.open(save_data_filepath, FileAccess.READ_WRITE)
+		file.seek_end(-2)
+		file.store_string("}")
+		print(file.get_path_absolute())
+		file = null
 
 func add_guest(guest_info : String):
 	if FileAccess.file_exists(guest_data_filepath):
 		var file = FileAccess.open(guest_data_filepath, FileAccess.READ_WRITE)
 		file.seek_end(-2)
 		file.store_string(",")
-		print(guest_info)
 		var guest_info_trimmed = guest_info.trim_prefix("{").trim_suffix("}")
 		file.store_string(guest_info_trimmed)
 		file.store_string("}")
@@ -169,43 +169,23 @@ func guest_image_as_texture(path : String) -> ImageTexture:
 	return loaded_texture
 
 func replace_unicode_characters(string_to_replace : String) -> String:
-	var replaced_string : String
 	var characters_to_replace = ["[&auml;]","[&uuml;]","[&ouml;]","[&Ouml;]","[&Auml;]","[&Uuml;]","[&szlig;]"]
-	var characters = ["ä","ü","ö","Ö","Ä","Ü","ß"]
-	for i in characters_to_replace.size():
-		for c in characters_to_replace:
-			print(c)
-			if string_to_replace.contains(c):
-				var new_string
-				print("Replacing with: " + characters[i-1])
-				new_string = string_to_replace.replace(c,characters[i-1])
-				replaced_string = new_string
-				
-	return replaced_string
-	#Make an array with all replacable strings. Loop through the array and update replaced_string
-#	if string_to_replace.contains("[&auml;]") ||\
-#		string_to_replace.contains("[&uuml;]") ||\
-#		string_to_replace.contains("[&ouml;]") ||\
-#		string_to_replace.contains("[&Ouml;]") ||\
-#		string_to_replace.contains("[&Auml;]") ||\
-#		string_to_replace.contains("[&Uuml;]") ||\
-#		string_to_replace.contains("[&szlig;]"):
-#			print("Replacing")
-#			if string_to_replace.contains("[&auml;]"):
-#				print("1: " + string_to_replace)
-#				replaced_string = string_to_replace.replace("[&auml;]","ä")
-#				print("2: " + string_to_replace)
-#			if string_to_replace.contains("[&uuml;]"):
-#				string_to_replace.replace("[&uuml;]","ü")
-#			if string_to_replace.contains("[&ouml;]"):
-#				string_to_replace.replace("[&ouml;]","ö")
-#			if string_to_replace.contains("[&Ouml;]"):
-#				string_to_replace.replace("[&Ouml;]","Ö")
-#			if string_to_replace.contains("[&Auml;]"):
-#				string_to_replace.replace("[&Auml;]","Ä")
-#			if string_to_replace.contains("[&Uuml;]"):
-#				string_to_replace.replace("[&Uuml;]","Ü")
-#			if string_to_replace.contains("[&auml;]"):
-#				string_to_replace.replace("[&szlig;]","ß")
-#	replaced_string = string_to_replace
-#	return replaced_string
+	for c in characters_to_replace:
+		if string_to_replace.contains(c):
+			var s : String
+			if c == "[&auml;]":
+				s = string_to_replace.replace(c, "ä")
+			elif c == "[&Auml;]":
+				s = string_to_replace.replace(c, "Ä")
+			elif c == "[&uuml;]":
+				s = string_to_replace.replace(c, "ü")
+			elif c == "[&Uuml;]":
+				s = string_to_replace.replace(c, "Ü")
+			elif c == "[&ouml;]":
+				s = string_to_replace.replace(c, "ö")
+			elif c == "[&Ouml;]":
+				s = string_to_replace.replace(c, "Ö")
+			elif c == "[&szlig;]":
+				s = string_to_replace.replace(c, "ß")
+			string_to_replace = s
+	return string_to_replace

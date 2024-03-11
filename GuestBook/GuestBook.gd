@@ -1,9 +1,9 @@
 extends Control
 
 var satisfaction_button : int
-var age_group_button: int
+var age_group_button: String
 var date : String
-var language : int
+var language : String
 var message : String
 
 var poll_data : Dictionary
@@ -42,6 +42,8 @@ enum PollPage {
 @export var Age_MidAged : button_syled
 @export var Age_Senior: button_syled
 
+@export var option_button: OptionButton
+
 @export var lock_rect: ColorRect
 var stars = []
 var age_buttons = []
@@ -51,7 +53,6 @@ var keep_visible : bool = false
 func _ready():
 	set_up_ui_elements()
 	satisfaction_button = 0
-	age_group_button = 0
 	age_buttons = get_tree().get_nodes_in_group("age_buttons")
 	date = Time.get_date_string_from_system()
 	remove_child(promt_panel)
@@ -98,32 +99,32 @@ func press_stars(star_index : int):
 			stars[i].button_pressed = false
 
 func _on_button_child_pressed():
-	age_group_button = 1
+	age_group_button = "0-12"
 	unpress_buttons(Age_Child)
 	tween_forward()
 	keep_button_pressed(Age_Child)
 func _on_button_teen_pressed():
-	age_group_button = 2
+	age_group_button = "13-18"
 	unpress_buttons(Age_Teen)
 	tween_forward()
 	keep_button_pressed(Age_Teen)
 func _on_button_adult_pressed():
-	age_group_button = 4
+	age_group_button = "31-45"
 	unpress_buttons(Age_Adult)
 	tween_forward()
 	keep_button_pressed(Age_Adult)
 func _on_button_young_adult_pressed():
-	age_group_button = 3
+	age_group_button = "19-30"
 	unpress_buttons(Age_YoungAdult)
 	tween_forward()
 	keep_button_pressed(Age_YoungAdult)
 func _on_button_mid_aged_pressed():
-	age_group_button = 5
+	age_group_button = "46-60"
 	unpress_buttons(Age_MidAged)
 	tween_forward()
 	keep_button_pressed(Age_MidAged)
 func _on_button_senior_pressed():
-	age_group_button = 6
+	age_group_button = "60+"
 	unpress_buttons(Age_Senior)
 	tween_forward()
 	keep_button_pressed(Age_Senior)
@@ -140,7 +141,7 @@ func keep_button_pressed(button_parent : button_syled):
 		button_parent.keep_pressed()
 
 func _on_option_button_item_selected(index):
-	language = index
+	language = option_button.get_item_text(index)
 	tween_forward()
 
 func _on_text_changed(new_text):
@@ -161,14 +162,21 @@ func _on_button_continue_pressed():
 func _on_button_home_pressed():
 	SceneManager.target_scene = "res://MainMenu/main.tscn"
 	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")
+	
 func _on_button_submit_pressed():
-	poll_data = {"Date" : date, "Satisfaction": satisfaction_button, 
-	"Age Group" : age_group_button, "Language" : language, "Message" : message}
-	JSON_string = JSON.stringify(poll_data, "\t")
-	SaveSystem.save(JSON_string)
+	submit_guest_info()
 	add_child(promt_panel)
 	tween_visibility(promt_panel)
 	promt_panel.global_position = Vector2.ZERO
+
+func submit_guest_info():
+	var new_answer
+	var guest_id = "Guest_" + Time.get_time_string_from_system()
+	poll_data = {"Date" : date, "Satisfaction": satisfaction_button, 
+	"Age Group" : age_group_button, "Language" : language, "Message" : message}
+	new_answer = {guest_id: poll_data}
+	JSON_string = JSON.stringify(new_answer, "\t", false)
+	SaveSystem.save(JSON_string)
 
 func move_page_forward():
 	var panel_size = panels.size/panels.get_child_count()
@@ -217,7 +225,6 @@ func tween_visibility(object_to_modulate) -> void:
 	else:
 		tween.tween_property(object_to_modulate, "modulate:a", 0, tween_movement_interval)
 		tween.tween_property(object_to_modulate, "visible", false, tween_wait_interval/2)
-
 
 func _on_translation_de_child_button_pressed():
 	SceneManager.set_language("de")

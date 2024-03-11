@@ -99,7 +99,7 @@ bg_color = Color(0.054902, 0.298039, 0.662745, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1p38"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="Root" type="Control" node_paths=PackedStringArray("back_button", "submit_button", "logo_rect", "button_home", "localization_buttons", "panels", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_YoungAdult", "Age_Adult", "Age_MidAged", "Age_Senior", "lock_rect")]
+[node name="Root" type="Control" node_paths=PackedStringArray("back_button", "submit_button", "logo_rect", "button_home", "localization_buttons", "panels", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_YoungAdult", "Age_Adult", "Age_MidAged", "Age_Senior", "option_button", "lock_rect")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,6 +126,7 @@ Age_YoungAdult = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Yo
 Age_Adult = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult")
 Age_MidAged = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group2/Button_MidAged")
 Age_Senior = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group2/Button_Senior")
+option_button = NodePath("Panels/LanguageContainer/VBoxContainer/HBoxContainer/Panel2/OptionButton")
 lock_rect = NodePath("LockRect")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -411,37 +412,35 @@ offset_bottom = 68.0
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-item_count = 15
-popup/item_0/text = "LANGUAGE_AR"
-popup/item_0/id = 0
-popup/item_1/text = "LANGUAGE_CH"
-popup/item_1/id = 1
-popup/item_2/text = "LANGUAGE_ES"
-popup/item_2/id = 2
-popup/item_3/text = "LANGUAGE_DE"
-popup/item_3/id = 3
-popup/item_4/text = "LANGUAGE_EN"
-popup/item_4/id = 4
-popup/item_5/text = "LANGUAGE_ES"
-popup/item_5/id = 5
-popup/item_6/text = "LANGUAGE_FR"
-popup/item_6/id = 6
-popup/item_7/text = "LANGUAGE_HI"
-popup/item_7/id = 7
-popup/item_8/text = "LANGUAGE_IT"
-popup/item_8/id = 8
-popup/item_9/text = "LANGUAGE_JA"
-popup/item_9/id = 9
-popup/item_10/text = "LANGUAGE_PO"
-popup/item_10/id = 10
-popup/item_11/text = "LANGUAGE_RU"
-popup/item_11/id = 11
-popup/item_12/text = "LANGUAGE_TR"
-popup/item_12/id = 12
-popup/item_13/text = "LANGUAGE_UK"
-popup/item_13/id = 13
-popup/item_14/text = "LANGUAGE_OTHER"
-popup/item_14/id = 14
+item_count = 14
+popup/item_0/text = "GERMAN"
+popup/item_0/id = 3
+popup/item_1/text = "ENGLISH"
+popup/item_1/id = 4
+popup/item_2/text = "ARABIC"
+popup/item_2/id = 0
+popup/item_3/text = "CHINESE"
+popup/item_3/id = 1
+popup/item_4/text = "SPANISH"
+popup/item_4/id = 2
+popup/item_5/text = "FRENCH"
+popup/item_5/id = 6
+popup/item_6/text = "HINDI"
+popup/item_6/id = 7
+popup/item_7/text = "ITALIAN"
+popup/item_7/id = 8
+popup/item_8/text = "JAPANESE"
+popup/item_8/id = 9
+popup/item_9/text = "POLISH"
+popup/item_9/id = 10
+popup/item_10/text = "RUSSIAN"
+popup/item_10/id = 11
+popup/item_11/text = "TURKISH"
+popup/item_11/id = 12
+popup/item_12/text = "UKRANIAN"
+popup/item_12/id = 13
+popup/item_13/text = "OTHER"
+popup/item_13/id = 14
 
 [node name="Panel3" type="Panel" parent="Panels/LanguageContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 30)
@@ -687,9 +686,9 @@ button_toggle_mode = false
 [node name="OnscreenKeyboard" type="PanelContainer" parent="."]
 layout_mode = 2
 offset_left = 40.0
-offset_top = 473.0
+offset_top = 525.0
 offset_right = 1040.0
-offset_bottom = 918.0
+offset_bottom = 970.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x1p38")
 script = ExtResource("19_axxdl")
 customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
