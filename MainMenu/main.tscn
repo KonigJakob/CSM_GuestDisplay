@@ -173,10 +173,10 @@ color = Color(0.054902, 0.298039, 0.662745, 1)
 
 [node name="Button_FamousGuests" type="Button" parent="MainMenu"]
 layout_mode = 2
-offset_left = 19.0
-offset_top = 587.0
-offset_right = 519.0
-offset_bottom = 1087.0
+offset_left = 37.0
+offset_top = 583.0
+offset_right = 537.0
+offset_bottom = 1083.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_l88qq")
@@ -187,10 +187,10 @@ expand_icon = true
 
 [node name="Button_GuestBook" type="Button" parent="MainMenu"]
 layout_mode = 2
-offset_left = 560.0
-offset_top = 1089.0
-offset_right = 1060.0
-offset_bottom = 1589.0
+offset_left = 543.0
+offset_top = 1083.0
+offset_right = 1043.0
+offset_bottom = 1583.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_l88qq")

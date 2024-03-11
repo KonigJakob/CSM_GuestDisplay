@@ -1,29 +1,48 @@
+FAMOUS GUESTS
+
 Adding Famous Guest Info to JSON:
+	
+	Found in %APPDATA%\Godot\app_userdata\CSM_GuestDisplay\FamousGuests_Resources\
+	
 	- Use Last name in all caps for GuestID.
 		- If there are two guests with the same last name, put the first letter of their first name before the last name.
 			Example: 	Ralph H. Baer --> BAER
 						Brenda Romero --> BROMERO
 						John Romero --> JROMERO
 	- Put Date of birth and death on the same space linked by a dash (-).
-	- Use the GuestID in the "famous for" field. Add the corresponding text on the CSM_GuestDisplay_Localization.csv file.
+	- In "Famous for" type German text before English text.
+	- Due to JSON encoding and decoding limitations of Godot on Windows, special German symbols must be typed as such:
+		ä -> [&auml;]
+		Ä -> [&Auml;]
+		ö -> [&ouml;]
+		Ö -> [&Ouml;]
+		ü -> [&uuml;]
+		Ü -> [&Uuml;]
+		ß -> [&szlig;]
+		Example:	Mitgründer von Atari. -> Mitgr[&uuml;]nder von Atari.
 
 Adding Famous Guest Images:
-	- Save images in FamousGuests_Resources/Images folder
-	- Images must be named using the Guest ID (Last name in CAPS) and a number (1-4).
+	
+	Add to: Found in %APPDATA%\Godot\app_userdata\CSM_GuestDisplay\FamousGuests_Resources\Images\
+	
+	- Images must be named using the Guest ID (Last name in CAPS) and one of four identifiers (Portrait, Image1, Image2, or Image3).
 		Example: BAER1, BAER2, BAER3
-	- Images must be saved as .png
-	- To correctly display them,
-		Image1: Portrait (300x400)
-		Image2-4: Landscape (300x400)
+	- Images must be saved as .png or .jpg
+	- To correctly display images, they must be saved with the following resolutions:
+		Portrait 1080 x 1350 
+		Image2-3 1080 x 566
 
-Adding Famous Guest Translation Text:
-	- Edit the CSM_GuestDisplay_Localization.csv. Any Spreadsheet apps can be used.
-	- Enclose text within quotation marks ("").
-	- Use the GuestID as key.
-		Example: BAER,"He developed the Brown Box.","Er hat die Brown Box entwickelt."
-	- If editing the file externally, don't forget to replace the existing file.
+GUEST BOOK
 
-Copy and paste this folder in:
-	Windows: %APPDATA%\Roaming\Godot\app_userdata\CSM_GuestDisplay
-	MAC: ~/Library/Application Support/Godot/app_userdata/CSM_GuestDisplay
-	Linux: ~/.local/share/godot/app_userdata/CSM_GuestDisplay
+	Answers saved in %APPDATA%\Godot\app_userdata\CSM_GuestDisplay\GuestAnswers as JSON.
+	
+	- Answers consist of:
+		- Guest ID
+		- Satisfaction level (0-5)
+		- Age group
+		- First language
+		- Message
+	- It is possible for guests to leave information blank.
+	- All answers from the same day are saved in a single JSON file automatically.
+	- JSON files can be converted to spreadsheets using tools such as https://data.page/json/csv
+	
