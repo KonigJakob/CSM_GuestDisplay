@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl8lffvjrwol6"]
+[gd_scene load_steps=10 format=3 uid="uid://dl8lffvjrwol6"]
 
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="2_n80u1"]
 
@@ -86,6 +86,13 @@ func on_tween_finished(up :bool):
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1iba"]
 bg_color = Color(0.241156, 0.241156, 0.241156, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndgcf"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q630f"]
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -118,6 +125,14 @@ layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 1920.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_e1iba")
+
+[node name="Panel Shadow" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 973.0
+offset_right = 1097.0
+offset_bottom = 1278.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ndgcf")
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
@@ -160,13 +175,13 @@ expand_mode = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_constants/separation = 35
+theme_override_constants/separation = 10
 
 [node name="Image_2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(450, 211.5)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 10
 expand_mode = 5
 
 [node name="Image_3" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
@@ -180,7 +195,7 @@ expand_mode = 5
 custom_minimum_size = Vector2(450, 211.5)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 2
 expand_mode = 5
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]

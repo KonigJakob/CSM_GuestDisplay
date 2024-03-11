@@ -43,10 +43,10 @@ welcome = NodePath("Label")
 
 [node name="ColorRect" type="ColorRect" parent="MainMenu"]
 layout_mode = 0
-offset_left = -27.0
-offset_top = -27.0
-offset_right = 1100.0
-offset_bottom = 1940.0
+offset_left = -26.0
+offset_top = -63.0
+offset_right = 1101.0
+offset_bottom = 1904.0
 theme = SubResource("Theme_wipqd")
 color = Color(0.0687983, 0.0687983, 0.0687982, 1)
 
@@ -173,9 +173,9 @@ color = Color(0.054902, 0.298039, 0.662745, 1)
 
 [node name="Button_FamousGuests" type="Button" parent="MainMenu"]
 layout_mode = 2
-offset_left = 37.0
-offset_top = 583.0
-offset_right = 537.0
+offset_left = 38.0
+offset_top = 603.0
+offset_right = 540.0
 offset_bottom = 1083.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -187,10 +187,10 @@ expand_icon = true
 
 [node name="Button_GuestBook" type="Button" parent="MainMenu"]
 layout_mode = 2
-offset_left = 543.0
+offset_left = 540.0
 offset_top = 1083.0
-offset_right = 1043.0
-offset_bottom = 1583.0
+offset_right = 1042.0
+offset_bottom = 1562.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_l88qq")
