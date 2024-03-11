@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://nrvsmp6oxc7x"]
-
-[ext_resource type="Texture2D" uid="uid://bud4djg5wa7ld" path="res://Assets/Textures/UITextures/AtlasTextures/Buttons/AT_Submit.svg" id="1_crnth"]
-
-[resource]
-atlas = ExtResource("1_crnth")
-region = Rect2(226, 1395, 3056, 1049)

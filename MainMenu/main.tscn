@@ -46,7 +46,7 @@ layout_mode = 0
 offset_left = -26.0
 offset_top = -63.0
 offset_right = 1101.0
-offset_bottom = 1904.0
+offset_bottom = 1963.0
 theme = SubResource("Theme_wipqd")
 color = Color(0.0687983, 0.0687983, 0.0687982, 1)
 
