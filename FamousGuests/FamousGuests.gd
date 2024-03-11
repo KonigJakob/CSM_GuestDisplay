@@ -33,7 +33,6 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		print("restart timer")
 		timer.start(timer.wait_time)
 
 func set_ui_elements_transform():

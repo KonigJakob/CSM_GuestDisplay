@@ -26,7 +26,6 @@ func set_language(language : String) -> void:
 	TranslationServer.set_locale(language)
 
 func _on_timer_timeout():
-	print("Timeout")
 	if get_tree().current_scene.name == "Main":
 		timer.start()
 	else:
