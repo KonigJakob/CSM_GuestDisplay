@@ -1,7 +1,6 @@
 extends Node
 
 @onready var save_data_filepath = new_data_file()
-@onready var guest_resource = load("res://FamousGuests_Resources/Guest.tres")
 var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 
 var guest_data_filepath : String = "user://FamousGuests_Resources/famous_guests.json"
