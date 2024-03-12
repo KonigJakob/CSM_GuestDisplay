@@ -28,7 +28,6 @@ SceneManager="*res://AutoLoads/SceneManager.gd"
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
-window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

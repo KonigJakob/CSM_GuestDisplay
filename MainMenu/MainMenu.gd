@@ -3,12 +3,26 @@ extends Control
 @export var localization_buttons : HBoxContainer
 @export var logo : TextureRect
 @export var welcome : Label
+@export var tween_duration : float
+@onready var color_timer = $ColorTimer
+var blocks = []
+var block_colors = []
+var colors_changed : bool
 
 func _ready():
 	localization_buttons.position.x = get_viewport_rect().size.x - localization_buttons.size.x - 35
 	localization_buttons.position.y = get_viewport_rect().size.y - localization_buttons.size.y - 35
 	logo.position = Vector2(get_viewport_rect().size.x/2 - logo.size.x/2, 100)
 	welcome.position = Vector2(get_viewport_rect().size.x/2 - welcome.size.x/2, logo.position.y + logo.size.y + 70)
+	blocks = get_tree().get_nodes_in_group("blocks")
+	block_colors = get_block_colors()
+	animate_block_colors()
+
+func _input(event):
+	if event is InputEventMouseButton:
+		animate_block_colors()
+	if event is InputEventKey:
+		reset_block_colors()
 
 func _on_button_famous_guests_pressed():
 	SceneManager.target_scene = "res://FamousGuests/FamousGuests.tscn"
@@ -22,3 +36,32 @@ func _on_translation_de_child_button_pressed():
 	TranslationServer.set_locale("de")
 func _on_translation_en_child_button_pressed():
 	TranslationServer.set_locale("en")
+	
+func get_block_colors() -> Array:
+	for b in blocks:
+		block_colors.append(b.color)
+	return block_colors
+	
+func animate_block_colors():
+	for b in blocks.size():
+		var tween = get_tree().create_tween()
+		if b+1 <= blocks.size():
+			tween.tween_property(blocks[b-1], "color", blocks[b].color, tween_duration)
+		else:
+			tween.tween_property(blocks[b-1], "color", blocks[0].color, tween_duration)
+	colors_changed = true
+
+func reset_block_colors():
+	for b in blocks.size():
+		var tween = get_tree().create_tween()
+		if b+1 <= blocks.size():
+			tween.tween_property(blocks[b-1], "color", block_colors[b], tween_duration)
+		else:
+			tween.tween_property(blocks[b-1], "color", block_colors[0], tween_duration)
+	colors_changed = false
+
+func _on_color_timer_timeout():
+	if colors_changed:
+		reset_block_colors()
+	else:
+		animate_block_colors()

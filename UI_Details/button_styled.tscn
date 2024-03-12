@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c8expo8ultkcm" path="res://Assets/Themes/visitorTheme.tres" id="1_7g7fw"]
 [ext_resource type="Script" path="res://UI_Details/button_styled.gd" id="1_vhlda"]
-[ext_resource type="Texture2D" uid="uid://dnd1js28akyln" path="res://Assets/Textures/Logos/logo_color_solo.png" id="3_oy7ea"]
+[ext_resource type="Texture2D" uid="uid://5jyiwuiik8kk" path="res://Assets/Textures/Logos/house_logo.jpg" id="3_8bpg3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwufu"]
 bg_color = Color(0.501961, 0.501961, 0.501961, 1)
@@ -80,7 +80,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_pgv25")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f8rb4")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_e07c4")
 toggle_mode = true
-icon = ExtResource("3_oy7ea")
+icon = ExtResource("3_8bpg3")
 icon_alignment = 1
 expand_icon = true
 
