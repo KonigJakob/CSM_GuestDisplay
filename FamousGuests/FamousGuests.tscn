@@ -19,6 +19,7 @@ script = ExtResource("1_hh1al")
 input_lock_rect = NodePath("InputLock")
 panel_input_lock = NodePath("InputLock2")
 portrait_gutter = 35.0
+tween_duration = 0.75
 portrait_panel = NodePath("Panel")
 left_arrow = NodePath("Button_LeftArrow")
 right_arrow = NodePath("Button_RightArrow")

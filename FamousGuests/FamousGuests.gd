@@ -10,6 +10,7 @@ var viewport
 @export var input_lock_rect : ColorRect
 @export var panel_input_lock : ColorRect
 @export var portrait_gutter: float
+@export var tween_duration: float = 1
 
 @export var portrait_panel : Panel
 @export var left_arrow : button_syled
@@ -25,7 +26,8 @@ var move_right : bool
 
 func _ready():
 	viewport = get_viewport_rect().size
-	guests = load_guests()
+	guests = SaveSystem.guest_array
+	connect_guest_signal()
 	set_guest_positions(guests, portrait_panel)
 	set_ui_elements_transform()
 	right_clicks = 0
@@ -43,50 +45,33 @@ func set_ui_elements_transform():
 	home_button.position = Vector2(35, viewport.y - home_button.size.y - 35)
 	logo.position = Vector2(get_viewport_rect().size.x/2 - logo.size.x/2, 100)
 	
-func load_guests() -> Array:
-	#var guests_w_images
-	var loaded_guests = []
-	#Load guests info, instantiate the scenes and save them in an array
-	if SaveSystem.load_guest():
-		guests = SaveSystem.load_guest()
-		#guests_w_images = SaveSystem.assign_images(guests)
-		for g in guests:
-			var _guest_portrait = guest_portrait.instantiate()
-			_guest_portrait.guest_name = guests[g]["Name"]
-			_guest_portrait.country = guests[g]["Country"]
-			_guest_portrait.birth = guests[g]["Birth"]
-			_guest_portrait.famous_for = SaveSystem.replace_unicode_characters(guests[g]["Famous for"])
-			_guest_portrait.image_1 = guests[g]["Image 1"]
-			_guest_portrait.image_2 = guests[g]["Image 2"]
-			_guest_portrait.image_3 = guests[g]["Image 3"]
-			_guest_portrait.portrait = guests[g]["Portrait"]
-			_guest_portrait.update_guest_info()
-			_guest_portrait.info_panel_changed.connect(_on_info_panel_changed)
-			loaded_guests.append(_guest_portrait)
-			SaveSystem.number_of_guests += 1
-			
-	else: 
-		print("Couldn't load guests.")
-	return loaded_guests
+func connect_guest_signal():
+	for g in guests:
+		g.info_panel_changed.connect(_on_info_panel_changed)
 
 func set_guest_positions(guest_array : Array, parent):
 	var current_x : int = 0
-	guest_array.shuffle()
-	for g in guest_array:
+	guests.shuffle()
+	for g in guests:
 		#g.gloabl_position.y = parent.position.y
 		g.position.x = current_x
 		current_x += g.size.x + portrait_gutter
 		parent.add_child(g)
 
+func reparent_guests():
+	for g in guests:
+		g.get_parent().remove_child(g)
+
 func move_guests_right(g):
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(g, "position", Vector2(g.position.x - g.size.x - portrait_gutter, g.position.y), 1)
+	tween.tween_property(g, "position", Vector2(g.position.x - g.size.x - portrait_gutter, g.position.y), tween_duration)
 	
 func move_guests_left(g):
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(g, "position", Vector2(g.position.x + g.size.x + portrait_gutter, g.position.y), 1)
+	tween.tween_property(g, "position", Vector2(g.position.x + g.size.x + portrait_gutter, g.position.y), tween_duration)
 
 func _on_button_home_pressed():
+	reparent_guests()
 	SceneManager.target_scene = "res://MainMenu/main.tscn"
 	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")
 

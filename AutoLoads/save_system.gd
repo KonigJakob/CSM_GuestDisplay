@@ -1,11 +1,19 @@
 extends Node
 
 @onready var save_data_filepath = new_data_file()
+@onready var guest_resource = load("res://FamousGuests_Resources/Guest.tres")
+var guest_portrait = preload("res://FamousGuests/guest_scene.tscn")
 
 var guest_data_filepath : String = "user://FamousGuests_Resources/famous_guests.json"
 var guest_images_folder_path : String = "user://FamousGuests_Resources/Images/"
 var placeholder_image : String = "res://Assets/Textures/no_image.jpg"
 var number_of_guests : int
+
+var guest_array: Array = []
+
+func _ready():
+	guest_array = load_guests()
+	print(guest_array)
 
 func _process(_delta):
 	if Input.is_action_pressed("exit"):
@@ -34,22 +42,30 @@ func save(content):
 		file.store_string("}")
 		print(file.get_path_absolute())
 		file = null
-	
-func load_guest_data():
-	if FileAccess.file_exists(save_data_filepath):
-		var file = FileAccess.open(save_data_filepath, FileAccess.READ)
-		var json = JSON.new()
-		var error = json.parse(file.get_as_text())
-		if error == OK:
-			var saved_data = json.data
-			if typeof(saved_data) == TYPE_ARRAY:
-				print(saved_data) # Prints array
-			else:
-				print("Unexpected data")
-		else:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", file.get_as_text(), " at line ", json.get_error_line())
-	else:
-		print("File does not exist!")
+		
+func load_guests() -> Array:
+	#var guests_w_images
+	var guests
+	var loaded_guests = []
+	#Load guests info, instantiate the scenes and save them in an array
+	if SaveSystem.load_guest():
+		guests = SaveSystem.load_guest()
+		for g in guests:
+			var _guest_portrait = guest_portrait.instantiate()
+			_guest_portrait.guest_name = guests[g]["Name"]
+			_guest_portrait.country = guests[g]["Country"]
+			_guest_portrait.birth = guests[g]["Birth"]
+			_guest_portrait.famous_for = SaveSystem.replace_unicode_characters(guests[g]["Famous for"])
+			_guest_portrait.image_1 = guests[g]["Image 1"]
+			_guest_portrait.image_2 = guests[g]["Image 2"]
+			_guest_portrait.image_3 = guests[g]["Image 3"]
+			_guest_portrait.portrait = guests[g]["Portrait"]
+			_guest_portrait.update_guest_info()
+			loaded_guests.append(_guest_portrait)
+			SaveSystem.number_of_guests += 1
+	else: 
+		print("Couldn't load guests.")
+	return loaded_guests
 
 func load_images_from_folder(folder_path : String, file_paths : bool) -> Array:
 	var loaded_images = []
