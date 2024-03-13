@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl8lffvjrwol6"]
+[gd_scene load_steps=11 format=3 uid="uid://dl8lffvjrwol6"]
 
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="2_n80u1"]
 
@@ -99,6 +99,9 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4mqa"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37mns"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lvmn"]
@@ -134,7 +137,7 @@ offset_right = 1097.0
 offset_bottom = 1278.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ndgcf")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Panel_Infos" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 49.0
 offset_top = 966.0
@@ -142,10 +145,26 @@ offset_right = 1097.0
 offset_bottom = 1270.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q630f")
 
+[node name="Panel Shadow2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 129.0
+offset_right = 1097.0
+offset_bottom = 950.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ndgcf")
+
+[node name="Panel_Photos" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 121.0
+offset_right = 1097.0
+offset_bottom = 942.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u4mqa")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 1080.0
-offset_bottom = 1943.0
+offset_bottom = 1980.0
 
 [node name="Panel2" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -232,14 +251,14 @@ theme_override_font_sizes/font_size = 48
 text = "Placeholder date"
 
 [node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 65)
+custom_minimum_size = Vector2(0, 102)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_37mns")
 
 [node name="Info" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 36
 text = "Renowned tech pioneer and philanthropist Bill Gates, co-founder of Microsoft, recently graced the halls of Berlin's Computerspielemuseum, immersing himself in a journey through the evolution of gaming technology. From vintage consoles to cutting-edge virtual reality experiences, Gates delved into the rich history and innovative future of gaming, engaging with interactive exhibits that showcase the cultural significance and technological advancements of this dynamic industry.
 
 Der angesehene Technologiepionier und Philanthrop Bill Gates, Mitbegründer von Microsoft, besuchte kürzlich die Hallen des Computerspielemuseums in Berlin und tauchte ein in die Entwicklung der Gaming-Technologie. Von Vintage-Konsolen bis hin zu modernsten Virtual-Reality-Erlebnissen erkundete Gates die reiche Geschichte und innovative Zukunft des Gamings. Er interagierte mit interaktiven Ausstellungsstücken, die die kulturelle Bedeutung und technologischen Fortschritte dieser dynamischen Branche verdeutlichen."

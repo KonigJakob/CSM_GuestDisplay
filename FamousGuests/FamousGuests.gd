@@ -51,8 +51,8 @@ func connect_guest_signal():
 
 func set_guest_positions(guest_array : Array, parent):
 	var current_x : int = 0
-	guests.shuffle()
-	for g in guests:
+	guest_array.shuffle()
+	for g in guest_array:
 		#g.gloabl_position.y = parent.position.y
 		g.position.x = current_x
 		current_x += g.size.x + portrait_gutter

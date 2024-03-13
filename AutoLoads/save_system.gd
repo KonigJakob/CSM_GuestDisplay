@@ -12,7 +12,6 @@ var guest_array: Array = []
 
 func _ready():
 	guest_array = load_guests()
-	print(guest_array)
 
 func _process(_delta):
 	if Input.is_action_pressed("exit"):

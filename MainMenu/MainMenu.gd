@@ -9,6 +9,8 @@ var blocks = []
 var block_colors = []
 var colors_changed : bool
 
+var tween
+
 func _ready():
 	localization_buttons.position.x = get_viewport_rect().size.x - localization_buttons.size.x - 35
 	localization_buttons.position.y = get_viewport_rect().size.y - localization_buttons.size.y - 35
@@ -43,7 +45,9 @@ func get_block_colors() -> Array:
 	return block_colors
 	
 func animate_block_colors():
-	var tween = get_tree().create_tween()
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
 	for b in blocks.size():
 		if b+1 <= blocks.size():
 			tween.tween_property(blocks[b-1], "color", blocks[b].color, tween_duration)
@@ -52,10 +56,12 @@ func animate_block_colors():
 	colors_changed = true
 
 func reset_block_colors():
-	var tween = get_tree().create_tween()
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
 	for b in blocks.size():
 		if b+1 <= blocks.size():
-			tween.tween_property(blocks[b-1], "color", block_colors[b], tween_duration)
+			tween.tween_property(blocks[b], "color", block_colors[b], tween_duration)
 		else:
 			tween.tween_property(blocks[b-1], "color", block_colors[0], tween_duration)
 	colors_changed = false
@@ -63,7 +69,5 @@ func reset_block_colors():
 func _on_color_timer_timeout():
 	if colors_changed:
 		reset_block_colors()
-		pass
 	else:
 		animate_block_colors()
-		pass
