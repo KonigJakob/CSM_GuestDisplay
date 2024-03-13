@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UI_Details/LoadingScene.gd" id="1_77r23"]
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_rjbbc"]
 [ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="3_jnhmt"]
-[ext_resource type="Texture2D" uid="uid://b6nbqlxfs6al6" path="res://Assets/Textures/Logos/logo_small.png" id="4_waq2w"]
+[ext_resource type="Texture2D" uid="uid://chw28ud24uidd" path="res://Assets/Textures/Logos/logo_color_small.png" id="4_umhu1"]
 
 [node name="LoadingScene" type="Control"]
 layout_mode = 3
@@ -18,13 +18,15 @@ script = ExtResource("1_77r23")
 layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 1920.0
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 script = ExtResource("2_rjbbc")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_right = 390.0
 offset_bottom = 48.0
 theme = ExtResource("3_jnhmt")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "LOADING"
 horizontal_alignment = 1
@@ -34,8 +36,8 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 193.0
 offset_top = 840.0
-offset_right = 913.0
-offset_bottom = 1031.0
-texture_under = ExtResource("4_waq2w")
-texture_progress = ExtResource("4_waq2w")
+offset_right = 693.0
+offset_bottom = 973.0
+texture_under = ExtResource("4_umhu1")
+texture_progress = ExtResource("4_umhu1")
 tint_under = Color(1, 1, 1, 0.376471)

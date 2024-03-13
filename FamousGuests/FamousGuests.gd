@@ -41,15 +41,15 @@ func _input(event):
 		timer.start(timer.wait_time)
 
 func set_ui_elements_transform():
-	portrait_panel.position = viewport / 2 - (portrait_panel.size / 2)
+	portrait_panel.position = viewport / 2 - (portrait_panel.size / 2) + Vector2(0, 100)
 	left_arrow.position = Vector2(35, portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y * 1.5)
 	right_arrow.position = Vector2(viewport.x - right_arrow.size.x - 35, left_arrow.position.y)
 	right_arrow_sub.position = Vector2(viewport.x - right_arrow_sub.size.x, portrait_panel.position.y - 100)
 	left_arrow_sub.position = Vector2(0, portrait_panel.position.y - 100)
 	localization_buttons.position = Vector2(viewport.x - localization_buttons.size.x - 35, viewport.y - localization_buttons.size.y - 35)
-	home_button.position = Vector2(home_button.size.x, viewport.y - home_button.size.y * 2)
+	home_button.position = Vector2(viewport.x/2 - home_button.size.x/2, viewport.y - home_button.size.y * 2)
 	logo.position = Vector2(get_viewport_rect().size.x/2 - logo.size.x/2, 100)
-	titel.position = Vector2(0,logo.position.y + logo.size.y + 35)
+	titel.position = Vector2(0,logo.position.y + logo.size.y + 70)
 	
 func connect_guest_signal():
 	for g in guests:

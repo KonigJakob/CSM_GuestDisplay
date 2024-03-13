@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5jyiwuiik8kk"
-path="res://.godot/imported/house_logo.jpg-5e5b1826cb60363ed73f72108591be47.ctex"
+uid="uid://cjo6mre2jgy28"
+path="res://.godot/imported/logo_blurred.png-545244f28101847557f3c9a982412a3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Logos/house_logo.jpg"
-dest_files=["res://.godot/imported/house_logo.jpg-5e5b1826cb60363ed73f72108591be47.ctex"]
+source_file="res://Assets/Textures/UITextures/logo_blurred.png"
+dest_files=["res://.godot/imported/logo_blurred.png-545244f28101847557f3c9a982412a3e.ctex"]
 
 [params]
 

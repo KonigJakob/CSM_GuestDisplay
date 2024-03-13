@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://dl8lffvjrwol6"]
 
+[ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="1_qdn25"]
 [ext_resource type="Texture2D" uid="uid://dab0fvjr67tbm" path="res://Assets/Textures/UITextures/x_button.png" id="2_cponn"]
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="2_n80u1"]
-[ext_resource type="Texture2D" uid="uid://dnd1js28akyln" path="res://Assets/Textures/Logos/logo_color_solo.png" id="2_usdva"]
 
 [sub_resource type="GDScript" id="GDScript_av1n2"]
 script/source = "extends Control
@@ -29,7 +29,7 @@ func _ready():
 	scale = Vector2(0, 0)
 	screen_center = get_viewport_rect().size/2
 	global_position = screen_center
-	x_button.position = Vector2(x_button.size.x * 2 + 35, get_viewport_rect().size.y - x_button.size.y * 2)
+	x_button.position = Vector2(get_viewport_rect().size.x - x_button.size.x -75, get_viewport_rect().size.y - x_button.size.y * 2)
 	resize_text($VBoxContainer/MarginContainer2/VBoxContainer/Name)
 
 func _on_visibility_changed():
@@ -136,6 +136,17 @@ layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 1922.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_e1iba")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.235294)
+layout_mode = 0
+offset_left = -148.0
+offset_top = 787.0
+offset_right = 1291.0
+offset_bottom = 1767.0
+texture = ExtResource("1_qdn25")
+flip_h = true
+flip_v = true
 
 [node name="Panel Shadow" type="Panel" parent="."]
 layout_mode = 0
@@ -283,16 +294,6 @@ button_size = Vector2(75, 75)
 button_toggle_mode = false
 icon = true
 icon_texture = ExtResource("2_cponn")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.647059)
-layout_mode = 0
-offset_left = 1043.0
-offset_top = 916.0
-offset_right = 1081.0
-offset_bottom = 1220.0
-texture = ExtResource("2_usdva")
-expand_mode = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

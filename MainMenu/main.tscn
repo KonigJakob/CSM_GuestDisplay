@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://s4mr31xgwy8"]
+[gd_scene load_steps=13 format=3 uid="uid://s4mr31xgwy8"]
 
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_c0ywe"]
+[ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="2_eiiww"]
 [ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="2_hosmq"]
 [ext_resource type="FontFile" uid="uid://df1w6lgghcy18" path="res://Assets/Fonts/visitor2 (1).ttf" id="2_vsk7g"]
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="3_vk3j7"]
@@ -52,6 +53,16 @@ offset_right = 1101.0
 offset_bottom = 1963.0
 theme = SubResource("Theme_wipqd")
 color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="MainMenu"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 0
+offset_left = -1247.0
+offset_top = 187.0
+offset_right = 2394.0
+offset_bottom = 1978.0
+texture = ExtResource("2_eiiww")
+flip_v = true
 
 [node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 0

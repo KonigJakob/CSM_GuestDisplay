@@ -5,6 +5,7 @@ extends Control
 @export var welcome : Label
 @export var tween_duration : float
 @onready var color_timer = $ColorTimer
+@onready var grid = $GridContainer
 var blocks = []
 var block_colors = []
 var colors_changed : bool
@@ -12,10 +13,10 @@ var colors_changed : bool
 var tween
 
 func _ready():
-	localization_buttons.position.x = get_viewport_rect().size.x - localization_buttons.size.x - 35
+	localization_buttons.position.x = grid.size.x - localization_buttons.size.x
 	localization_buttons.position.y = get_viewport_rect().size.y - localization_buttons.size.y - 35
 	logo.position = Vector2(get_viewport_rect().size.x/2 - logo.size.x/2, 100)
-	welcome.position = Vector2(get_viewport_rect().size.x/2 - welcome.size.x/2, logo.position.y + logo.size.y + 70)
+	welcome.position = Vector2(get_viewport_rect().size.x/2 - welcome.size.x/2, logo.position.y + logo.size.y + 105)
 	blocks = get_tree().get_nodes_in_group("blocks")
 	block_colors = get_block_colors()
 	animate_block_colors()
