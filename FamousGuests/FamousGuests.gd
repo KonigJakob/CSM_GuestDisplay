@@ -14,10 +14,13 @@ var viewport
 
 @export var portrait_panel : Panel
 @export var left_arrow : button_syled
+@export var left_arrow_sub : button_syled
 @export var right_arrow : button_syled
+@export var right_arrow_sub : button_syled
 @export var localization_buttons : HBoxContainer
 @export var home_button: button_syled
 @export var logo : TextureRect
+@export var titel : CenterContainer
 @export var timer : Timer
 
 var right_clicks : int
@@ -41,9 +44,12 @@ func set_ui_elements_transform():
 	portrait_panel.position = viewport / 2 - (portrait_panel.size / 2)
 	left_arrow.position = Vector2(35, portrait_panel.position.y + portrait_panel.size.y + left_arrow.size.y * 1.5)
 	right_arrow.position = Vector2(viewport.x - right_arrow.size.x - 35, left_arrow.position.y)
+	right_arrow_sub.position = Vector2(viewport.x - right_arrow_sub.size.x, portrait_panel.position.y - 100)
+	left_arrow_sub.position = Vector2(0, portrait_panel.position.y - 100)
 	localization_buttons.position = Vector2(viewport.x - localization_buttons.size.x - 35, viewport.y - localization_buttons.size.y - 35)
 	home_button.position = Vector2(35, viewport.y - home_button.size.y - 35)
 	logo.position = Vector2(get_viewport_rect().size.x/2 - logo.size.x/2, 100)
+	titel.position = Vector2(0,logo.position.y + logo.size.y + 35)
 	
 func connect_guest_signal():
 	for g in guests:

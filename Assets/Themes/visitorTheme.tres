@@ -1,10 +1,9 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c8expo8ultkcm"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c8expo8ultkcm"]
 
 [ext_resource type="FontFile" uid="uid://cvdkd2neu25va" path="res://Assets/Fonts/Atkinson-Hyperlegible-Regular-102.otf" id="1_40tun"]
-[ext_resource type="StyleBox" uid="uid://dlox2rr4jh60o" path="res://Assets/Resources/button_styleboxTextture.tres" id="2_vakjq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5dmg"]
-bg_color = Color(0.72549, 0.878431, 0.270588, 1)
+bg_color = Color(0.243137, 0.45098, 0.737255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm6g"]
 bg_color = Color(1, 1, 1, 1)
@@ -15,7 +14,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkfjr"]
-bg_color = Color(0.72549, 0.878431, 0.270588, 1)
+bg_color = Color(0.243137, 0.45098, 0.737255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2roi"]
 bg_color = Color(0.92549, 0.92549, 0.92549, 1)
@@ -28,7 +27,6 @@ corner_radius_bottom_left = 5
 default_font = ExtResource("1_40tun")
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_40tun")
-Button/styles/disabled = ExtResource("2_vakjq")
 Label/font_sizes/font_size = 42
 Label/fonts/font = ExtResource("1_40tun")
 Label/styles/normal = null
@@ -37,7 +35,7 @@ LineEdit/constants/caret_width = 5
 LineEdit/fonts/font = ExtResource("1_40tun")
 OptionButton/colors/font_color = Color(0, 0, 0, 1)
 OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
-OptionButton/colors/font_hover_color = Color(0.203922, 0.203922, 0.203922, 1)
+OptionButton/colors/font_hover_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 OptionButton/colors/font_pressed_color = Color(0, 0, 0, 1)
 OptionButton/constants/arrow_margin = 15
 OptionButton/fonts/font = ExtResource("1_40tun")

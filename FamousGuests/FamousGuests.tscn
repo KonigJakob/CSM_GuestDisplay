@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="7_jwkf8"]
 [ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="10_bt386"]
 
-[node name="Root" type="Control" node_paths=PackedStringArray("input_lock_rect", "panel_input_lock", "portrait_panel", "left_arrow", "right_arrow", "localization_buttons", "home_button", "logo", "timer")]
+[node name="Root" type="Control" node_paths=PackedStringArray("input_lock_rect", "panel_input_lock", "portrait_panel", "left_arrow", "left_arrow_sub", "right_arrow", "right_arrow_sub", "localization_buttons", "home_button", "logo", "titel", "timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,10 +22,13 @@ portrait_gutter = 35.0
 tween_duration = 0.75
 portrait_panel = NodePath("Panel")
 left_arrow = NodePath("Button_LeftArrow")
+left_arrow_sub = NodePath("Button_LeftArrowSub")
 right_arrow = NodePath("Button_RightArrow")
+right_arrow_sub = NodePath("Button_RightArrowSub")
 localization_buttons = NodePath("Localization_Buttons")
 home_button = NodePath("Button_Home")
 logo = NodePath("Logo")
+titel = NodePath("CenterContainer")
 timer = NodePath("Timer")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -56,9 +59,36 @@ offset_right = 127.5
 offset_bottom = 67.0
 grow_horizontal = 1
 grow_vertical = 1
-button_color = Color(0, 0.419608, 0.729412, 1)
+button_color = Color(0.85, 0.85, 0.85, 1)
 button_text = "<<"
 button_size = Vector2(300, 100)
+button_toggle_mode = false
+
+[node name="Button_LeftArrowSub" parent="." instance=ExtResource("7_jwkf8")]
+custom_minimum_size = Vector2(150, 1150)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -172.5
+offset_top = -8.0
+offset_right = -22.5
+offset_bottom = 1142.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0, 0.419608, 0.729412, 0)
+button_size = Vector2(150, 1150)
+button_toggle_mode = false
+
+[node name="Button_RightArrowSub" parent="." instance=ExtResource("7_jwkf8")]
+custom_minimum_size = Vector2(150, 1150)
+layout_mode = 1
+offset_left = -49.0
+offset_top = -8.0
+offset_right = 101.0
+offset_bottom = 1142.0
+button_color = Color(1, 1, 1, 0)
+button_size = Vector2(150, 1150)
 button_toggle_mode = false
 
 [node name="Button_RightArrow" parent="." instance=ExtResource("7_jwkf8")]
@@ -68,7 +98,7 @@ offset_left = -49.0
 offset_top = -8.0
 offset_right = 251.0
 offset_bottom = 67.0
-button_color = Color(0, 0.419608, 0.729412, 1)
+button_color = Color(0.85, 0.85, 0.85, 1)
 button_text = ">>"
 button_size = Vector2(300, 100)
 button_toggle_mode = false
@@ -85,9 +115,9 @@ script = ExtResource("1_5hcky")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_top = 142.0
+offset_top = 256.0
 offset_right = 1080.0
-offset_bottom = 587.0
+offset_bottom = 304.0
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
@@ -168,6 +198,8 @@ stretch_mode = 5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="child_button_pressed" from="Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
+[connection signal="child_button_pressed" from="Button_LeftArrowSub" to="." method="_on_button_left_arrow_pressed"]
+[connection signal="child_button_pressed" from="Button_RightArrowSub" to="." method="_on_button_right_arrow_pressed"]
 [connection signal="child_button_pressed" from="Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]
 [connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="child_button_pressed" from="Localization_Buttons/Translation_DE" to="." method="_on_translation_de_child_button_pressed"]
