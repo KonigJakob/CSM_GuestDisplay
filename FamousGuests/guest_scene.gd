@@ -66,7 +66,7 @@ func get_valid_guest_image(image_path : String, _image_number : int = 0):
 		if _image_number == 3:
 			$Button/InfoPanel/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/Image_4.visible = false
 		else:
-			_image_texture = load("res://Assets/Textures/no_image.jpg")
+			_image_texture = load("res://Assets/Textures/UITextures/no_image.jpg")
 	return _image_texture
 	
 func _on_panel_opened():
