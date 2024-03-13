@@ -16,6 +16,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_pressed("exit"):
 		#save_on_exit()
+		guest_array.clear()
 		get_tree().quit()
 		
 func new_data_file() -> String:
