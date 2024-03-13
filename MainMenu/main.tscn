@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://s4mr31xgwy8"]
+[gd_scene load_steps=12 format=3 uid="uid://s4mr31xgwy8"]
 
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_c0ywe"]
 [ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="2_hosmq"]
 [ext_resource type="FontFile" uid="uid://df1w6lgghcy18" path="res://Assets/Fonts/visitor2 (1).ttf" id="2_vsk7g"]
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="3_vk3j7"]
 [ext_resource type="Texture2D" uid="uid://ba4edxqqhlpwk" path="res://Assets/Textures/Logos/logo_color_dott__light_300dpi.png" id="3_y2aqm"]
+[ext_resource type="Texture2D" uid="uid://cquhhdbsyqos5" path="res://Assets/Textures/UITextures/de.png" id="6_f32p1"]
+[ext_resource type="Texture2D" uid="uid://coyxtgisq8vnf" path="res://Assets/Textures/UITextures/gb.png" id="7_61v27"]
 
 [sub_resource type="Theme" id="Theme_7lbj6"]
 
@@ -242,10 +244,11 @@ z_index = 3
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_vertical = 0
-button_color = Color(0.898039, 0, 0, 1)
-button_text = "De"
-button_size = Vector2(75, 75)
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
 button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("6_f32p1")
 
 [node name="Translation_EN" parent="Localization_Buttons" instance=ExtResource("3_vk3j7")]
 z_index = 3
@@ -253,10 +256,11 @@ z_as_relative = false
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_vertical = 0
-button_color = Color(0.054902, 0.298039, 0.662745, 1)
-button_text = "En"
-button_size = Vector2(75, 75)
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
 button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("7_61v27")
 
 [connection signal="pressed" from="MainMenu/Button_FamousGuests" to="MainMenu" method="_on_button_famous_guests_pressed"]
 [connection signal="pressed" from="MainMenu/Button_GuestBook" to="MainMenu" method="_on_button_guest_book_pressed"]

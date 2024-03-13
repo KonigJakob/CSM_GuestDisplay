@@ -1,6 +1,0 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dlox2rr4jh60o"]
-
-[ext_resource type="Texture2D" uid="uid://bldnnkagy5k44" path="res://Assets/Textures/UITextures/T_ButtonNormal.svg" id="1_qwc62"]
-
-[resource]
-texture = ExtResource("1_qwc62")

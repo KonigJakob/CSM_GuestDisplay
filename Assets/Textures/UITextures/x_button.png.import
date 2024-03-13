@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxk7e8fh612x0"
-path="res://.godot/imported/Arrow.png-e2a57d6308b0d9d07145df5d8ebf183f.ctex"
+uid="uid://dab0fvjr67tbm"
+path="res://.godot/imported/x_button.png-0aeefed72e6f232d1f151f8ef26b24eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/UITextures/Arrow.png"
-dest_files=["res://.godot/imported/Arrow.png-e2a57d6308b0d9d07145df5d8ebf183f.ctex"]
+source_file="res://Assets/Textures/UITextures/x_button.png"
+dest_files=["res://.godot/imported/x_button.png-0aeefed72e6f232d1f151f8ef26b24eb.ctex"]
 
 [params]
 
@@ -26,7 +26,7 @@ mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
-process/premult_alpha=true
+process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false

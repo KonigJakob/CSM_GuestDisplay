@@ -10,13 +10,16 @@ signal child_button_pressed
 @export var button_size : Vector2
 @export var button_toggle_mode : bool = true
 @export var button_pressed : bool = false
-@export var home_icon : bool = false
+@export var icon : bool = false
+@export var icon_texture : CompressedTexture2D
 
 var button_pos
 
 func _ready():
-	if !home_icon:
+	if !icon:
 		$Button.icon = null
+	else:
+		$Button.icon = icon_texture
 	$Button/CenterContainer/Label.text = button_text
 	$Button/CenterContainer/Label["theme_override_font_sizes/font_size"] = button_text_size
 	$Shadow.size = button_size

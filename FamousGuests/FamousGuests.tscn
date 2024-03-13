@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://1la0pgo1y5tp"]
+[gd_scene load_steps=9 format=3 uid="uid://1la0pgo1y5tp"]
 
 [ext_resource type="Script" path="res://FamousGuests/Background.gd" id="1_5hcky"]
 [ext_resource type="Script" path="res://FamousGuests/FamousGuests.gd" id="1_hh1al"]
+[ext_resource type="Texture2D" uid="uid://bht4b5cxpncl2" path="res://Assets/Textures/UITextures/arrow_left.png" id="4_yprov"]
+[ext_resource type="Texture2D" uid="uid://5ilblptlh657" path="res://Assets/Textures/UITextures/arrow_right.png" id="5_exn6d"]
+[ext_resource type="Texture2D" uid="uid://su8cekh1vny4" path="res://Assets/Textures/UITextures/logo_house.png" id="5_ngtj3"]
 [ext_resource type="Texture2D" uid="uid://ba4edxqqhlpwk" path="res://Assets/Textures/Logos/logo_color_dott__light_300dpi.png" id="5_t2dia"]
 [ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="7_jwkf8"]
 [ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="10_bt386"]
@@ -60,9 +63,10 @@ offset_bottom = 67.0
 grow_horizontal = 1
 grow_vertical = 1
 button_color = Color(0.85, 0.85, 0.85, 1)
-button_text = "<<"
 button_size = Vector2(300, 100)
 button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("4_yprov")
 
 [node name="Button_LeftArrowSub" parent="." instance=ExtResource("7_jwkf8")]
 custom_minimum_size = Vector2(150, 1150)
@@ -99,9 +103,10 @@ offset_top = -8.0
 offset_right = 251.0
 offset_bottom = 67.0
 button_color = Color(0.85, 0.85, 0.85, 1)
-button_text = ">>"
 button_size = Vector2(300, 100)
 button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("5_exn6d")
 
 [node name="InputLock" type="ColorRect" parent="."]
 visible = false
@@ -128,7 +133,7 @@ text = "FAmOUS GUESTS
 "
 
 [node name="Button_Home" parent="." instance=ExtResource("7_jwkf8")]
-z_index = 3
+z_index = 30
 z_as_relative = false
 layout_mode = 0
 anchors_preset = 0
@@ -140,10 +145,11 @@ offset_right = 110.0
 offset_bottom = 1195.0
 grow_horizontal = 1
 grow_vertical = 1
-button_color = Color(1, 1, 1, 1)
+button_color = Color(0.882353, 0.882353, 0.882353, 1)
 button_size = Vector2(75, 75)
 button_toggle_mode = false
-home_icon = true
+icon = true
+icon_texture = ExtResource("5_ngtj3")
 
 [node name="Localization_Buttons" type="HBoxContainer" parent="."]
 visible = false
@@ -182,7 +188,7 @@ layout_mode = 2
 offset_left = -1.0
 offset_top = 1.0
 offset_right = 1079.0
-offset_bottom = 1816.0
+offset_bottom = 1745.0
 color = Color(1, 1, 1, 0)
 
 [node name="Logo" type="TextureRect" parent="."]

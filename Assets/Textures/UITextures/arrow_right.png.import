@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e8w8aypld6bc"
-path="res://.godot/imported/T_ButtonClick.svg-b703b89ce023437a32fff35c03c54c43.ctex"
+uid="uid://5ilblptlh657"
+path="res://.godot/imported/arrow_right.png-e5b81ca8d1f261a28b8f26637868a94c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/UITextures/T_ButtonClick.svg"
-dest_files=["res://.godot/imported/T_ButtonClick.svg-b703b89ce023437a32fff35c03c54c43.ctex"]
+source_file="res://Assets/Textures/UITextures/arrow_right.png"
+dest_files=["res://.godot/imported/arrow_right.png-e5b81ca8d1f261a28b8f26637868a94c.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

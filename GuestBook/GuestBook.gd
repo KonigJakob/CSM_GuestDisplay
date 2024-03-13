@@ -64,8 +64,8 @@ func set_up_ui_elements():
 	logo_rect.position = Vector2(get_viewport_rect().size.x/2 - logo_rect.size.x/2, 100)
 	back_button.position = Vector2(panels.position.x, panels.position.y + panels.size.y + 75)
 	submit_button.position = Vector2(get_viewport_rect().size.x - submit_button.size.x - 200, panels.position.y)
-	localization_buttons.position = Vector2(get_viewport_rect().size.x - localization_buttons.size.x - 35, get_viewport_rect().size.y - localization_buttons.size.y - 35)
-	button_home.position = Vector2(35, get_viewport_rect().size.y - button_home.size.y - 35)
+	button_home.position = Vector2(button_home.size.x, get_viewport_rect().size.y - button_home.size.y * 2)
+	localization_buttons.position = Vector2(get_viewport_rect().size.x - localization_buttons.size.x - 35, button_home.position.y)
 
 func _on_star_1_pressed():
 	satisfaction_button = 1

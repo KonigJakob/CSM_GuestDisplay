@@ -1,9 +1,0 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bdbhobs8vpyt8"]
-
-[ext_resource type="Texture2D" uid="uid://bfcrqipmx7sa0" path="res://Assets/Textures/UITextures/Panel_Arrow.png" id="1_re4kr"]
-[ext_resource type="FontFile" uid="uid://cij5kl01d1wcu" path="res://Assets/Fonts/Atkinson-Hyperlegible-Regular-102.otf" id="2_8t47d"]
-
-[resource]
-OptionButton/icons/arrow = ExtResource("1_re4kr")
-PopupMenu/fonts/font = ExtResource("2_8t47d")
-PopupMenu/fonts/font_separator = ExtResource("2_8t47d")
