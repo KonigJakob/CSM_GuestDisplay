@@ -184,7 +184,12 @@ func move_page_forward():
 	lock_rect.visible = true
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 	tween.tween_property(panels, "position", Vector2(panels.position.x - panel_size.x - 75, panels.position.y),tween_movement_interval)
-	current_page += 1
+	if current_page == PollPage.STARS:
+		current_page = PollPage.AGE
+	elif current_page == PollPage.AGE:
+		current_page = PollPage.LANGUAGE
+	elif current_page == PollPage.LANGUAGE:
+		current_page = PollPage.MESSAGE
 	update_page_buttons()
 	tween.finished.connect(on_tween_finished)
 func move_page_backwards():
@@ -192,8 +197,13 @@ func move_page_backwards():
 	var tween = get_tree().create_tween()
 	lock_rect.visible = true
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
-	tween.tween_property(panels, "position", Vector2(panels.position.x + panel_size.x + 75, panels.position.y),tween_movement_interval)
-	current_page -= 1
+	tween.tween_property(panels, "position", Vector2(panels.position.x + panel_size.x + 75, panels.position.y),tween_movement_interval * 0.75)
+	if current_page == PollPage.AGE:
+		current_page = PollPage.STARS
+	elif current_page == PollPage.LANGUAGE:
+		current_page = PollPage.AGE
+	elif current_page == PollPage.MESSAGE:
+		current_page = PollPage.LANGUAGE
 	update_page_buttons()
 	tween.finished.connect(on_tween_finished)
 func tween_forward():
