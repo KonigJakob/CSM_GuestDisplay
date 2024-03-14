@@ -55,10 +55,12 @@ func _ready():
 	satisfaction_button = 0
 	age_buttons = get_tree().get_nodes_in_group("age_buttons")
 	date = Time.get_date_string_from_system()
-	remove_child(promt_panel)
+	#remove_child(promt_panel)
 	stars = get_tree().get_nodes_in_group("star_buttons")
 	update_page_buttons()
 	submit_button.modulate.a = 0
+	#add_child(promt_panel)
+	promt_panel.visible = false
 
 func set_up_ui_elements():
 	logo_rect.position = Vector2(get_viewport_rect().size.x/2 - logo_rect.size.x/2, 100)
@@ -165,7 +167,7 @@ func _on_button_home_pressed():
 	
 func _on_button_submit_pressed():
 	submit_guest_info()
-	add_child(promt_panel)
+	promt_panel.visible = true
 	tween_visibility(promt_panel)
 	promt_panel.global_position = Vector2.ZERO
 
@@ -237,6 +239,6 @@ func tween_visibility(object_to_modulate) -> void:
 		tween.tween_property(object_to_modulate, "visible", false, tween_wait_interval/2)
 
 func _on_translation_de_child_button_pressed():
-	SceneManager.set_language("de")
+	TranslationServer.set_locale("de")
 func _on_translation_en_child_button_pressed():
-	SceneManager.set_language("en")
+	TranslationServer.set_locale("en")

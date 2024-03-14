@@ -74,6 +74,9 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1p38"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naoj1"]
 bg_color = Color(0.411765, 0.411765, 0.411765, 1)
 corner_radius_top_left = 5
@@ -128,9 +131,6 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdqwl"]
 bg_color = Color(0.054902, 0.298039, 0.662745, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1p38"]
-bg_color = Color(0, 0, 0, 1)
 
 [node name="Root" type="Control" node_paths=PackedStringArray("back_button", "submit_button", "logo_rect", "button_home", "localization_buttons", "panels", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_YoungAdult", "Age_Adult", "Age_MidAged", "Age_Senior", "option_button", "lock_rect")]
 layout_mode = 3
@@ -564,6 +564,67 @@ texture = ExtResource("7_ks0j6")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="LockRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1079.0
+offset_bottom = 1921.0
+theme = ExtResource("3_8lblm")
+color = Color(1, 1, 1, 0)
+script = ExtResource("2_v86rj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 185.0
+offset_bottom = 75.0
+theme_override_constants/separation = 35
+
+[node name="Translation_DE" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("9_uefa7")
+
+[node name="Translation_EN" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("10_f3x05")
+
+[node name="Button_Submit" parent="." instance=ExtResource("19_vj6oa")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 485.0
+offset_top = 750.0
+offset_right = 685.0
+offset_bottom = 825.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0.976471, 0.203922, 0, 1)
+button_text = "SUBMIT"
+button_size = Vector2(200, 75)
+button_toggle_mode = false
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 473.0
+offset_right = 1040.0
+offset_bottom = 918.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1p38")
+script = ExtResource("19_axxdl")
+customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
+background = SubResource("StyleBoxFlat_x1p38")
+
 [node name="Promt_Panel" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
@@ -679,67 +740,6 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
 
-[node name="LockRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 1079.0
-offset_bottom = 1921.0
-theme = ExtResource("3_8lblm")
-color = Color(1, 1, 1, 0)
-script = ExtResource("2_v86rj")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 185.0
-offset_bottom = 75.0
-theme_override_constants/separation = 35
-
-[node name="Translation_DE" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-button_color = Color(0.85098, 0.85098, 0.85098, 1)
-button_size = Vector2(75, 50)
-button_toggle_mode = false
-icon = true
-icon_texture = ExtResource("9_uefa7")
-
-[node name="Translation_EN" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-button_color = Color(0.85098, 0.85098, 0.85098, 1)
-button_size = Vector2(75, 50)
-button_toggle_mode = false
-icon = true
-icon_texture = ExtResource("10_f3x05")
-
-[node name="Button_Submit" parent="." instance=ExtResource("19_vj6oa")]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 485.0
-offset_top = 750.0
-offset_right = 685.0
-offset_bottom = 825.0
-grow_horizontal = 1
-grow_vertical = 1
-button_color = Color(0.976471, 0.203922, 0, 1)
-button_text = "SUBMIT"
-button_size = Vector2(200, 75)
-button_toggle_mode = false
-
-[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
-layout_mode = 2
-offset_left = 40.0
-offset_top = 12.0
-offset_right = 1040.0
-offset_bottom = 457.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_x1p38")
-script = ExtResource("19_axxdl")
-customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
-background = SubResource("StyleBoxFlat_x1p38")
-
 [connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
 [connection signal="child_button_pressed" from="Button_Return" to="." method="_on_button_return_pressed"]
 [connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_1" to="." method="_on_star_1_pressed"]
@@ -755,8 +755,8 @@ background = SubResource("StyleBoxFlat_x1p38")
 [connection signal="child_button_pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group2/Button_Senior" to="." method="_on_button_senior_pressed"]
 [connection signal="item_selected" from="Panels/LanguageContainer/VBoxContainer/HBoxContainer/Panel2/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="text_changed" from="Panels/MessageContainer/VBoxContainer/HBoxContainer/Panel2/LineEdit" to="." method="_on_text_changed"]
-[connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_No" to="." method="_on_button_no_pressed"]
-[connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_Yes" to="." method="_on_button_yes_pressed"]
 [connection signal="child_button_pressed" from="HBoxContainer/Translation_DE" to="." method="_on_translation_de_child_button_pressed"]
 [connection signal="child_button_pressed" from="HBoxContainer/Translation_EN" to="." method="_on_translation_en_child_button_pressed"]
 [connection signal="child_button_pressed" from="Button_Submit" to="." method="_on_button_submit_pressed"]
+[connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_No" to="." method="_on_button_no_pressed"]
+[connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_Yes" to="." method="_on_button_yes_pressed"]

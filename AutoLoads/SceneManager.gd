@@ -22,9 +22,6 @@ var target_scene : String :
 			target_scene = value
 			target_scene_changed.emit(target_scene)
 
-func set_language(language : String) -> void: 
-	TranslationServer.set_locale(language)
-
 func _on_timer_timeout():
 	if get_tree().current_scene.name == "Main":
 		timer.start()
