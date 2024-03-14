@@ -62,7 +62,7 @@ func animate_block_colors():
 	tween.set_trans(Tween.TRANS_SINE)
 	print(blocks.size())
 	for b in blocks.size():
-		tween.tween_property(blocks[b], "color", blocks[blocks.size()-1-b].color, tween_duration)
+		tween.tween_property(blocks[b], "color", blocks[blocks.size()-1-b].color, tween_duration * 2)
 	colors_changed = true
 
 func reset_block_colors():
@@ -71,9 +71,9 @@ func reset_block_colors():
 	tween = get_tree().create_tween()
 	for b in blocks.size():
 		if b+1 <= blocks.size():
-			tween.tween_property(blocks[b], "color", block_colors[b], tween_duration)
+			tween.tween_property(blocks[b], "color", block_colors[b], tween_duration * 2)
 		else:
-			tween.tween_property(blocks[b-1], "color", block_colors[0], tween_duration)
+			tween.tween_property(blocks[b-1], "color", block_colors[0], tween_duration * 2)
 	colors_changed = false
 
 func _on_color_timer_timeout():
