@@ -30,11 +30,15 @@ var move_right : bool
 func _ready():
 	viewport = get_viewport_rect().size
 	guests = SaveSystem.guest_array
+	close_panels()
 	connect_guest_signal()
 	set_guest_positions(guests, portrait_panel)
 	set_ui_elements_transform()
 	right_clicks = 0
 	left_clicks = guests.size() -1
+	for g in guests:
+		g.info_panel.update_guest_properties()
+	panel_input_lock.visible = false
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -50,7 +54,12 @@ func set_ui_elements_transform():
 	home_button.position = Vector2(viewport.x/2 - home_button.size.x/2, viewport.y - home_button.size.y * 2)
 	logo.position = Vector2(get_viewport_rect().size.x/2 - logo.size.x/2, 100)
 	titel.position = Vector2(0,logo.position.y + logo.size.y + 70)
-	
+
+func close_panels():
+	for g in guests:
+		if g.info_panel_shown:
+			g.info_panel.visible = false
+
 func connect_guest_signal():
 	for g in guests:
 		g.info_panel_changed.connect(_on_info_panel_changed)

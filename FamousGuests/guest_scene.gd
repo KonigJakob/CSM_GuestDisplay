@@ -28,6 +28,7 @@ var info_panel_shown : bool :
 @export var button : Button
 @export var container : VBoxContainer
 
+
 func _ready():
 	portrait_panel = get_parent()
 	button.size = portrait_panel.size
