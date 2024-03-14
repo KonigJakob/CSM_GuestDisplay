@@ -2,7 +2,24 @@
 
 CSM Guest Display is an app to showcase famous guests that have visited the Computerspielemuseum in Berlin and survey regular visitors about their experience. Survey data can be retrieved to gather metrics about visitors such as age and first language. The app is meant to be used on a touch screen at the Computerspielemuseum main exhibit.
 
-CSM Guest Display was created by Jaime Emilio O'Hea Flores as part of an Internship for the Game Design BA at HTW Berlin in 2024.
+CSM Guest Display was created using the Godot Engine by Jaime Emilio O'Hea Flores as part of an Internship for the Game Design BA at HTW Berlin in 2024.
+
+## Setup
+
+The user must create three folders within Godot's default user:// folder (%APPDATA%\Godot\app_userdata\CSM_GuestDisplay\).
+
+### GuestAnswers
+
+CSM Guest display will save survey answers here as JSON files.
+
+### FamousGuests_Resources
+
+- Store the Famous Guests JSON file here.
+- Create and "Images" folder in here.
+
+### FamousGuests_Resources/Images
+
+- Store all Famous Guest images as described below.
 
 ## FAMOUS GUESTS
 
