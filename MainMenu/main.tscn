@@ -240,7 +240,7 @@ texture = ExtResource("3_y2aqm")
 expand_mode = 1
 
 [node name="ColorTimer" type="Timer" parent="MainMenu"]
-wait_time = 32.0
+wait_time = 16.0
 autostart = true
 
 [node name="Localization_Buttons" type="HBoxContainer" parent="."]

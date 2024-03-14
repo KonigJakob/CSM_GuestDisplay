@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dgbxrik588yxv" path="res://Assets/Textures/UITextures/logo_house_blurred.png" id="8_tsa8j"]
 [ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="10_bt386"]
 
-[node name="Root" type="Control" node_paths=PackedStringArray("input_lock_rect", "panel_input_lock", "portrait_panel", "left_arrow", "left_arrow_sub", "right_arrow", "right_arrow_sub", "localization_buttons", "home_button", "logo", "titel", "timer")]
+[node name="FamousGuests" type="Control" node_paths=PackedStringArray("input_lock_rect", "panel_input_lock", "portrait_panel", "left_arrow", "left_arrow_sub", "right_arrow", "right_arrow_sub", "localization_buttons", "home_button", "logo", "titel", "timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,7 +52,7 @@ offset_bottom = 1946.0
 texture = ExtResource("3_v1evy")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 7.5
 autostart = true
 
 [node name="Panel" type="Panel" parent="."]

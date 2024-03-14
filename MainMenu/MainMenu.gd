@@ -48,21 +48,15 @@ func get_block_colors() -> Array:
 	for b in blocks:
 		block_colors.append(b.color)
 	return block_colors
-	
-func get_alt_block_colors() -> Array:
-	var block_alt_colors = []
-	for b in blocks.size():
-		blocks[b].color = blocks[blocks.size()-1-b]
-		
-	return block_alt_colors
-	
+
 func animate_block_colors():
+	if tween:
+		tween.kill()
 	tween = get_tree().create_tween().set_loops(-1)
 	tween.set_ease(Tween.EASE_OUT_IN)
 	tween.set_trans(Tween.TRANS_SINE)
-	print(blocks.size())
 	for b in blocks.size():
-		tween.tween_property(blocks[b], "color", blocks[blocks.size()-1-b].color, tween_duration * 2)
+		tween.tween_property(blocks[b], "color", blocks[blocks.size()-1-b].color, tween_duration)
 	colors_changed = true
 
 func reset_block_colors():
@@ -71,9 +65,9 @@ func reset_block_colors():
 	tween = get_tree().create_tween()
 	for b in blocks.size():
 		if b+1 <= blocks.size():
-			tween.tween_property(blocks[b], "color", block_colors[b], tween_duration * 2)
+			tween.tween_property(blocks[b], "color", block_colors[b], tween_duration)
 		else:
-			tween.tween_property(blocks[b-1], "color", block_colors[0], tween_duration * 2)
+			tween.tween_property(blocks[b-1], "color", block_colors[0], tween_duration)
 	colors_changed = false
 
 func _on_color_timer_timeout():
