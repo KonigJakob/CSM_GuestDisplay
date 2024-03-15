@@ -25,7 +25,6 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 default_font = ExtResource("2_vsk7g")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 0.501961)
-Button/colors/font_focus_color = Color(0, 1, 0.286275, 1)
 Button/styles/disabled = null
 LineEdit/fonts/font = SubResource("FontFile_wriq0")
 
@@ -252,7 +251,7 @@ theme_override_constants/separation = 15
 
 [node name="Translation_DE" parent="Localization_Buttons" instance=ExtResource("3_vk3j7")]
 z_index = 3
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 size_flags_vertical = 0
 button_color = Color(0.85098, 0.85098, 0.85098, 1)
@@ -264,7 +263,7 @@ icon_texture = ExtResource("6_f32p1")
 [node name="Translation_EN" parent="Localization_Buttons" instance=ExtResource("3_vk3j7")]
 z_index = 3
 z_as_relative = false
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 size_flags_vertical = 0
 button_color = Color(0.85098, 0.85098, 0.85098, 1)

@@ -365,7 +365,7 @@ button_size = Vector2(200, 200)
 [node name="Button_YoungAdult" parent="Panels/AgeContainer/VBoxContainer/Age_Group" groups=["age_buttons"] instance=ExtResource("19_vj6oa")]
 custom_minimum_size = Vector2(200, 175)
 layout_mode = 2
-button_color = Color(0.988235, 0.654902, 0.262745, 1)
+button_color = Color(0.988235, 0.611765, 0.137255, 1)
 button_text = "19 - 30"
 button_text_size = 50
 button_size = Vector2(200, 200)
@@ -580,7 +580,7 @@ offset_bottom = 75.0
 theme_override_constants/separation = 35
 
 [node name="Translation_DE" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 button_color = Color(0.85098, 0.85098, 0.85098, 1)
 button_size = Vector2(75, 50)
@@ -589,7 +589,7 @@ icon = true
 icon_texture = ExtResource("9_uefa7")
 
 [node name="Translation_EN" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 button_color = Color(0.85098, 0.85098, 0.85098, 1)
 button_size = Vector2(75, 50)
@@ -617,9 +617,9 @@ button_toggle_mode = false
 [node name="OnscreenKeyboard" type="PanelContainer" parent="."]
 layout_mode = 2
 offset_left = 40.0
-offset_top = 473.0
+offset_top = 423.0
 offset_right = 1040.0
-offset_bottom = 918.0
+offset_bottom = 868.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x1p38")
 script = ExtResource("19_axxdl")
 customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
