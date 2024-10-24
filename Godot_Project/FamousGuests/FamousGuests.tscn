@@ -1,0 +1,224 @@
+[gd_scene load_steps=10 format=3 uid="uid://1la0pgo1y5tp"]
+
+[ext_resource type="Script" path="res://FamousGuests/Background.gd" id="1_5hcky"]
+[ext_resource type="Script" path="res://FamousGuests/FamousGuests.gd" id="1_hh1al"]
+[ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="3_v1evy"]
+[ext_resource type="Texture2D" uid="uid://bht4b5cxpncl2" path="res://Assets/Textures/UITextures/arrow_left.png" id="4_yprov"]
+[ext_resource type="Texture2D" uid="uid://5ilblptlh657" path="res://Assets/Textures/UITextures/arrow_right.png" id="5_exn6d"]
+[ext_resource type="Texture2D" uid="uid://ba4edxqqhlpwk" path="res://Assets/Textures/Logos/logo_color_dott__light_300dpi.png" id="5_t2dia"]
+[ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="7_jwkf8"]
+[ext_resource type="Texture2D" uid="uid://dgbxrik588yxv" path="res://Assets/Textures/UITextures/logo_house_blurred.png" id="8_tsa8j"]
+[ext_resource type="Theme" uid="uid://ba32j84atev3c" path="res://Assets/Themes/Pixel_Theme.tres" id="10_bt386"]
+
+[node name="FamousGuests" type="Control" node_paths=PackedStringArray("input_lock_rect", "panel_input_lock", "portrait_panel", "left_arrow", "left_arrow_sub", "right_arrow", "right_arrow_sub", "localization_buttons", "home_button", "logo", "titel", "timer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1080.0
+offset_bottom = -1920.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hh1al")
+input_lock_rect = NodePath("InputLock")
+panel_input_lock = NodePath("InputLock2")
+portrait_gutter = 35.0
+tween_duration = 0.75
+portrait_panel = NodePath("Panel")
+left_arrow = NodePath("Button_LeftArrow")
+left_arrow_sub = NodePath("Button_LeftArrowSub")
+right_arrow = NodePath("Button_RightArrow")
+right_arrow_sub = NodePath("Button_RightArrowSub")
+localization_buttons = NodePath("Localization_Buttons")
+home_button = NodePath("Button_Home")
+logo = NodePath("Logo")
+titel = NodePath("CenterContainer")
+timer = NodePath("Timer")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1920.0
+color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+script = ExtResource("1_5hcky")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 0
+offset_left = -1252.0
+offset_top = 177.0
+offset_right = 2344.0
+offset_bottom = 1946.0
+texture = ExtResource("3_v1evy")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.5
+autostart = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 900.0
+
+[node name="Button_LeftArrow" parent="." instance=ExtResource("7_jwkf8")]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -172.5
+offset_top = -8.0
+offset_right = 127.5
+offset_bottom = 67.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0.85, 0.85, 0.85, 1)
+button_size = Vector2(300, 100)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("4_yprov")
+
+[node name="Button_LeftArrowSub" parent="." instance=ExtResource("7_jwkf8")]
+custom_minimum_size = Vector2(150, 1150)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -172.5
+offset_top = -8.0
+offset_right = -22.5
+offset_bottom = 1142.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0, 0.419608, 0.729412, 0)
+button_size = Vector2(150, 1150)
+button_toggle_mode = false
+
+[node name="Button_RightArrowSub" parent="." instance=ExtResource("7_jwkf8")]
+custom_minimum_size = Vector2(150, 1150)
+layout_mode = 1
+offset_left = -49.0
+offset_top = -8.0
+offset_right = 101.0
+offset_bottom = 1142.0
+button_color = Color(1, 1, 1, 0)
+button_size = Vector2(150, 1150)
+button_toggle_mode = false
+
+[node name="Button_RightArrow" parent="." instance=ExtResource("7_jwkf8")]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+offset_left = -49.0
+offset_top = -8.0
+offset_right = 251.0
+offset_bottom = 67.0
+button_color = Color(0.85, 0.85, 0.85, 1)
+button_size = Vector2(300, 100)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("5_exn6d")
+
+[node name="InputLock" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 717.0
+offset_bottom = 1271.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_5hcky")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1080.0
+offset_bottom = 304.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("10_bt386")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "FAmOUS GUESTS
+"
+
+[node name="Button_Home" parent="." instance=ExtResource("7_jwkf8")]
+z_index = 30
+z_as_relative = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 35.0
+offset_top = 1120.0
+offset_right = 110.0
+offset_bottom = 1195.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0.882353, 0.882353, 0.882353, 1)
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("8_tsa8j")
+
+[node name="Localization_Buttons" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 408.0
+offset_top = 1120.0
+offset_right = 573.0
+offset_bottom = 1195.0
+theme_override_constants/separation = 15
+
+[node name="Translation_DE" parent="Localization_Buttons" instance=ExtResource("7_jwkf8")]
+z_index = 3
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(0.976471, 0.203922, 0, 1)
+button_text = "De"
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+
+[node name="Translation_EN" parent="Localization_Buttons" instance=ExtResource("7_jwkf8")]
+z_index = 3
+z_as_relative = false
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(0, 0.333333, 0.686275, 1)
+button_text = "En"
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+
+[node name="InputLock2" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+layout_mode = 2
+offset_left = -65.0
+offset_top = 1.0
+offset_right = 1184.0
+offset_bottom = 1745.0
+color = Color(1, 1, 1, 0)
+
+[node name="Logo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(785, 209)
+layout_mode = 0
+offset_left = 227.0
+offset_top = 44.0
+offset_right = 671.0
+offset_bottom = 162.0
+texture = ExtResource("5_t2dia")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="child_button_pressed" from="Button_LeftArrow" to="." method="_on_button_left_arrow_pressed"]
+[connection signal="child_button_pressed" from="Button_LeftArrowSub" to="." method="_on_button_left_arrow_pressed"]
+[connection signal="child_button_pressed" from="Button_RightArrowSub" to="." method="_on_button_right_arrow_pressed"]
+[connection signal="child_button_pressed" from="Button_RightArrow" to="." method="_on_button_right_arrow_pressed"]
+[connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_DE" to="." method="_on_translation_de_child_button_pressed"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_EN" to="." method="_on_translation_en_child_button_pressed"]

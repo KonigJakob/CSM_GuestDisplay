@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0jrgwvdm51yo"]
+
+[ext_resource type="Script" path="res://ImportInterface/ImportInterface.gd" id="1_ir0br"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ncub1"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_10mku"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q4v7g"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1sk35"]
+
+[node name="ImportInterface" type="Control" node_paths=PackedStringArray("guest_id_edit")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ir0br")
+guest_id_edit = NodePath("VBoxContainer/ID_Label2/ID_Line")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 185.0
+offset_right = 703.0
+offset_bottom = 706.0
+theme_override_constants/separation = 35
+
+[node name="NAME_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "NAME:"
+vertical_alignment = 1
+
+[node name="NAME_Line" type="LineEdit" parent="VBoxContainer/NAME_Label" groups=["line_edits"]]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="COUNTRY_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "COUNTRY: "
+vertical_alignment = 1
+
+[node name="COUNTRY_Line" type="LineEdit" parent="VBoxContainer/COUNTRY_Label" groups=["line_edits"]]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="DATES_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "DATE(S):"
+vertical_alignment = 1
+
+[node name="DATES_Line" type="LineEdit" parent="VBoxContainer/DATES_Label" groups=["line_edits"]]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="INFO_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INFO:"
+vertical_alignment = 1
+
+[node name="INFO_Line" type="LineEdit" parent="VBoxContainer/INFO_Label" groups=["line_edits"]]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="ID_Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "ID:"
+vertical_alignment = 1
+
+[node name="ID_Line" type="LineEdit" parent="VBoxContainer/ID_Label2" groups=["line_edits"]]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 39.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="PORTRAIT" type="TextureRect" parent="VBoxContainer/HBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 337)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("PlaceholderTexture2D_ncub1")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="IMAGE1" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 141)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_10mku")
+expand_mode = 1
+
+[node name="IMAGE2" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 141)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_q4v7g")
+expand_mode = 1
+
+[node name="IMAGE3" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["texture_rects"]]
+custom_minimum_size = Vector2(270, 141)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_1sk35")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 605.0
+offset_right = 684.0
+offset_bottom = 655.0
+text = "SUBMIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

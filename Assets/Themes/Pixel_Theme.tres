@@ -1,8 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ba32j84atev3c"]
-
-[ext_resource type="FontFile" uid="uid://df1w6lgghcy18" path="res://Assets/Fonts/visitor2 (1).ttf" id="1_0sifm"]
-
-[resource]
-Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 128
-Label/fonts/font = ExtResource("1_0sifm")

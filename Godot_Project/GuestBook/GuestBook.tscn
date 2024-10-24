@@ -1,0 +1,762 @@
+[gd_scene load_steps=37 format=3 uid="uid://biq73pieyhg4y"]
+
+[ext_resource type="Script" path="res://GuestBook/GuestBook.gd" id="1_i5vid"]
+[ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_v86rj"]
+[ext_resource type="Theme" uid="uid://c8expo8ultkcm" path="res://Assets/Themes/visitorTheme.tres" id="3_8lblm"]
+[ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="4_pu4lf"]
+[ext_resource type="Texture2D" uid="uid://xw25l3gqjigy" path="res://Assets/Textures/UITextures/AtlasTextures/Stars/AT_Star_Normal.tres" id="5_lmw77"]
+[ext_resource type="Texture2D" uid="uid://bimmrqogoifkl" path="res://Assets/Textures/UITextures/AtlasTextures/Stars/AT_Star_Toggle.tres" id="6_gusho"]
+[ext_resource type="Texture2D" uid="uid://dgbxrik588yxv" path="res://Assets/Textures/UITextures/logo_house_blurred.png" id="6_o2qli"]
+[ext_resource type="Texture2D" uid="uid://ba4edxqqhlpwk" path="res://Assets/Textures/Logos/logo_color_dott__light_300dpi.png" id="7_ks0j6"]
+[ext_resource type="Texture2D" uid="uid://bm02x3qoejygt" path="res://Assets/Textures/UITextures/back_button.png" id="7_vdawn"]
+[ext_resource type="Texture2D" uid="uid://cquhhdbsyqos5" path="res://Assets/Textures/UITextures/de.png" id="9_uefa7"]
+[ext_resource type="Texture2D" uid="uid://coyxtgisq8vnf" path="res://Assets/Textures/UITextures/gb.png" id="10_f3x05"]
+[ext_resource type="Script" path="res://addons/onscreenkeyboard/onscreen_keyboard.gd" id="19_axxdl"]
+[ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="19_vj6oa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gh6t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u47er"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8xnw"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq2n8"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upgn5"]
+texture = ExtResource("5_lmw77")
+modulate_color = Color(0.709804, 0.709804, 0.709804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myial"]
+texture = ExtResource("6_gusho")
+modulate_color = Color(1, 0.723865, 0.326252, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7la"]
+texture = ExtResource("6_gusho")
+modulate_color = Color(1, 0.723865, 0.326252, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q664k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2rnw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxnbe"]
+bg_color = Color(0.411765, 0.411765, 0.411765, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4btq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkv73"]
+bg_color = Color(0.411765, 0.411765, 0.411765, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nj82l"]
+bg_color = Color(0.92549, 0.92549, 0.92549, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1p38"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naoj1"]
+bg_color = Color(0.411765, 0.411765, 0.411765, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlkls"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukeon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqgfw"]
+bg_color = Color(0.898039, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yemdj"]
+bg_color = Color(1, 0.300051, 0.236805, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0hbh"]
+bg_color = Color(0.656786, 0, 0.0795321, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep331"]
+bg_color = Color(0, 0.419608, 0.729412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dufi0"]
+bg_color = Color(0, 0.419608, 0.729412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdqwl"]
+bg_color = Color(0.054902, 0.298039, 0.662745, 1)
+
+[node name="Root" type="Control" node_paths=PackedStringArray("back_button", "submit_button", "logo_rect", "button_home", "localization_buttons", "panels", "Star_One", "Star_Two", "Star_Three", "Star_Four", "Star_Five", "Age_Child", "Age_Teen", "Age_YoungAdult", "Age_Adult", "Age_MidAged", "Age_Senior", "option_button", "lock_rect")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5vid")
+back_button = NodePath("Button_Return")
+tween_wait_interval = 1.0
+tween_movement_interval = 1.25
+submit_button = NodePath("Button_Submit")
+logo_rect = NodePath("Logo")
+button_home = NodePath("Button_Home")
+localization_buttons = NodePath("HBoxContainer")
+panels = NodePath("Panels")
+Star_One = NodePath("Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_1")
+Star_Two = NodePath("Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_2")
+Star_Three = NodePath("Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_3")
+Star_Four = NodePath("Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_4")
+Star_Five = NodePath("Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_5")
+Age_Child = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Child")
+Age_Teen = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Teen")
+Age_YoungAdult = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_YoungAdult")
+Age_Adult = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult")
+Age_MidAged = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group2/Button_MidAged")
+Age_Senior = NodePath("Panels/AgeContainer/VBoxContainer/Age_Group2/Button_Senior")
+option_button = NodePath("Panels/LanguageContainer/VBoxContainer/HBoxContainer/Panel2/OptionButton")
+lock_rect = NodePath("LockRect")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1920.0
+theme = ExtResource("3_8lblm")
+color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+script = ExtResource("2_v86rj")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+offset_left = -1252.0
+offset_top = 177.0
+offset_right = 2344.0
+offset_bottom = 1946.0
+texture = ExtResource("4_pu4lf")
+
+[node name="Button_Home" parent="." instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 35.0
+offset_top = 1120.0
+offset_right = 110.0
+offset_bottom = 1195.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("6_o2qli")
+
+[node name="Button_Return" parent="." instance=ExtResource("19_vj6oa")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 35.0
+offset_top = 950.0
+offset_right = 110.0
+offset_bottom = 1025.0
+button_color = Color(0.882353, 0.882353, 0.882353, 1)
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("7_vdawn")
+
+[node name="Panels" type="HBoxContainer" parent="."]
+layout_mode = 2
+anchor_left = -0.001
+anchor_top = 0.157
+anchor_right = 1.0
+anchor_bottom = 0.617
+offset_left = 111.08
+offset_top = 622.56
+offset_right = 3031.0
+offset_bottom = 291.36
+theme_override_constants/separation = 300
+
+[node name="StarContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5gh6t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/StarContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panels/StarContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "POLL_EXPERIENCE"
+
+[node name="Panel" type="Panel" parent="Panels/StarContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="Panel2" type="Panel" parent="Panels/StarContainer/VBoxContainer"]
+custom_minimum_size = Vector2(812.5, 187.5)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_p8xnw")
+
+[node name="Panel" type="Panel" parent="Panels/StarContainer/VBoxContainer/Panel2"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = -5.0
+offset_right = 817.5
+offset_bottom = 182.5
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_cq2n8")
+
+[node name="Satisfaction" type="HBoxContainer" parent="Panels/StarContainer/VBoxContainer/Panel2"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 810.0
+offset_bottom = 157.0
+size_flags_vertical = 3
+theme = ExtResource("3_8lblm")
+theme_override_constants/separation = 14
+
+[node name="Star_1" type="Button" parent="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction" groups=["star_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
+toggle_mode = true
+
+[node name="Star_2" type="Button" parent="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction" groups=["star_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
+toggle_mode = true
+
+[node name="Star_3" type="Button" parent="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction" groups=["star_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
+toggle_mode = true
+
+[node name="Star_4" type="Button" parent="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction" groups=["star_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
+toggle_mode = true
+
+[node name="Star_5" type="Button" parent="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction" groups=["star_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_upgn5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_myial")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7la")
+toggle_mode = true
+
+[node name="AgeContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(850, 200)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q664k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/AgeContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="Panels/AgeContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "POLL_AGE"
+
+[node name="Panel" type="Panel" parent="Panels/AgeContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="Age_Group" type="HBoxContainer" parent="Panels/AgeContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("3_8lblm")
+theme_override_constants/separation = 10
+
+[node name="Button_Child" parent="Panels/AgeContainer/VBoxContainer/Age_Group" groups=["age_buttons"] instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(200, 175)
+layout_mode = 2
+button_color = Color(0.976471, 0.203922, 0, 1)
+button_text = "0 - 12"
+button_text_size = 50
+button_size = Vector2(200, 200)
+
+[node name="Button_Teen" parent="Panels/AgeContainer/VBoxContainer/Age_Group" groups=["age_buttons"] instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(200, 175)
+layout_mode = 2
+button_color = Color(1, 0.466667, 0, 1)
+button_text = "13 - 18"
+button_text_size = 50
+button_size = Vector2(200, 200)
+
+[node name="Button_YoungAdult" parent="Panels/AgeContainer/VBoxContainer/Age_Group" groups=["age_buttons"] instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(200, 175)
+layout_mode = 2
+button_color = Color(0.988235, 0.611765, 0.137255, 1)
+button_text = "19 - 30"
+button_text_size = 50
+button_size = Vector2(200, 200)
+
+[node name="Button_Adult" parent="Panels/AgeContainer/VBoxContainer/Age_Group" groups=["age_buttons"] instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(200, 175)
+layout_mode = 2
+button_color = Color(0, 0.419608, 0.729412, 1)
+button_text = "31 - 45"
+button_text_size = 50
+button_size = Vector2(200, 200)
+
+[node name="Panel2" type="Panel" parent="Panels/AgeContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="Age_Group2" type="HBoxContainer" parent="Panels/AgeContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("3_8lblm")
+theme_override_constants/separation = 10
+
+[node name="Panel2" type="Panel" parent="Panels/AgeContainer/VBoxContainer/Age_Group2"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="Button_MidAged" parent="Panels/AgeContainer/VBoxContainer/Age_Group2" groups=["age_buttons"] instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(200, 175)
+layout_mode = 2
+button_color = Color(0.321569, 0.247059, 0.603922, 1)
+button_text = "46 - 60"
+button_text_size = 50
+button_size = Vector2(200, 200)
+
+[node name="Button_Senior" parent="Panels/AgeContainer/VBoxContainer/Age_Group2" groups=["age_buttons"] instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(200, 175)
+layout_mode = 2
+button_color = Color(0.243137, 0.45098, 0.737255, 1)
+button_text = "65 +"
+button_text_size = 50
+button_size = Vector2(200, 200)
+
+[node name="LanguageContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j2rnw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/LanguageContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panels/LanguageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "POLL_LANGUAGE"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panels/LanguageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/LanguageContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Panels/LanguageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxnbe")
+
+[node name="OptionButton" type="OptionButton" parent="Panels/LanguageContainer/VBoxContainer/HBoxContainer/Panel2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+offset_left = 5.0
+offset_top = -7.0
+offset_right = 305.0
+offset_bottom = 68.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+item_count = 14
+popup/item_0/text = "GERMAN"
+popup/item_0/id = 3
+popup/item_1/text = "ENGLISH"
+popup/item_1/id = 4
+popup/item_2/text = "ARABIC"
+popup/item_2/id = 0
+popup/item_3/text = "CHINESE"
+popup/item_3/id = 1
+popup/item_4/text = "SPANISH"
+popup/item_4/id = 2
+popup/item_5/text = "FRENCH"
+popup/item_5/id = 6
+popup/item_6/text = "HINDI"
+popup/item_6/id = 7
+popup/item_7/text = "ITALIAN"
+popup/item_7/id = 8
+popup/item_8/text = "JAPANESE"
+popup/item_8/id = 9
+popup/item_9/text = "POLISH"
+popup/item_9/id = 10
+popup/item_10/text = "RUSSIAN"
+popup/item_10/id = 11
+popup/item_11/text = "TURKISH"
+popup/item_11/id = 12
+popup/item_12/text = "UKRANIAN"
+popup/item_12/id = 13
+popup/item_13/text = "OTHER"
+popup/item_13/id = 14
+
+[node name="Panel3" type="Panel" parent="Panels/LanguageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="MessageContainer" type="PanelContainer" parent="Panels"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v4btq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/MessageContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Panels/MessageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "POLL_MESSAGE"
+vertical_alignment = 2
+
+[node name="Panel" type="Panel" parent="Panels/MessageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/MessageContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(600, 260)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tkv73")
+
+[node name="LineEdit" type="LineEdit" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer/Panel2"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+offset_left = 7.0
+offset_top = -11.0
+offset_right = 756.0
+offset_bottom = 251.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_nj82l")
+placeholder_text = "  ..."
+clear_button_enabled = true
+caret_blink = true
+
+[node name="Panel3" type="Panel" parent="Panels/MessageContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
+
+[node name="Logo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(785, 209)
+layout_mode = 2
+offset_left = 227.0
+offset_top = 44.0
+offset_right = 671.0
+offset_bottom = 162.0
+texture = ExtResource("7_ks0j6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LockRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1079.0
+offset_bottom = 1921.0
+theme = ExtResource("3_8lblm")
+color = Color(1, 1, 1, 0)
+script = ExtResource("2_v86rj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 185.0
+offset_bottom = 75.0
+theme_override_constants/separation = 35
+
+[node name="Translation_DE" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("9_uefa7")
+
+[node name="Translation_EN" parent="HBoxContainer" instance=ExtResource("19_vj6oa")]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("10_f3x05")
+
+[node name="Button_Submit" parent="." instance=ExtResource("19_vj6oa")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 485.0
+offset_top = 750.0
+offset_right = 685.0
+offset_bottom = 825.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0.976471, 0.203922, 0, 1)
+button_text = "SUBMIT"
+button_size = Vector2(200, 75)
+button_toggle_mode = false
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 423.0
+offset_right = 1040.0
+offset_bottom = 868.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1p38")
+script = ExtResource("19_axxdl")
+customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
+background = SubResource("StyleBoxFlat_x1p38")
+
+[node name="Promt_Panel" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 1080.0
+offset_bottom = 1920.0
+
+[node name="ColorRect" type="ColorRect" parent="Promt_Panel"]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1920.0
+color = Color(0.00392157, 0.00392157, 0.00392157, 0.768627)
+
+[node name="MainPanelShadow" type="Panel" parent="Promt_Panel"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 987.0
+offset_right = 810.0
+offset_bottom = 1305.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_naoj1")
+
+[node name="MainPanel" type="Panel" parent="Promt_Panel"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 977.0
+offset_right = 820.0
+offset_bottom = 1292.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tlkls")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Promt_Panel/MainPanel"]
+layout_mode = 0
+offset_right = 560.0
+offset_bottom = 312.0
+
+[node name="Panel3" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[node name="Label" type="Label" parent="Promt_Panel/MainPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "THANK_YOU"
+horizontal_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Promt_Panel/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[node name="Label2" type="Label" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("3_8lblm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "EXTRA_ANSWER"
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Promt_Panel/MainPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[node name="Button_No" type="Button" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_8lblm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sqgfw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yemdj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t0hbh")
+text = "NO_K"
+
+[node name="Panel3" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[node name="Button_Yes" type="Button" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_8lblm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ep331")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dufi0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdqwl")
+text = "YES"
+
+[node name="Panel2" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[node name="Panel2" type="Panel" parent="Promt_Panel/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukeon")
+
+[connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
+[connection signal="child_button_pressed" from="Button_Return" to="." method="_on_button_return_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_1" to="." method="_on_star_1_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_2" to="." method="_on_star_2_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_3" to="." method="_on_star_3_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_4" to="." method="_on_star_4_pressed"]
+[connection signal="pressed" from="Panels/StarContainer/VBoxContainer/Panel2/Satisfaction/Star_5" to="." method="_on_star_5_pressed"]
+[connection signal="child_button_pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Child" to="." method="_on_button_child_pressed"]
+[connection signal="child_button_pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Teen" to="." method="_on_button_teen_pressed"]
+[connection signal="child_button_pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_YoungAdult" to="." method="_on_button_young_adult_pressed"]
+[connection signal="child_button_pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group/Button_Adult" to="." method="_on_button_adult_pressed"]
+[connection signal="child_button_pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group2/Button_MidAged" to="." method="_on_button_mid_aged_pressed"]
+[connection signal="child_button_pressed" from="Panels/AgeContainer/VBoxContainer/Age_Group2/Button_Senior" to="." method="_on_button_senior_pressed"]
+[connection signal="item_selected" from="Panels/LanguageContainer/VBoxContainer/HBoxContainer/Panel2/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="text_changed" from="Panels/MessageContainer/VBoxContainer/HBoxContainer/Panel2/LineEdit" to="." method="_on_text_changed"]
+[connection signal="child_button_pressed" from="HBoxContainer/Translation_DE" to="." method="_on_translation_de_child_button_pressed"]
+[connection signal="child_button_pressed" from="HBoxContainer/Translation_EN" to="." method="_on_translation_en_child_button_pressed"]
+[connection signal="child_button_pressed" from="Button_Submit" to="." method="_on_button_submit_pressed"]
+[connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_No" to="." method="_on_button_no_pressed"]
+[connection signal="pressed" from="Promt_Panel/MainPanel/VBoxContainer/HBoxContainer/Button_Yes" to="." method="_on_button_yes_pressed"]
