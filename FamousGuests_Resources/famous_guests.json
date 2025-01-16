@@ -163,5 +163,16 @@
 		"Image 2": "user://FamousGuests_Resources/Images/LAWHEAD_Image2.jpg",
 		"Image 3": "user://FamousGuests_Resources/Images/LAWHEAD_Image3.jpg",
 		"Portrait": "user://FamousGuests_Resources/Images/LAWHEAD_Portrait.jpg"
-	}
+	},
+	"guest_15": {
+        "GuestID": "YAGER",
+        "Name": "YAGER Development",
+        "Country": "GERMANY",
+        "Birth": "1999",
+        "Famous for": "YAGER ist ein Spieleentwicklungsstudio aus Berlin, das 1999 von Timo Ullmann, Uwe Beneke, Roman Golka, Philipp Schellbach und Mathias Wiese gegr[&uuml;]ndet wurde. Das Studio ist auf Actionspiele spezialisiert und hat unter anderem Titel wie Spec Ops: The Line und The Cycle entwickelt.\n\n\nYAGER is a game development studio from Berlin, founded in 1999 by Timo Ullmann, Uwe Beneke, Roman Golka, Philipp Schellbach, and Mathias Wiese. Known for its focus on action games, the studio has created titles like Spec Ops: The Line and The Cycle.",
+        "Image 1": "user://FamousGuests_Resources/Images/YAGER_Image1.jpg",
+        "Image 2": "user://FamousGuests_Resources/Images/YAGER_Image2.jpg",
+        "Image 3": "user://FamousGuests_Resources/Images/YAGER_Image3.jpg",
+        "Portrait": "user://FamousGuests_Resources/Images/YAGER_Portrait.jpg"
+    }
 }
