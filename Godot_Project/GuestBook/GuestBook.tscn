@@ -401,7 +401,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 custom_minimum_size = Vector2(200, 175)
 layout_mode = 2
 button_color = Color(0.321569, 0.247059, 0.603922, 1)
-button_text = "46 - 60"
+button_text = "46 - 64"
 button_text_size = 50
 button_size = Vector2(200, 200)
 
