@@ -61,7 +61,7 @@ CSM Guest display will save survey answers here as JSON files.
 
 		Example: BAER_Image1, BAER_Image2, BAER_Image3, BEAR_Portrait
 
-- Images must be saved as .png or .jpg
+- Images must be saved as .jpeg / .jpg
 - To correctly display images, they must be saved with the following resolutions:
 
 		Portrait 1080 x 1350 
