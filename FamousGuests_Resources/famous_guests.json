@@ -174,5 +174,16 @@
         "Image 2": "user://FamousGuests_Resources/Images/YAGER_Image2.jpg",
         "Image 3": "user://FamousGuests_Resources/Images/YAGER_Image3.jpg",
         "Portrait": "user://FamousGuests_Resources/Images/YAGER_Portrait.jpg"
+    },
+	"guest_16": {
+        "GuestID": "TOUKANA",
+        "Name": "Toukana Interactive",
+        "Country": "GERMANY",
+        "Birth": "2020",
+        "Famous for": "Toukana Interactive ist ein Berliner Indie-Studio, das 2020 von vier Studierenden der HTW Berlin gegr[&uuml;]ndet wurde und f[&uuml;]r ihr Puzzle-Spiel Dorfromantik bekannt ist.\n\n\nToukana Interactive is a Berlin-based indie studio founded in 2020 by four HTW Berlin students, known for their puzzle game Dorfromantik.",
+        "Image 1": "user://FamousGuests_Resources/Images/TOUKANA_Image1.jpg",
+        "Image 2": "user://FamousGuests_Resources/Images/TOUKANA_Image2.jpg",
+        "Image 3": "user://FamousGuests_Resources/Images/TOUKANA_Image3.jpg",
+        "Portrait": "user://FamousGuests_Resources/Images/TOUKANA_Portrait.jpg"
     }
 }
