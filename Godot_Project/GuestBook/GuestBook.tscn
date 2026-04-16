@@ -401,7 +401,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_u47er")
 custom_minimum_size = Vector2(200, 175)
 layout_mode = 2
 button_color = Color(0.321569, 0.247059, 0.603922, 1)
-button_text = "46 - 60"
+button_text = "46 - 64"
 button_text_size = 50
 button_size = Vector2(200, 200)
 
@@ -617,9 +617,9 @@ button_toggle_mode = false
 [node name="OnscreenKeyboard" type="PanelContainer" parent="."]
 layout_mode = 2
 offset_left = 40.0
-offset_top = 12.0
+offset_top = 1448.0
 offset_right = 1040.0
-offset_bottom = 457.0
+offset_bottom = 1893.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x1p38")
 script = ExtResource("19_axxdl")
 customLayoutFile = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_de.json"
