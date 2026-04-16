@@ -185,5 +185,16 @@
         "Image 2": "user://FamousGuests_Resources/Images/TOUKANA_Image2.jpg",
         "Image 3": "user://FamousGuests_Resources/Images/TOUKANA_Image3.jpg",
         "Portrait": "user://FamousGuests_Resources/Images/TOUKANA_Portrait.jpg"
+    },
+	"guest_17": {
+        "GuestID": "WELCH",
+        "Name": "Baudelaire Welch",
+        "Country": "UK",
+        "Birth": "1999",
+        "Famous for": "Verantwortlich f[&uuml;]r die preisgekr[&ouml;]nte narrative Gestaltung, Texte und Dialoge in Spielen wie Crusader Kings 3, Fallen London, Baldur’s Gate 3 und der Witcher-Serie. Welch h[&auml;]lt au[&szlig;]erdem regelm[&auml;][&szlig;]ig Vortr[&auml;]ge [&uuml;]ber die erz[&auml;]hlerische Gestaltung von pers[&ouml;]nlichen Beziehungen in Spielen.\n\n\nResponsible for the award-winning narrative design, writing and dialogue in games such as Crusader Kings 3, Fallen London, Baldur’s Gate 3 and The Witcher series. Welch is also a regular speaker on the narrative design of personal relationships in games.",
+        "Image 1": "user://FamousGuests_Resources/Images/WELCH_Image1.jpg",
+        "Image 2": "user://FamousGuests_Resources/Images/WELCH_Image2.jpg",
+        "Image 3": "user://FamousGuests_Resources/Images/WELCH_Image3.jpg",
+        "Portrait": "user://FamousGuests_Resources/Images/WELCH_Portrait.jpg"
     }
 }
