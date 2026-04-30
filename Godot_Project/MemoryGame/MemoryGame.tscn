@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://74fwdkuoday0"]
+
+[ext_resource type="Script" path="res://MemoryGame/MemoryGame.gd" id="1_3bm27"]
+[ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="1_pus3l"]
+[ext_resource type="Script" path="res://MemoryGame/BlocksContainer.gd" id="3_ooty6"]
+
+[sub_resource type="Theme" id="Theme_dyshj"]
+
+[node name="MemoryGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3bm27")
+number_of_sqaures = 9
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -63.0
+offset_right = 1101.0
+offset_bottom = 1963.0
+theme = SubResource("Theme_dyshj")
+color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+
+[node name="BackgroundGraphic" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 0
+offset_left = -1247.0
+offset_top = 187.0
+offset_right = 2394.0
+offset_bottom = 1978.0
+pivot_offset = Vector2(1782, 917)
+texture = ExtResource("1_pus3l")
+flip_v = true
+
+[node name="BlocksContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.788
+offset_top = -125.102
+offset_right = 125.212
+offset_bottom = 121.897
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+script = ExtResource("3_ooty6")
+
+[connection signal="buttons_added" from="." to="BlocksContainer" method="_on_memory_game_buttons_added"]

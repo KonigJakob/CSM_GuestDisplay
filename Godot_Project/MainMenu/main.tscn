@@ -244,6 +244,7 @@ theme_override_font_sizes/font_size = 94
 expand_icon = true
 
 [node name="Label" type="Label" parent="MainMenu/Button_GuestBook"]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 221.0
 offset_right = 478.0
