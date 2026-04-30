@@ -33,6 +33,7 @@ func _ready():
 	connect_guest_signal()
 	set_guest_positions(SaveSystem.guest_array, portrait_panel)
 	set_ui_elements_transform()
+	animate_background()
 	right_clicks = 0
 	left_clicks = SaveSystem.guest_array.size() -1
 	for g in SaveSystem.guest_array:
@@ -153,3 +154,15 @@ func _on_timer_timeout():
 				move_right = true
 	else:
 		timer.start(timer.wait_time)
+
+func animate_background():
+	# Continuous rotation tween (loops forever on its own)
+	var rot_tween = get_tree().create_tween().set_loops()
+	rot_tween.tween_property($TextureRect2, "rotation_degrees", 360.0, 60.0)\
+	.as_relative()  
+
+	# Scale pulse tween (grow then shrink, loops forever)
+	var scale_tween = get_tree().create_tween().set_loops()
+	scale_tween.tween_property($TextureRect2, "scale", Vector2(1.3, 1.3), 30)\
+	.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	scale_tween.tween_property($TextureRect2, "scale", Vector2(0.6, 0.6), 30).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)

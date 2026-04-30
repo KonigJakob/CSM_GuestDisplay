@@ -20,6 +20,7 @@ func _ready():
 	blocks = get_tree().get_nodes_in_group("blocks")
 	block_colors = get_block_colors()
 	animate_block_colors()
+	animate_background()
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -58,6 +59,18 @@ func animate_block_colors():
 	for b in blocks.size():
 		tween.tween_property(blocks[b], "color", blocks[blocks.size()-1-b].color, tween_duration)
 	colors_changed = true
+
+func animate_background():
+	# Continuous rotation tween (loops forever on its own)
+	var rot_tween = get_tree().create_tween().set_loops()
+	rot_tween.tween_property($TextureRect2, "rotation_degrees", 360.0, 60.0)\
+	.as_relative()  
+
+	# Scale pulse tween (grow then shrink, loops forever)
+	var scale_tween = get_tree().create_tween().set_loops()
+	scale_tween.tween_property($TextureRect2, "scale", Vector2(1.3, 1.3), 30)\
+	.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	scale_tween.tween_property($TextureRect2, "scale", Vector2(0.6, 0.6), 30).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 
 func reset_block_colors():
 	if tween:
