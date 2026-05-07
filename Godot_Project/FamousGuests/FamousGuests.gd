@@ -158,11 +158,11 @@ func _on_timer_timeout():
 func animate_background():
 	# Continuous rotation tween (loops forever on its own)
 	var rot_tween = get_tree().create_tween().set_loops()
-	rot_tween.tween_property($TextureRect2, "rotation_degrees", 360.0, 60.0)\
+	rot_tween.tween_property($BackgroundLogo, "rotation_degrees", 360.0, 60.0)\
 	.as_relative()  
 
 	# Scale pulse tween (grow then shrink, loops forever)
 	var scale_tween = get_tree().create_tween().set_loops()
-	scale_tween.tween_property($TextureRect2, "scale", Vector2(1.3, 1.3), 30)\
+	scale_tween.tween_property($BackgroundLogo, "scale", Vector2(1.3, 1.3), 30)\
 	.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	scale_tween.tween_property($TextureRect2, "scale", Vector2(0.6, 0.6), 30).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	scale_tween.tween_property($BackgroundLogo, "scale", Vector2(0.6, 0.6), 30).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
