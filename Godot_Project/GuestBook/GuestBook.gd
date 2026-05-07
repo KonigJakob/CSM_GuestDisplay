@@ -194,6 +194,7 @@ func move_page_forward():
 		current_page = PollPage.MESSAGE
 	update_page_buttons()
 	tween.finished.connect(on_tween_finished)
+	tween.bind_node(self)
 func move_page_backwards():
 	var panel_size = panels.size/panels.get_child_count()
 	var tween = get_tree().create_tween()
@@ -208,10 +209,12 @@ func move_page_backwards():
 		current_page = PollPage.LANGUAGE
 	update_page_buttons()
 	tween.finished.connect(on_tween_finished)
+	tween.bind_node(self)
 func tween_forward():
 	var tween = get_tree().create_tween()
 	tween.tween_interval(tween_wait_interval)
 	tween.tween_callback(move_page_forward)
+	tween.bind_node(self)
 func on_tween_finished():
 	lock_rect.visible = false
 
@@ -234,9 +237,11 @@ func tween_visibility(object_to_modulate) -> void:
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 	if object_to_modulate.modulate.a == 0:
 		tween.tween_property(object_to_modulate, "modulate:a", 1, tween_movement_interval)
+		tween.bind_node(self)
 	else:
 		tween.tween_property(object_to_modulate, "modulate:a", 0, tween_movement_interval)
 		tween.tween_property(object_to_modulate, "visible", false, tween_wait_interval/2)
+		tween.bind_node(self)
 
 func _on_translation_de_child_button_pressed():
 	TranslationServer.set_locale("de")
