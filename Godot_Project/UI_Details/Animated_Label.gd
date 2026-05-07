@@ -9,6 +9,8 @@ func _ready():
 
 func animate_label():
 	await get_tree().create_timer(randf_range(5, 10)).timeout
+	if pos_tween:
+		pos_tween.kill()
 	
 	pos_tween = get_tree().create_tween()
 	var original_position : float = position.y
@@ -17,3 +19,4 @@ func animate_label():
 	pos_tween.tween_property(self, "position:y", original_position, 0.75).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	
 	pos_tween.tween_callback(animate_label)
+	pos_tween.bind_node(self)
