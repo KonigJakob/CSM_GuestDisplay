@@ -41,7 +41,8 @@ func _ready():
 	left_clicks = SaveSystem.guest_array.size() -1
 	for g in SaveSystem.guest_array:
 		g.info_panel.update_guest_properties()
-	panel_input_lock.visible = false
+		if g.info_panel.visible == true:
+			g.info_panel.visible = false
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -124,8 +125,10 @@ func _on_info_panel_changed(_value):
 		timer.start(timer.wait_time)
 	if panel_input_lock.visible == true:
 		panel_input_lock.visible = false
+		home_button.visible = true
 	else:
 		panel_input_lock.visible = true
+		home_button.visible = false
 
 func _on_timer_timeout():
 	if panel_input_lock.visible == false:

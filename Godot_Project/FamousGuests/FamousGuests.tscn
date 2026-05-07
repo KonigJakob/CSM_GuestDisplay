@@ -135,12 +135,13 @@ script = ExtResource("1_5hcky")
 
 [node name="DownArrow" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 540.0
+offset_left = 503.0
 offset_top = 500.0
-offset_right = 1068.0
-offset_bottom = 1028.0
-scale = Vector2(0.15, 0.15)
+offset_right = 578.0
+offset_bottom = 575.0
+pivot_offset = Vector2(37, 37)
 texture = ExtResource("4_5h1pv")
+expand_mode = 1
 script = ExtResource("5_gnj6o")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
