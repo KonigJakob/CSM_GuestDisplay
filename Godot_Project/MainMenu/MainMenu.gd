@@ -11,6 +11,8 @@ var block_colors = []
 var colors_changed : bool
 
 var tween
+var rot_tween
+var scale_tween
 
 func _ready():
 	localization_buttons.position.x = grid.size.x - localization_buttons.size.x
@@ -62,15 +64,21 @@ func animate_block_colors():
 
 func animate_background():
 	# Continuous rotation tween (loops forever on its own)
-	var rot_tween = get_tree().create_tween().set_loops()
+	if rot_tween:
+		rot_tween.kill()
+	rot_tween = get_tree().create_tween().set_loops()
 	rot_tween.tween_property($TextureRect2, "rotation_degrees", 360.0, 60.0)\
 	.as_relative()  
+	rot_tween.bind_node(self)
 
 	# Scale pulse tween (grow then shrink, loops forever)
-	var scale_tween = get_tree().create_tween().set_loops()
+	if scale_tween:
+		scale_tween.kill()
+	scale_tween = get_tree().create_tween().set_loops()
 	scale_tween.tween_property($TextureRect2, "scale", Vector2(1.3, 1.3), 30)\
 	.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	scale_tween.tween_property($TextureRect2, "scale", Vector2(0.6, 0.6), 30).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	scale_tween.bind_node(self)
 
 func reset_block_colors():
 	if tween:
