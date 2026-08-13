@@ -22,6 +22,7 @@ func add_buttons() -> void:
 	for i in range(number_of_sqaures):
 		var game_button_instance = game_button.instantiate()
 		game_button_instance.set_meta("id",i+1)
+		game_button_instance.get_child(0).color = Color.MEDIUM_PURPLE
 		game_buttons.append(game_button_instance)
 		grid_parent.add_child(game_button_instance)
 	buttons_added.emit()
@@ -60,8 +61,13 @@ func check_sequence(id : int):
 		if current_step == game_sequence.size():
 			current_step = 0
 			print("sequence completed")
+			game_sequence = set_game_sequence()
+			reset_buttons()
+			turn_button_on()
 	else:
 		current_step = 0
+		flash_buttons(Color.RED)
+		turn_button_on()
 		print("wrong!")
 		
 func recolor_game_buttons(id : int):
@@ -69,4 +75,16 @@ func recolor_game_buttons(id : int):
 	if current_step < game_buttons.size():
 		var next_id = game_sequence[current_step]
 		game_buttons[next_id - 1].get_child(0).color = Color.YELLOW
+
+func reset_buttons():
+	for b in game_buttons:
+		b.get_child(0).color = Color.MEDIUM_PURPLE
+
+func flash_buttons(color : Color):
+	var flash_tween = get_tree().create_tween()
+	for b in game_buttons:
+		flash_tween.tween_property(b.get_child(0), "color", color, 0.2)
+		flash_tween.tween_property(b.get_child(0), "color", Color.MEDIUM_PURPLE, 0.2)
+		flash_tween.set_loops(2).set_parallel(true)
+		#it flashes block by block instead of all together
 	

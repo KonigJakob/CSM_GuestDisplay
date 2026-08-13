@@ -15,6 +15,9 @@
 [sub_resource type="Theme" id="Theme_wipqd"]
 
 [sub_resource type="FontFile" id="FontFile_wriq0"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 face_index = null
 embolden = null
 transform = null

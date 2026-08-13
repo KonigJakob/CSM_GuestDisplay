@@ -19,3 +19,6 @@ grow_vertical = 2
 pivot_offset = Vector2(124, 124)
 mouse_filter = 2
 color = Color(0.737255, 0.180392, 0.533333, 1)
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
