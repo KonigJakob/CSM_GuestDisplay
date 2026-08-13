@@ -97,6 +97,7 @@ func resize_text(label : Label):
 bg_color = Color(0, 0, 0, 0.941176)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndgcf"]
+resource_name = "PanelBox"
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5

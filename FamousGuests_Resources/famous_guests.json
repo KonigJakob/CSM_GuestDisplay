@@ -196,5 +196,27 @@
         "Image 2": "user://FamousGuests_Resources/Images/WELCH_Image2.jpg",
         "Image 3": "user://FamousGuests_Resources/Images/WELCH_Image3.jpg",
         "Portrait": "user://FamousGuests_Resources/Images/WELCH_Portrait.jpg"
+    },
+	"guest_18": {
+        "GuestID": "DAY",
+        "Name": "Walter Day",
+        "Country": "USA",
+        "Birth": "14.05.1949",
+        "Famous for": "Walter Day baute die erste gro[&szlig;]e Datenbank f[&uuml;]r Videospiele, Weltrekorde und Highscores auf. In den fr[&uuml;]hen 1980er Jahren trug er dazu bei, die Geschichte der Arcade-Spiele zu bewahren, indem er Spielende und Wettbewerbe in den gesamten Vereinigten Staaten dokumentierte. Seine Arbeit legte den Grundstein f[&uuml;]r den modernen E-Sport.\n\n\nWalter Day established the first major database of video game world records and high scores. In the early 1980s, he helped preserve arcade gaming history by documenting players and competitions across the United States. \nHis work laid the foundation for modern esports.",
+        "Image 1": "user://FamousGuests_Resources/Images/DAY_Image1.jpg",
+        "Image 2": "user://FamousGuests_Resources/Images/DAY_Image2.jpg",
+        "Image 3": "user://FamousGuests_Resources/Images/DAY_Image3.jpg",
+        "Portrait": "user://FamousGuests_Resources/Images/DAY_Portrait.jpg"
+    },
+	"guest_19": {
+        "GuestID": "MITCHELL",
+        "Name": "Billy Mitchell",
+        "Country": "USA",
+        "Birth": "16.07.1965",
+        "Famous for": "Billy Mitchell wurde zu einem der ber[&uuml;]hmtesten Arcade-Spieler der 1980er Jahre. Er hielt Rekorde bei Klassikern wie Pac-Man und Donkey Kong. Seine Erfolge trugen dazu bei, das kompetitives Gaming in den Fokus der [&Ouml;]ffentlichkeit zu r[&uuml;]cken, und er gilt bis heute als eine der bekanntesten Pers[&ouml;]nlichkeiten der Videospielgeschichte.\n\n\nBilly Mitchell became one of the most famous arcade players of the 1980s. He held records for classic games such as Pac-Man and Donkey Kong. His achievements helped bring public attention to competitive gaming \nand remains one of the most recognizable figures \nin video game history.",
+        "Image 1": "user://FamousGuests_Resources/Images/MITCHELL_Image1.jpg",
+        "Image 2": "user://FamousGuests_Resources/Images/MITCHELL_Image2.jpg",
+        "Image 3": "user://FamousGuests_Resources/Images/MITCHELL_Image3.jpg",
+        "Portrait": "user://FamousGuests_Resources/Images/MITCHELL_Portrait.jpg"
     }
 }
