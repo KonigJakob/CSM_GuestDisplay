@@ -46,8 +46,6 @@ func set_game_sequence() -> Array:
 	return sequence
 
 func turn_button_on():
-	print(game_sequence)
-	print(grid_parent.color_rects)
 	grid_parent.color_rects[game_sequence[0]-1].color = Color.YELLOW
 
 func on_game_button_up(id : int):
@@ -67,7 +65,7 @@ func check_sequence(id : int):
 	else:
 		current_step = 0
 		flash_buttons(Color.RED)
-		turn_button_on()
+		
 		print("wrong!")
 		
 func recolor_game_buttons(id : int):
@@ -81,10 +79,27 @@ func reset_buttons():
 		b.get_child(0).color = Color.MEDIUM_PURPLE
 
 func flash_buttons(color : Color):
-	var flash_tween = get_tree().create_tween()
+	var flash_tween = get_tree().create_tween().set_loops(1).set_parallel()
+	
 	for b in game_buttons:
 		flash_tween.tween_property(b.get_child(0), "color", color, 0.2)
-		flash_tween.tween_property(b.get_child(0), "color", Color.MEDIUM_PURPLE, 0.2)
-		flash_tween.set_loops(2).set_parallel(true)
-		#it flashes block by block instead of all together
 	
+	flash_tween.chain()
+	
+	for b in game_buttons:
+		flash_tween.tween_property(b.get_child(0), "color", Color.MEDIUM_PURPLE, 0.2)
+		
+	flash_tween.chain()
+	
+	for b in game_buttons:
+		flash_tween.tween_property(b.get_child(0), "color", color, 0.2)
+	
+	flash_tween.chain()
+	
+	for b in game_buttons:
+		flash_tween.tween_property(b.get_child(0), "color", Color.MEDIUM_PURPLE, 0.2)
+	
+	flash_tween.chain()
+
+	flash_tween.tween_callback(turn_button_on)
+
