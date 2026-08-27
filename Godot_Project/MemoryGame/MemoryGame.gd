@@ -9,17 +9,17 @@ var game_buttons : Array
 var game_sequence : Array 
 var current_step : int = 0
 
-@export var number_of_sqaures : int = 1
+@export var number_of_squares : int = 1
 
 func _ready():
 	grid_parent = $BlocksContainer
 	add_buttons()
 	connect_button_signals()
-	game_sequence = set_game_sequence()
+	start_game()
 	turn_button_on()
 
 func add_buttons() -> void:
-	for i in range(number_of_sqaures):
+	for i in range(number_of_squares):
 		var game_button_instance = game_button.instantiate()
 		game_button_instance.set_meta("id",i+1)
 		game_button_instance.get_child(0).color = Color.MEDIUM_PURPLE
@@ -31,22 +31,27 @@ func connect_button_signals():
 	for i in range(game_buttons.size()):
 		game_buttons[i].button_up.connect(func(): on_game_button_up(game_buttons[i].get_meta("id")))
 		pass
-	
+
+func start_game():
+	game_sequence = set_game_sequence()
+	current_step = 0
+	flash_buttons(Color.BLUE)
+
 func set_game_sequence() -> Array:
 	var sequence: Array = []
-	if number_of_sqaures == 1: 
+	if number_of_squares == 1: 
 		sequence.append(1)
 		return sequence
 	else:
-		for i in range(number_of_sqaures):
-			var rng = randi_range(1, number_of_sqaures)
+		for i in range(number_of_squares):
+			var rng = randi_range(1, number_of_squares)
 			while rng in sequence:
-				rng = randi_range(1, number_of_sqaures)
+				rng = randi_range(1, number_of_squares)
 			sequence.append(rng)
 	return sequence
 
 func turn_button_on():
-	grid_parent.color_rects[game_sequence[0]-1].color = Color.YELLOW
+	flash_button(grid_parent.color_rects[game_sequence[0]-1], Color.YELLOW)
 
 func on_game_button_up(id : int):
 	check_sequence(id)
@@ -72,7 +77,7 @@ func recolor_game_buttons(id : int):
 	game_buttons[id].get_child(0).color = Color.BLUE
 	if current_step < game_buttons.size():
 		var next_id = game_sequence[current_step]
-		game_buttons[next_id - 1].get_child(0).color = Color.YELLOW
+		flash_button(game_buttons[next_id - 1].get_child(0), Color.YELLOW)
 
 func reset_buttons():
 	for b in game_buttons:
@@ -102,4 +107,10 @@ func flash_buttons(color : Color):
 	flash_tween.chain()
 
 	flash_tween.tween_callback(turn_button_on)
+
+func flash_button(b : ColorRect, color : Color):
+	var single_flash_tween = get_tree().create_tween().set_loops(2).set_parallel()
+	single_flash_tween.tween_property(b, "color", color, 0.2)
+	single_flash_tween.chain()
+	single_flash_tween.tween_property(b, "color", Color.MEDIUM_PURPLE, 0.2)
 

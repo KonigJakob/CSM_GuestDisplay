@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://74fwdkuoday0"]
+[gd_scene load_steps=6 format=3 uid="uid://74fwdkuoday0"]
 
 [ext_resource type="Script" path="res://MemoryGame/MemoryGame.gd" id="1_3bm27"]
 [ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="1_pus3l"]
 [ext_resource type="Script" path="res://MemoryGame/BlocksContainer.gd" id="3_ooty6"]
+[ext_resource type="Script" path="res://MemoryGame/MemoryGame_Timer.gd" id="4_voejn"]
 
 [sub_resource type="Theme" id="Theme_dyshj"]
 
@@ -14,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3bm27")
-number_of_sqaures = 9
+number_of_squares = 4
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -51,7 +52,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
-columns = 2
+columns = 3
 script = ExtResource("3_ooty6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 371.444
+offset_top = 318.682
+offset_right = 754.444
+offset_bottom = 397.682
+text = "0.00"
+vertical_alignment = 1
+script = ExtResource("4_voejn")
 
 [connection signal="buttons_added" from="." to="BlocksContainer" method="_on_memory_game_buttons_added"]
