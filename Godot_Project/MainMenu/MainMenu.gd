@@ -21,6 +21,7 @@ func _ready():
 	welcome.position = Vector2(get_viewport_rect().size.x/2 - welcome.size.x/2, logo.position.y + logo.size.y + 105)
 	blocks = get_tree().get_nodes_in_group("blocks")
 	block_colors = get_block_colors()
+	SaveSystem.block_colors = block_colors
 	animate_block_colors()
 	animate_background()
 
@@ -96,3 +97,10 @@ func _on_color_timer_timeout():
 		reset_block_colors()
 	else:
 		animate_block_colors()
+
+
+func _on_button_memory_game_pressed():
+	if tween:
+		tween.kill()
+	SceneManager.target_scene = "res://MemoryGame/MemoryGame.tscn"
+	get_tree().change_scene_to_file("res://UI_Details/LoadingScene.tscn")

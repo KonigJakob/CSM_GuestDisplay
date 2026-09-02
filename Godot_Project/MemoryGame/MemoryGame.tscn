@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://74fwdkuoday0"]
+[gd_scene load_steps=12 format=3 uid="uid://74fwdkuoday0"]
 
 [ext_resource type="Script" path="res://MemoryGame/MemoryGame.gd" id="1_3bm27"]
 [ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="1_pus3l"]
 [ext_resource type="Script" path="res://MemoryGame/BlocksContainer.gd" id="3_ooty6"]
+[ext_resource type="FontFile" uid="uid://df1w6lgghcy18" path="res://Assets/Fonts/visitor2 (1).ttf" id="4_jpr53"]
 [ext_resource type="Script" path="res://MemoryGame/MemoryGame_Timer.gd" id="4_voejn"]
+[ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="6_j1sn6"]
+[ext_resource type="Script" path="res://MemoryGame/Leaderboards.gd" id="6_rbemy"]
+[ext_resource type="Texture2D" uid="uid://cquhhdbsyqos5" path="res://Assets/Textures/UITextures/de.png" id="8_enyn5"]
+[ext_resource type="Texture2D" uid="uid://coyxtgisq8vnf" path="res://Assets/Textures/UITextures/gb.png" id="9_81hdi"]
+[ext_resource type="Texture2D" uid="uid://dgbxrik588yxv" path="res://Assets/Textures/UITextures/logo_house_blurred.png" id="10_oehn6"]
 
 [sub_resource type="Theme" id="Theme_dyshj"]
 
@@ -55,14 +61,147 @@ theme_override_constants/v_separation = 15
 columns = 3
 script = ExtResource("3_ooty6")
 
-[node name="Label" type="Label" parent="."]
+[node name="Timer" type="Label" parent="."]
 layout_mode = 0
-offset_left = 371.444
-offset_top = 318.682
-offset_right = 754.444
-offset_bottom = 397.682
+offset_left = 371.0
+offset_top = 255.0
+offset_right = 754.0
+offset_bottom = 427.0
+theme_override_fonts/font = ExtResource("4_jpr53")
+theme_override_font_sizes/font_size = 150
 text = "0.00"
+horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_voejn")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 19.1374
+offset_top = 1466.0
+offset_right = 1099.14
+offset_bottom = 1561.0
+theme_override_constants/separation = 70
+alignment = 1
+script = ExtResource("6_rbemy")
+
+[node name="Scores_Label" type="Label" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0.823529)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_jpr53")
+theme_override_font_sizes/font_size = 100
+text = "scores:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeaderboardNew" type="Label" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0.823529)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_jpr53")
+theme_override_font_sizes/font_size = 130
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeaderboardOld" type="Label" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_jpr53")
+theme_override_font_sizes/font_size = 100
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeaderboardOldest" type="Label" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_jpr53")
+theme_override_font_sizes/font_size = 80
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" parent="." instance=ExtResource("6_j1sn6")]
+modulate = Color(1, 1, 1, 0.458824)
+layout_mode = 1
+offset_left = 493.22
+offset_top = 1627.76
+offset_right = -586.78
+offset_bottom = -292.241
+pivot_offset = Vector2(50, 25)
+button_color = Color(0.392157, 0.733333, 0.282353, 1)
+button_text = "RESTART"
+button_text_size = 24
+button_size = Vector2(100, 50)
+button_toggle_mode = false
+
+[node name="Localization_Buttons" type="HBoxContainer" parent="."]
+offset_left = 825.0
+offset_top = 1794.83
+offset_right = 990.0
+offset_bottom = 1869.83
+theme_override_constants/separation = 15
+
+[node name="Translation_DE" parent="Localization_Buttons" instance=ExtResource("6_j1sn6")]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("8_enyn5")
+
+[node name="Translation_EN" parent="Localization_Buttons" instance=ExtResource("6_j1sn6")]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(0.85098, 0.85098, 0.85098, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("9_81hdi")
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.073
+offset_top = 114.277
+offset_bottom = 114.117
+theme_override_fonts/font = ExtResource("4_jpr53")
+theme_override_font_sizes/font_size = 50
+text = "INSTRUCTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Home" parent="." instance=ExtResource("6_j1sn6")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 511.885
+offset_top = 1782.97
+offset_right = 586.885
+offset_bottom = 1857.97
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0.882353, 0.882353, 0.882353, 1)
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("10_oehn6")
+
 [connection signal="buttons_added" from="." to="BlocksContainer" method="_on_memory_game_buttons_added"]
+[connection signal="game_started" from="." to="Timer" method="_on_memory_game_game_started"]
+[connection signal="successful_sequence" from="." to="BlocksContainer" method="_on_memory_game_successful_sequence"]
+[connection signal="successful_sequence" from="." to="Timer" method="_on_memory_game_successful_sequence"]
+[connection signal="successful_sequence" from="." to="HBoxContainer" method="_on_memory_game_successful_sequence"]
+[connection signal="child_button_pressed" from="RestartButton" to="." method="_on_button_styled_child_button_pressed"]
+[connection signal="child_button_pressed" from="RestartButton" to="BlocksContainer" method="_on_button_styled_child_button_pressed"]
+[connection signal="child_button_pressed" from="RestartButton" to="Timer" method="_on_button_styled_child_button_pressed"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_DE" to="." method="_on_translation_de_child_button_pressed"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_EN" to="." method="_on_translation_en_child_button_pressed"]
+[connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_child_button_pressed"]

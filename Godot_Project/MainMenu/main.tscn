@@ -258,6 +258,31 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_np5yb")
 
+[node name="Button_MemoryGame" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 1106.0
+offset_right = 541.0
+offset_bottom = 1608.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_l88qq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 94
+expand_icon = true
+
+[node name="Label" type="Label" parent="MainMenu/Button_MemoryGame"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 221.0
+offset_right = 478.0
+offset_bottom = 278.0
+theme_override_font_sizes/font_size = 76
+text = "Memory game"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_np5yb")
+
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = -1
@@ -304,6 +329,7 @@ icon_texture = ExtResource("7_61v27")
 
 [connection signal="pressed" from="MainMenu/Button_FamousGuests" to="MainMenu" method="_on_button_famous_guests_pressed"]
 [connection signal="pressed" from="MainMenu/Button_GuestBook" to="MainMenu" method="_on_button_guest_book_pressed"]
+[connection signal="pressed" from="MainMenu/Button_MemoryGame" to="MainMenu" method="_on_button_memory_game_pressed"]
 [connection signal="timeout" from="MainMenu/ColorTimer" to="MainMenu" method="_on_color_timer_timeout"]
 [connection signal="child_button_pressed" from="Localization_Buttons/Translation_DE" to="MainMenu" method="_on_translation_de_child_button_pressed"]
 [connection signal="child_button_pressed" from="Localization_Buttons/Translation_EN" to="MainMenu" method="_on_translation_en_child_button_pressed"]

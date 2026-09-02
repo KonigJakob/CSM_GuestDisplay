@@ -10,6 +10,8 @@ var number_of_guests : int
 
 var guest_array: Array = []
 
+var block_colors: Array = []
+
 func _ready():
 	guest_array = load_guests()
 
