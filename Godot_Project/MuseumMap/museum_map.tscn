@@ -1,0 +1,710 @@
+[gd_scene load_steps=41 format=3 uid="uid://oamx3rx0w8xh"]
+
+[ext_resource type="Script" path="res://MuseumMap.gd" id="1_mn8lv"]
+[ext_resource type="Script" path="res://FamousGuests/Background.gd" id="2_ly7mr"]
+[ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="3_0l0gp"]
+[ext_resource type="Texture2D" uid="uid://dpfwy3srv1tom" path="res://MuseumMap/MuseumMap_Static.png" id="4_gu4bj"]
+[ext_resource type="Texture2D" uid="uid://cr3gd48k3ker2" path="res://MuseumMap/FloorTiles/K.png" id="5_nbdhk"]
+[ext_resource type="Texture2D" uid="uid://bvrsvvyvlc4on" path="res://MuseumMap/Letters/A.png" id="6_iheay"]
+[ext_resource type="Texture2D" uid="uid://wudfqt1i62yu" path="res://MuseumMap/FloorTiles/J.png" id="6_yq3gq"]
+[ext_resource type="Texture2D" uid="uid://dx0gbxji445s5" path="res://MuseumMap/Letters/G.png" id="7_1ovx7"]
+[ext_resource type="Texture2D" uid="uid://cufoxf42htnfb" path="res://MuseumMap/FloorTiles/I.png" id="7_3s0td"]
+[ext_resource type="FontFile" uid="uid://df1w6lgghcy18" path="res://Assets/Fonts/visitor2 (1).ttf" id="7_7du2h"]
+[ext_resource type="Texture2D" uid="uid://cl5jyswhba7e7" path="res://MuseumMap/Letters/B.png" id="8_j7gn0"]
+[ext_resource type="Texture2D" uid="uid://cb3dt6yjw6wum" path="res://MuseumMap/FloorTiles/H.png" id="8_x2bcm"]
+[ext_resource type="Texture2D" uid="uid://bxbicadglpxli" path="res://MuseumMap/Letters/H.png" id="9_b6mnx"]
+[ext_resource type="Texture2D" uid="uid://d1e6ie4fn5hlr" path="res://MuseumMap/FloorTiles/G.png" id="9_bdk7j"]
+[ext_resource type="Texture2D" uid="uid://ejdyryojn32a" path="res://MuseumMap/Letters/C.png" id="10_quxgy"]
+[ext_resource type="Texture2D" uid="uid://bmheivehoqiak" path="res://MuseumMap/FloorTiles/F.png" id="10_sye44"]
+[ext_resource type="Texture2D" uid="uid://bahvvijd57gs0" path="res://MuseumMap/FloorTiles/E.png" id="11_4inmv"]
+[ext_resource type="Texture2D" uid="uid://cxxxtvaf2fee4" path="res://MuseumMap/Letters/I.png" id="11_7fdjr"]
+[ext_resource type="Texture2D" uid="uid://bnakl2pyi3ig0" path="res://MuseumMap/Letters/D.png" id="12_eeu33"]
+[ext_resource type="Texture2D" uid="uid://bpckpu35m8dk6" path="res://MuseumMap/FloorTiles/B.png" id="12_yvugh"]
+[ext_resource type="Texture2D" uid="uid://crdyco7hg65y7" path="res://MuseumMap/FloorTiles/A.png" id="13_4nedy"]
+[ext_resource type="Texture2D" uid="uid://b64lx82y8tejx" path="res://MuseumMap/Letters/J.png" id="13_kdviq"]
+[ext_resource type="Texture2D" uid="uid://xyon8ch0r6rk" path="res://MuseumMap/FloorTiles/D.png" id="14_1soi4"]
+[ext_resource type="Texture2D" uid="uid://i1g5kx0tm3vu" path="res://MuseumMap/Letters/E.png" id="14_8pqtd"]
+[ext_resource type="Texture2D" uid="uid://yi7rhc2wke3p" path="res://MuseumMap/FloorTiles/C.png" id="15_jqqlb"]
+[ext_resource type="Texture2D" uid="uid://bathvfenbuqgo" path="res://MuseumMap/Letters/F.png" id="15_wm0k8"]
+[ext_resource type="Texture2D" uid="uid://ba4edxqqhlpwk" path="res://Assets/Textures/Logos/logo_color_dott__light_300dpi.png" id="16_qx4rx"]
+[ext_resource type="Texture2D" uid="uid://cq6fg3m3dwxht" path="res://MuseumMap/Letters/K.png" id="16_u5ey8"]
+[ext_resource type="Texture2D" uid="uid://b5voegx8w4vov" path="res://MuseumMap/FloorTiles/YOU_Ring.png" id="18_mx5rp"]
+[ext_resource type="Script" path="res://MuseumMap/MapButton.gd" id="19_8s5xn"]
+[ext_resource type="Texture2D" uid="uid://1ab0a5fhh62o" path="res://MuseumMap/FloorTiles/YOU.png" id="19_twhrl"]
+[ext_resource type="Script" path="res://MuseumMap/DarkOverlay.gd" id="31_pcq7h"]
+[ext_resource type="PackedScene" uid="uid://cigu3gjcmh4rx" path="res://UI_Details/button_styled.tscn" id="33_75ux1"]
+[ext_resource type="Theme" uid="uid://c8expo8ultkcm" path="res://Assets/Themes/visitorTheme.tres" id="33_ldwed"]
+[ext_resource type="Texture2D" uid="uid://cquhhdbsyqos5" path="res://Assets/Textures/UITextures/de.png" id="34_o42hv"]
+[ext_resource type="Texture2D" uid="uid://coyxtgisq8vnf" path="res://Assets/Textures/UITextures/gb.png" id="35_2s1x8"]
+[ext_resource type="Texture2D" uid="uid://dgbxrik588yxv" path="res://Assets/Textures/UITextures/logo_house_blurred.png" id="36_530pp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5evt"]
+bg_color = Color(0.701961, 0.701961, 0.701961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0jqe"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xbd0"]
+bg_color = Color(0.94902, 0.0117647, 1, 1)
+
+[node name="MuseumMap" type="Control" node_paths=PackedStringArray("home_button", "localization_buttons", "logo")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mn8lv")
+animate_tiles_tween_duration = 0.1
+home_button = NodePath("Button_Home")
+localization_buttons = NodePath("Localization_Buttons")
+logo = NodePath("Logo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1920.0
+color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+script = ExtResource("2_ly7mr")
+
+[node name="BackgroundLogo" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 0
+offset_left = -1252.0
+offset_top = 177.0
+offset_right = 2344.0
+offset_bottom = 1946.0
+pivot_offset = Vector2(1763, 853)
+texture = ExtResource("3_0l0gp")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gu4bj")
+
+[node name="Letters" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="Letters"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -474.0
+offset_top = -514.0
+offset_right = 533.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 410
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="A" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_iheay")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/A"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "EINGANG"
+vertical_alignment = 1
+
+[node name="G" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_1ovx7")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/G"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "BLAU"
+vertical_alignment = 1
+
+[node name="B" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_j7gn0")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/B"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "GARDEROBE"
+vertical_alignment = 1
+
+[node name="H" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("9_b6mnx")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/H"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "ZWISCHENSPIEL"
+vertical_alignment = 1
+
+[node name="C" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("10_quxgy")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/C"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "SHOP"
+vertical_alignment = 1
+
+[node name="I" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("11_7fdjr")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/I"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "ARCADE"
+vertical_alignment = 1
+
+[node name="D" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("12_eeu33")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/D"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "SONDERAUSSTELLUNG"
+vertical_alignment = 1
+
+[node name="J" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("13_kdviq")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/J"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "WOHNZIMMERN"
+vertical_alignment = 1
+
+[node name="E" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("14_8pqtd")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/E"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "GELB"
+vertical_alignment = 1
+
+[node name="K" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("16_u5ey8")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/K"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "TOILETTEN"
+vertical_alignment = 1
+
+[node name="F" type="TextureRect" parent="Letters/GridContainer"]
+layout_mode = 2
+texture = ExtResource("15_wm0k8")
+
+[node name="Label" type="Label" parent="Letters/GridContainer/F"]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 190.4
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "GRUEN"
+vertical_alignment = 1
+
+[node name="GridContainer_Buttons" type="GridContainer" parent="Letters"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -474.0
+offset_top = -514.0
+offset_right = 533.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="A" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="G" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="B" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="H" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(324.89, 44)
+layout_mode = 2
+flat = true
+
+[node name="C" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="I" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="D" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(298.49, 44)
+layout_mode = 2
+flat = true
+
+[node name="J" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="E" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="K" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="F" type="Button" parent="Letters/GridContainer_Buttons"]
+custom_minimum_size = Vector2(250, 44)
+layout_mode = 2
+flat = true
+
+[node name="MapTiles" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -188.0
+offset_right = 15.0
+offset_bottom = -148.0
+
+[node name="K" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 156.0
+offset_top = 553.0
+offset_right = 3764.0
+offset_bottom = 3335.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("5_nbdhk")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/K")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/K")
+
+[node name="G" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 157.0
+offset_top = 643.0
+offset_right = 7901.0
+offset_bottom = 6693.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("9_bdk7j")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/G")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/G")
+
+[node name="J" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 385.0
+offset_top = 731.0
+offset_right = 5061.0
+offset_bottom = 4248.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("6_yq3gq")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/J")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/J")
+
+[node name="I" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 528.0
+offset_top = 923.0
+offset_right = 4082.0
+offset_bottom = 2952.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("7_3s0td")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/I")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/I")
+
+[node name="F" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 323.0
+offset_top = 862.0
+offset_right = 7268.0
+offset_bottom = 5865.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("10_sye44")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/F")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/F")
+
+[node name="H" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 618.0
+offset_top = 1037.0
+offset_right = 5294.0
+offset_bottom = 4554.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("8_x2bcm")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/H")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/H")
+
+[node name="E" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = 1041.0
+offset_right = 7961.0
+offset_bottom = 6438.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("11_4inmv")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/E")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/E")
+
+[node name="B" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 872.0
+offset_top = 1242.0
+offset_right = 4299.0
+offset_bottom = 4001.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("12_yvugh")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/B")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/B")
+
+[node name="A" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 704.0
+offset_top = 1232.0
+offset_right = 5956.0
+offset_bottom = 5115.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0401079, 0.0402997)
+texture_normal = ExtResource("13_4nedy")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/A")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/A")
+
+[node name="D" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 605.0
+offset_top = 1234.0
+offset_right = 5546.0
+offset_bottom = 5104.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("14_1soi4")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/D")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/D")
+
+[node name="C" type="TextureButton" parent="MapTiles" node_paths=PackedStringArray("sister_node", "sister_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 853.0
+offset_top = 1319.0
+offset_right = 3505.0
+offset_bottom = 3045.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("15_jqqlb")
+stretch_mode = 0
+script = ExtResource("19_8s5xn")
+sister_node = NodePath("../../Letters/GridContainer/C")
+sister_button = NodePath("../../Letters/GridContainer_Buttons/C")
+
+[node name="YOU" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(785, 209)
+layout_mode = 0
+offset_left = 833.0
+offset_top = 1055.0
+offset_right = 1618.0
+offset_bottom = 1264.0
+scale = Vector2(0.31, 0.31)
+mouse_filter = 2
+texture = ExtResource("19_twhrl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ring" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(785, 209)
+layout_mode = 0
+offset_left = 930.0
+offset_top = 1112.0
+offset_right = 1715.0
+offset_bottom = 1321.0
+scale = Vector2(0.06, 0.06)
+mouse_filter = 2
+texture = ExtResource("18_mx5rp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.552941)
+script = ExtResource("31_pcq7h")
+
+[node name="Button" type="Button" parent="DarkOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Logo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(785, 209)
+layout_mode = 0
+offset_left = 640.0
+offset_top = 68.0
+offset_right = 1425.0
+offset_bottom = 277.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_qx4rx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RandomBounceTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="InfoPanel" type="Panel" parent="."]
+visible = false
+texture_filter = 4
+layout_mode = 0
+offset_left = 1105.0
+offset_top = 382.0
+offset_right = 1705.0
+offset_bottom = 682.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5evt")
+
+[node name="InfoPanel_Front" type="Panel" parent="InfoPanel"]
+texture_filter = 4
+layout_mode = 0
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 590.0
+offset_bottom = 291.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0jqe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoPanel/InfoPanel_Front"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 22.0
+offset_right = 226.0
+offset_bottom = 82.0
+theme_override_constants/separation = 75
+
+[node name="Title_Label" type="Label" parent="InfoPanel/InfoPanel_Front/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("33_ldwed")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_7du2h")
+text = "HIGHLIGHTS"
+
+[node name="GridContainer" type="GridContainer" parent="InfoPanel/InfoPanel_Front/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 5
+
+[node name="Panel" type="Panel" parent="InfoPanel/InfoPanel_Front/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3xbd0")
+
+[node name="Panel2" type="Panel" parent="InfoPanel/InfoPanel_Front/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3xbd0")
+
+[node name="Panel3" type="Panel" parent="InfoPanel/InfoPanel_Front/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3xbd0")
+
+[node name="Localization_Buttons" type="HBoxContainer" parent="."]
+offset_left = 789.0
+offset_top = 1651.0
+offset_right = 954.0
+offset_bottom = 1726.0
+theme_override_constants/separation = 15
+
+[node name="Translation_DE" parent="Localization_Buttons" instance=ExtResource("33_75ux1")]
+z_index = 3
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(1, 1, 1, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("34_o42hv")
+
+[node name="Translation_EN" parent="Localization_Buttons" instance=ExtResource("33_75ux1")]
+z_index = 3
+z_as_relative = false
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 0
+button_color = Color(1, 1, 1, 1)
+button_size = Vector2(75, 50)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("35_2s1x8")
+
+[node name="Button_Home" parent="." instance=ExtResource("33_75ux1")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 35.0
+offset_top = 1120.0
+offset_right = 110.0
+offset_bottom = 1195.0
+grow_horizontal = 1
+grow_vertical = 1
+button_color = Color(0.882353, 0.882353, 0.882353, 1)
+button_size = Vector2(75, 75)
+button_toggle_mode = false
+icon = true
+icon_texture = ExtResource("36_530pp")
+
+[connection signal="timeout" from="RandomBounceTimer" to="." method="random_tile_bounce"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_DE" to="." method="_on_translation_de_child_button_pressed"]
+[connection signal="child_button_pressed" from="Localization_Buttons/Translation_EN" to="." method="_on_translation_en_child_button_pressed"]
+[connection signal="child_button_pressed" from="Button_Home" to="." method="_on_button_home_pressed"]
