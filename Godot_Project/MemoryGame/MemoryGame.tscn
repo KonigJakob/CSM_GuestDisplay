@@ -139,6 +139,7 @@ button_size = Vector2(100, 50)
 button_toggle_mode = false
 
 [node name="Localization_Buttons" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 825.0
 offset_top = 1794.83
 offset_right = 990.0
@@ -174,11 +175,14 @@ offset_top = 114.277
 offset_bottom = 114.117
 theme_override_fonts/font = ExtResource("4_jpr53")
 theme_override_font_sizes/font_size = 50
-text = "INSTRUCTIONS"
+text = "INSTRUCTIONS
+
+Make bigger and then small after starting a sequence."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button_Home" parent="." instance=ExtResource("6_j1sn6")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

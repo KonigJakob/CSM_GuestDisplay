@@ -104,7 +104,6 @@ func _on_color_timer_timeout():
 	else:
 		animate_block_colors()
 
-
 func _on_button_memory_game_pressed():
 	if tween:
 		tween.kill()
