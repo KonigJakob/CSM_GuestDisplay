@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://74fwdkuoday0"]
+[gd_scene load_steps=13 format=3 uid="uid://74fwdkuoday0"]
 
 [ext_resource type="Script" path="res://MemoryGame/MemoryGame.gd" id="1_3bm27"]
 [ext_resource type="Texture2D" uid="uid://cjo6mre2jgy28" path="res://Assets/Textures/UITextures/logo_blurred.png" id="1_pus3l"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cquhhdbsyqos5" path="res://Assets/Textures/UITextures/de.png" id="8_enyn5"]
 [ext_resource type="Texture2D" uid="uid://coyxtgisq8vnf" path="res://Assets/Textures/UITextures/gb.png" id="9_81hdi"]
 [ext_resource type="Texture2D" uid="uid://dgbxrik588yxv" path="res://Assets/Textures/UITextures/logo_house_blurred.png" id="10_oehn6"]
+[ext_resource type="Script" path="res://MemoryGame/MemoryGame_Instructions.gd" id="10_xqil1"]
 
 [sub_resource type="Theme" id="Theme_dyshj"]
 
@@ -171,15 +172,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.073
-offset_top = 114.277
-offset_bottom = 114.117
+offset_top = 112.0
+offset_bottom = 127.84
 theme_override_fonts/font = ExtResource("4_jpr53")
 theme_override_font_sizes/font_size = 50
-text = "INSTRUCTIONS
-
-Make bigger and then small after starting a sequence."
+text = "INSTRUCTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("10_xqil1")
 
 [node name="Button_Home" parent="." instance=ExtResource("6_j1sn6")]
 layout_mode = 0
