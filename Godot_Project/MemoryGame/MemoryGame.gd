@@ -23,12 +23,12 @@ func _ready():
 	add_buttons()
 	connect_button_signals()
 	start_game()
+	turn_button_on()
 
 func add_buttons() -> void:
 	for i in range(number_of_squares):
 		var game_button_instance = game_button.instantiate()
 		game_button_instance.set_meta("id",i+1)
-		game_button_instance.get_child(0).color = Color.MEDIUM_PURPLE
 		game_buttons.append(game_button_instance)
 		grid_parent.add_child(game_button_instance)
 	buttons_added.emit()
@@ -98,6 +98,7 @@ func restart_game():
 	flash_buttons(Color.DARK_VIOLET)
 	start_game()
 	reset_buttons()
+	turn_button_on()
 
 func flash_buttons(color : Color):
 	var flash_tween = get_tree().create_tween().set_loops(1).set_parallel()
@@ -122,10 +123,10 @@ func flash_buttons(color : Color):
 	
 
 func flash_button(b : ColorRect, color : Color):
-	var single_flash_tween = get_tree().create_tween().set_loops(2).set_parallel()
+	var single_flash_tween = get_tree().create_tween().set_loops(4).set_parallel()
 	single_flash_tween.tween_property(b, "color", color, 0.2)
 	single_flash_tween.chain()
-	single_flash_tween.tween_property(b, "color", b.get_parent().color_of_squares, 0.2)
+	single_flash_tween.tween_property(b, "color", grid_parent.color_of_squares, 0.2)
 
 func disable_button(id : int):
 	var button_to_remove = game_buttons[id]

@@ -4,12 +4,11 @@ var children: Array
 var color_rects: Array
 var color_of_squares: Color
 
-var color_tween
-
 func _ready():
 	position = Vector2(get_viewport_rect().size.x/2 - size.x/2, get_viewport_rect().size.y/2 - size.y/2)
 	grow_horizontal = Control.GROW_DIRECTION_BOTH
 	grow_vertical = Control.GROW_DIRECTION_BOTH
+	animate_squares_colors()
 	pass
 
 func set_grid_columns(number_of_squares) -> void:
@@ -28,7 +27,7 @@ func set_grid_columns(number_of_squares) -> void:
 	pass
 	
 func get_color_rects() -> Array:
-	var rects: Array
+	var rects: Array = []
 	for i in range(children.size()):
 		if children[i].get_child(0) is ColorRect:
 			rects.append(children[i].get_child(0))
@@ -77,10 +76,16 @@ func animate_squares_success():
 		var scale_tween = get_tree().create_tween()
 		scale_tween.tween_property(color_rects[r], "scale", Vector2(1,1), 1)\
 		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-		color_tween = get_tree().create_tween().set_loops(2)
-		color_tween.set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_SINE)
 		for b in color_rects.size():
+			var color_tween = get_tree().create_tween().set_loops(2)
+			color_tween.set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_SINE)
 			color_tween.tween_property(color_rects[b], "color", SaveSystem.block_colors.pick_random(), 0.3)
+
+func animate_squares_colors():
+	for b in color_rects.size():
+		var color_tween = get_tree().create_tween().set_loops(1)
+		color_tween.set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_SINE)
+		color_tween.tween_property(color_rects[b], "color", SaveSystem.block_colors.pick_random(), 0.3)
 
 func _on_memory_game_successful_sequence():
 	animate_squares_success()
@@ -88,5 +93,4 @@ func _on_memory_game_successful_sequence():
 
 
 func _on_button_styled_child_button_pressed():
-	if color_tween:
-		color_tween.kill()
+	pass
