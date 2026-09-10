@@ -75,48 +75,38 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_voejn")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Leaderboard" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 19.1374
 offset_top = 1466.0
-offset_right = 1099.14
+offset_right = 1080.0
 offset_bottom = 1561.0
-theme_override_constants/separation = 70
+pivot_offset = Vector2(520, 240)
+theme_override_constants/separation = -90
 alignment = 1
 script = ExtResource("6_rbemy")
 
-[node name="Scores_Label" type="Label" parent="HBoxContainer"]
+[node name="Scores_Label" type="Label" parent="Leaderboard"]
 modulate = Color(1, 1, 1, 0.823529)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_jpr53")
-theme_override_font_sizes/font_size = 100
-text = "scores:"
+theme_override_font_sizes/font_size = 80
+text = "scores: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LeaderboardNew" type="Label" parent="HBoxContainer"]
+[node name="LeaderboardNew" type="Label" parent="Leaderboard"]
 modulate = Color(1, 1, 1, 0.823529)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_jpr53")
-theme_override_font_sizes/font_size = 130
+theme_override_font_sizes/font_size = 110
 text = "0.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LeaderboardOld" type="Label" parent="HBoxContainer"]
+[node name="LeaderboardOld" type="Label" parent="Leaderboard"]
 modulate = Color(1, 1, 1, 0.588235)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("4_jpr53")
-theme_override_font_sizes/font_size = 100
-text = "0.00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LeaderboardOldest" type="Label" parent="HBoxContainer"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_jpr53")
@@ -125,18 +115,28 @@ text = "0.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LeaderboardOldest" type="Label" parent="Leaderboard"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_jpr53")
+theme_override_font_sizes/font_size = 70
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RestartButton" parent="." instance=ExtResource("6_j1sn6")]
 modulate = Color(1, 1, 1, 0.458824)
 layout_mode = 1
-offset_left = 493.22
+offset_left = 437.22
 offset_top = 1627.76
-offset_right = -586.78
-offset_bottom = -292.241
-pivot_offset = Vector2(50, 25)
+offset_right = -642.78
+offset_bottom = -292.24
+pivot_offset = Vector2(80, 40)
 button_color = Color(0.392157, 0.733333, 0.282353, 1)
 button_text = "RESTART"
-button_text_size = 24
-button_size = Vector2(100, 50)
+button_text_size = 40
+button_size = Vector2(250, 75)
 button_toggle_mode = false
 
 [node name="Localization_Buttons" type="HBoxContainer" parent="."]
@@ -203,7 +203,7 @@ icon_texture = ExtResource("10_oehn6")
 [connection signal="game_started" from="." to="Timer" method="_on_memory_game_game_started"]
 [connection signal="successful_sequence" from="." to="BlocksContainer" method="_on_memory_game_successful_sequence"]
 [connection signal="successful_sequence" from="." to="Timer" method="_on_memory_game_successful_sequence"]
-[connection signal="successful_sequence" from="." to="HBoxContainer" method="_on_memory_game_successful_sequence"]
+[connection signal="successful_sequence" from="." to="Leaderboard" method="_on_memory_game_successful_sequence"]
 [connection signal="child_button_pressed" from="RestartButton" to="." method="_on_button_styled_child_button_pressed"]
 [connection signal="child_button_pressed" from="RestartButton" to="BlocksContainer" method="_on_button_styled_child_button_pressed"]
 [connection signal="child_button_pressed" from="RestartButton" to="Timer" method="_on_button_styled_child_button_pressed"]

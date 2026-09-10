@@ -7,7 +7,10 @@ var count_time : bool = true
 
 func _ready():
 	count_time = false
-	position = Vector2(get_viewport_rect().size.x/2 - size.x/2, 450)
+	
+	await get_tree().process_frame
+	
+	position = Vector2(get_viewport_rect().size.x/2 - size.x/2, $"../BlocksContainer".position.y - 250)
 
 func _process(delta):
 	if count_time:

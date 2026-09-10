@@ -12,18 +12,22 @@ var game_sequence : Array
 var current_step : int = 0
 
 var home_button : button_syled
+var restart_button : button_syled
 
 @export var number_of_squares : int = 1
 
 func _ready():
 	grid_parent = $BlocksContainer
 	home_button = $Button_Home
+	restart_button = $RestartButton
 	var viewport = get_viewport_rect().size
 	home_button.position = Vector2(viewport.x/2 - home_button.size.x/2, viewport.y - home_button.size.y * 2)
+	restart_button.position = Vector2(viewport.x/2 - restart_button.button_size.x/2, home_button.position.y - 150)
 	add_buttons()
 	connect_button_signals()
 	start_game()
 	turn_button_on()
+
 
 func add_buttons() -> void:
 	for i in range(number_of_squares):
@@ -67,14 +71,14 @@ func on_game_button_up(id : int):
 	check_sequence(id)
 
 func check_sequence(id : int):
-	print("ID: " + str(id))
+	##print("ID: " + str(id))
 	if id == game_sequence[current_step]:
 		current_step += 1
 		#recolor_game_buttons(id - 1)
 		disable_button(id - 1)
 		if current_step == game_sequence.size():
 			current_step = 0
-			print("sequence completed")
+			##print("sequence completed")
 			game_sequence = set_game_sequence()
 			successful_sequence.emit()
 	else:
@@ -82,7 +86,7 @@ func check_sequence(id : int):
 		flash_buttons(Color.RED)
 		reset_buttons()
 		
-		print("wrong!")
+		##print("wrong!")
 		
 func recolor_game_buttons(id : int):
 	game_buttons[id].get_child(0).color = Color.BLUE
